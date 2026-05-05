@@ -13,8 +13,10 @@ RESTAURANTS = [
         "address": "Via Alberto Cadlolo, 101",
         "lat": 41.9185,
         "lng": 12.4354,
-        "rating": 1,
+        "rating": 5,
         "price": "€€€€",
+        "hours": "Tue–Sat: 7:30pm–11pm | Closed Sun & Mon",
+        "maps_url": "https://maps.google.com/?q=La+Pergola+Rome",
         "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
     },
     {
@@ -27,6 +29,8 @@ RESTAURANTS = [
         "lng": 12.4665,
         "rating": 5,
         "price": "€€€€",
+        "hours": "Tue–Sat: 7:30pm–10:30pm | Closed Sun & Mon",
+        "maps_url": "https://maps.google.com/?q=Il+Pagliaccio+Rome",
         "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=250&fit=crop"
     },
     {
@@ -39,6 +43,8 @@ RESTAURANTS = [
         "lng": 12.4936,
         "rating": 5,
         "price": "€€€€",
+        "hours": "Mon–Sun: 7pm–10:30pm",
+        "maps_url": "https://maps.google.com/?q=Aroma+Restaurant+Rome",
         "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop"
     },
     # Trattoria
@@ -52,6 +58,8 @@ RESTAURANTS = [
         "lng": 12.4727,
         "rating": 4,
         "price": "€€",
+        "hours": "Mon–Sat: 12pm–3pm, 7pm–10pm | Closed Sun",
+        "maps_url": "https://maps.google.com/?q=Da+Enzo+al+29+Rome",
         "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=400&h=250&fit=crop"
     },
     {
@@ -64,6 +72,8 @@ RESTAURANTS = [
         "lng": 12.4758,
         "rating": 4,
         "price": "€€",
+        "hours": "Mon–Sun: 12:30pm–3pm, 7:30pm–11pm",
+        "maps_url": "https://maps.google.com/?q=Flavio+al+Velavevodetto+Rome",
         "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=250&fit=crop"
     },
     {
@@ -76,6 +86,8 @@ RESTAURANTS = [
         "lng": 12.4792,
         "rating": 4,
         "price": "€€",
+        "hours": "Thu–Tue: 12pm–3pm, 7pm–11pm | Closed Wed",
+        "maps_url": "https://maps.google.com/?q=Trattoria+Vecchia+Roma",
         "image": "https://images.unsplash.com/photo-1534482421-64566f976cfa?w=400&h=250&fit=crop"
     },
     # Café
@@ -89,6 +101,8 @@ RESTAURANTS = [
         "lng": 12.4737,
         "rating": 5,
         "price": "€",
+        "hours": "Mon–Sun: 7:30am–1am",
+        "maps_url": "https://maps.google.com/?q=Sant'Eustachio+il+Caffe+Rome",
         "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=250&fit=crop"
     },
     {
@@ -101,6 +115,8 @@ RESTAURANTS = [
         "lng": 12.4801,
         "rating": 4,
         "price": "€€",
+        "hours": "Mon–Sun: 9am–9pm",
+        "maps_url": "https://maps.google.com/?q=Antico+Caffe+Greco+Rome",
         "image": "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=400&h=250&fit=crop"
     },
     {
@@ -113,6 +129,8 @@ RESTAURANTS = [
         "lng": 12.4718,
         "rating": 4,
         "price": "€€",
+        "hours": "Tue–Sun: 9am–2am | Closed Mon",
+        "maps_url": "https://maps.google.com/?q=Caffe+della+Pace+Rome",
         "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=250&fit=crop"
     },
     # Pizza
@@ -126,6 +144,8 @@ RESTAURANTS = [
         "lng": 12.4554,
         "rating": 5,
         "price": "€",
+        "hours": "Mon–Sat: 11am–10pm | Closed Sun",
+        "maps_url": "https://maps.google.com/?q=Pizzarium+Bonci+Rome",
         "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop"
     },
     {
@@ -138,6 +158,8 @@ RESTAURANTS = [
         "lng": 12.4702,
         "rating": 5,
         "price": "€€",
+        "hours": "Tue–Sun: 7pm–11:30pm | Closed Mon",
+        "maps_url": "https://maps.google.com/?q=Seu+Pizza+Illuminati+Rome",
         "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=250&fit=crop"
     },
     # Gelato
@@ -151,6 +173,8 @@ RESTAURANTS = [
         "lng": 12.4694,
         "rating": 5,
         "price": "€",
+        "hours": "Mon–Sun: 12pm–11:30pm",
+        "maps_url": "https://maps.google.com/?q=Fatamorgana+Gelateria+Rome",
         "image": "https://images.unsplash.com/photo-1488900128323-21503983a07e?w=400&h=250&fit=crop"
     },
     {
@@ -163,16 +187,18 @@ RESTAURANTS = [
         "lng": 12.4707,
         "rating": 5,
         "price": "€",
+        "hours": "Mon–Sun: 11am–11pm",
+        "maps_url": "https://maps.google.com/?q=Gelateria+del+Teatro+Rome",
         "image": "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=400&h=250&fit=crop"
     },
 ]
 
 CATEGORIES = {
     "fine_dining": {"label": "Fine Dining", "color": "#C9A84C", "icon": "✦"},
-    "trattoria":   {"label": "Trattoria",   "color": "#E05C3A", "icon": "◈"},
-    "cafe":        {"label": "Café",        "color": "#6B9E78", "icon": "◉"},
-    "pizza":       {"label": "Pizza",       "color": "#D4547A", "icon": "◆"},
-    "gelato":      {"label": "Gelato",      "color": "#5B8EC4", "icon": "◇"},
+    "trattoria":   {"label": "Trattoria",   "color": "#E05C3A", "icon": "🍝"},
+    "cafe":        {"label": "Café",        "color": "#6B9E78", "icon": "☕"},
+    "pizza":       {"label": "Pizza",       "color": "#D4547A", "icon": "🍕"},
+    "gelato":      {"label": "Gelato",      "color": "#5B8EC4", "icon": "🍦"},
 }
 
 @app.route("/", methods=['GET', 'POST'])

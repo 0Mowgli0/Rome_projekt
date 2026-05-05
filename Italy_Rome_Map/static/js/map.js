@@ -42,10 +42,10 @@ const CAT_COLORS = {
 
 const CAT_ICONS = {
   fine_dining: '✦',
-  trattoria:   '◈',
-  cafe:        '◉',
-  pizza:       '◆',
-  gelato:      '◇',
+  trattoria:   '🍝',
+  cafe:        '☕',
+  pizza:       '🍕',
+  gelato:      '🍦',
 };
 
 // ── Fetch data ───────────────────────────────────────────────
@@ -141,10 +141,15 @@ function renderRestaurants(list) {
       </div>
       <div class="rest-card-dot" style="background:${CAT_COLORS[r.category]}"></div>
     `;
-    card.addEventListener('click', () => {
-      flyToMarker(r);
-      showDetail(r);
-    });
+   card.addEventListener('click', () => {
+  flyToMarker(r);
+  showDetail(r);
+  // Auto-collapse drawer on mobile
+  if (window.innerWidth < 768) {
+    sidebar.classList.remove('expanded');
+    setTimeout(() => map.invalidateSize(), 320);
+  }
+});
     container.appendChild(card);
   });
 }
@@ -299,9 +304,11 @@ function showDetail(r) {
   document.getElementById('detailDesc').textContent     = r.description;
   document.getElementById('detailAddress').textContent  = r.address;
   document.getElementById('detailPrice').textContent    = r.price;
+  document.getElementById('detailHours').textContent    = r.hours || 'Hours not available';
   document.getElementById('detailCategory').textContent = categories[r.category]?.label || r.category;
   document.getElementById('detailBadge').textContent    = categories[r.category]?.label || r.category;
   document.getElementById('detailStars').textContent    = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+  document.getElementById('directionsBtn').href         = r.maps_url;
   panel.classList.add('open');
   backdrop.classList.add('open');
 }
