@@ -4,6 +4,7 @@ let categories     = {};
 let activeCategory = 'all';
 let markers        = {};
 let activeMarker   = null;
+let clusterGroup   = null;
 
 // ── Map init ─────────────────────────────────────────────────
 const map = L.map('map', {
@@ -19,6 +20,15 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   subdomains: 'abcd',
   maxZoom: 19
 }).addTo(map);
+
+// ── Cluster group ─────────────────────────────────────────────
+clusterGroup = L.markerClusterGroup({
+  maxClusterRadius: 50,
+  spiderfyOnMaxZoom: true,
+  showCoverageOnHover: false,
+  zoomToBoundsOnClick: true,
+});
+map.addLayer(clusterGroup);
 
 // ── Category colors ──────────────────────────────────────────
 const CAT_COLORS = {
@@ -78,13 +88,39 @@ function setFilter(cat) {
   document.querySelectorAll('.filter-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.cat === cat);
   });
-  const filtered = cat === 'all'
-    ? allRestaurants
-    : allRestaurants.filter(r => r.category === cat);
+
+  const query = document.getElementById('searchInput').value.toLowerCase().trim();
+  const base  = cat === 'all' ? allRestaurants : allRestaurants.filter(r => r.category === cat);
+  const filtered = query ? base.filter(r =>
+    r.name.toLowerCase().includes(query) ||
+    r.description.toLowerCase().includes(query)
+  ) : base;
+
   renderRestaurants(filtered);
   updateMarkerVisibility(filtered);
   updateCount(filtered.length);
+  fitMapToVisible(filtered);
 }
+
+// ── Search ───────────────────────────────────────────────────
+document.getElementById('searchInput').addEventListener('input', function () {
+  const query = this.value.toLowerCase().trim();
+  const base  = activeCategory === 'all'
+    ? allRestaurants
+    : allRestaurants.filter(r => r.category === activeCategory);
+
+  const filtered = query
+    ? base.filter(r =>
+        r.name.toLowerCase().includes(query) ||
+        r.description.toLowerCase().includes(query)
+      )
+    : base;
+
+  renderRestaurants(filtered);
+  updateMarkerVisibility(filtered);
+  updateCount(filtered.length);
+  if (filtered.length > 0) fitMapToVisible(filtered);
+});
 
 // ── Restaurant sidebar list ──────────────────────────────────
 function renderRestaurants(list) {
@@ -100,6 +136,7 @@ function renderRestaurants(list) {
       <div class="rest-card-info">
         <div class="rest-card-name">${r.name}</div>
         <div class="rest-card-meta">${categories[r.category]?.label || r.category} · ${r.price}</div>
+        <div class="rest-card-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
       </div>
       <div class="rest-card-dot" style="background:${CAT_COLORS[r.category]}"></div>
     `;
@@ -132,7 +169,7 @@ function placeMarkers(list) {
     const marker = L.marker([r.lat, r.lng], {
       icon: createMarkerIcon(r.category),
       title: r.name,
-    }).addTo(map);
+    });
 
     const popupHtml = `
       <div class="popup-inner">
@@ -151,6 +188,8 @@ function placeMarkers(list) {
       activeMarker = { marker, cat: r.category };
     });
     marker.on('popupclose', () => resetActiveMarker());
+
+    clusterGroup.addLayer(marker);
     markers[r.id] = { marker, restaurant: r };
   });
 }
@@ -164,26 +203,66 @@ function resetActiveMarker() {
 
 function updateMarkerVisibility(visible) {
   const visibleIds = new Set(visible.map(r => r.id));
+  clusterGroup.clearLayers();
   Object.values(markers).forEach(({ marker, restaurant }) => {
     if (visibleIds.has(restaurant.id)) {
-      if (!map.hasLayer(marker)) map.addLayer(marker);
-    } else {
-      if (map.hasLayer(marker)) map.removeLayer(marker);
+      clusterGroup.addLayer(marker);
     }
   });
+}
+
+function fitMapToVisible(list) {
+  if (list.length === 0) return;
+  const bounds = L.latLngBounds(list.map(r => [r.lat, r.lng]));
+  map.fitBounds(bounds, { padding: [40, 40], maxZoom: 16 });
 }
 
 function flyToMarker(r) {
   map.flyTo([r.lat, r.lng], 16, { duration: 0.8 });
   setTimeout(() => {
     if (markers[r.id]) {
-      markers[r.id].marker.openPopup();
+      clusterGroup.zoomToShowLayer(markers[r.id].marker, () => {
+        markers[r.id].marker.openPopup();
+      });
       resetActiveMarker();
       markers[r.id].marker.setIcon(createMarkerIcon(r.category, true));
       activeMarker = { marker: markers[r.id].marker, cat: r.category };
     }
   }, 900);
 }
+
+// ── Locate me ────────────────────────────────────────────────
+document.getElementById('locateBtn').addEventListener('click', () => {
+  const btn = document.getElementById('locateBtn');
+  btn.textContent = '⏳';
+
+  if (!navigator.geolocation) {
+    alert('Geolocation is not supported by your browser.');
+    btn.textContent = '📍';
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      const { latitude, longitude } = pos.coords;
+      map.flyTo([latitude, longitude], 15, { duration: 1 });
+
+      L.circleMarker([latitude, longitude], {
+        radius: 10,
+        fillColor: '#C9A84C',
+        color: '#fff',
+        weight: 2,
+        fillOpacity: 0.9,
+      }).addTo(map).bindPopup('📍 You are here').openPopup();
+
+      btn.textContent = '📍';
+    },
+    () => {
+      alert('Could not get your location. Make sure location access is allowed.');
+      btn.textContent = '📍';
+    }
+  );
+});
 
 // ── Detail panel ─────────────────────────────────────────────
 const panel    = document.getElementById('detailPanel');
@@ -196,14 +275,14 @@ function showDetailById(id) {
 window.showDetailById = showDetailById;
 
 function showDetail(r) {
-  document.getElementById('detailImage').src           = r.image;
-  document.getElementById('detailName').textContent    = r.name;
-  document.getElementById('detailDesc').textContent    = r.description;
-  document.getElementById('detailAddress').textContent = r.address;
-  document.getElementById('detailPrice').textContent   = r.price;
+  document.getElementById('detailImage').src            = r.image;
+  document.getElementById('detailName').textContent     = r.name;
+  document.getElementById('detailDesc').textContent     = r.description;
+  document.getElementById('detailAddress').textContent  = r.address;
+  document.getElementById('detailPrice').textContent    = r.price;
   document.getElementById('detailCategory').textContent = categories[r.category]?.label || r.category;
-  document.getElementById('detailBadge').textContent   = categories[r.category]?.label || r.category;
-  document.getElementById('detailStars').textContent   = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+  document.getElementById('detailBadge').textContent    = categories[r.category]?.label || r.category;
+  document.getElementById('detailStars').textContent    = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
   panel.classList.add('open');
   backdrop.classList.add('open');
 }

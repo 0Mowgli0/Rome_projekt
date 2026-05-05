@@ -13,7 +13,7 @@ RESTAURANTS = [
         "address": "Via Alberto Cadlolo, 101",
         "lat": 41.9185,
         "lng": 12.4354,
-        "rating": 5,
+        "rating": 1,
         "price": "€€€€",
         "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
     },
@@ -175,7 +175,7 @@ CATEGORIES = {
     "gelato":      {"label": "Gelato",      "color": "#5B8EC4", "icon": "◇"},
 }
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def index():
     return render_template("index.html")
 
