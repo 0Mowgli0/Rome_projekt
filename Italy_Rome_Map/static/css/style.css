@@ -15,7 +15,7 @@
   --slate:     #5B8EC4;
 
   --sidebar-w: 320px;
-  --header-h:  72px;
+  --header-h:  60px;
   --radius:    4px;
   --shadow:    0 8px 40px rgba(26,20,16,0.14);
   --shadow-sm: 0 2px 12px rgba(26,20,16,0.10);
@@ -29,7 +29,6 @@ html, body {
   overflow: hidden;
 }
 
-/* ─── Header ─────────────────────────────────────────────── */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -38,27 +37,27 @@ html, body {
   z-index: 1000;
   display: flex;
   align-items: center;
-  padding: 0 28px;
+  padding: 0 16px;
   border-bottom: 1px solid rgba(201,168,76,0.25);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 12px;
   width: 100%;
 }
 
 .logo {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
 .logo-accent {
   color: var(--gold);
-  font-size: 18px;
+  font-size: 16px;
   animation: spin-slow 8s linear infinite;
   display: inline-block;
 }
@@ -70,14 +69,14 @@ html, body {
 
 .logo-main {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 400;
   color: #fff;
   letter-spacing: 0.04em;
 }
 
 .logo-sub {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -88,190 +87,24 @@ html, body {
 .header-tagline {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(255,255,255,0.45);
-  letter-spacing: 0.02em;
   margin-left: auto;
   padding-right: 8px;
+  display: none;
 }
 
-/* ─── Layout ─────────────────────────────────────────────── */
 .app-layout {
   display: flex;
   height: 100vh;
   padding-top: var(--header-h);
-}
-
-/* ─── Sidebar ─────────────────────────────────────────────── */
-.sidebar {
-  width: var(--sidebar-w);
-  flex-shrink: 0;
-  background: var(--cream);
-  border-right: 1px solid var(--parchment);
-  display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
-.sidebar::-webkit-scrollbar { width: 4px; }
-.sidebar::-webkit-scrollbar-track { background: transparent; }
-.sidebar::-webkit-scrollbar-thumb { background: var(--parchment); border-radius: 2px; }
-
-.sidebar-section {
-  padding: 20px 20px 0;
-}
-
-.sidebar-title {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--parchment);
-}
-
-/* Filter buttons */
-.filter-list {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 20px;
-}
-
-.filter-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
-  border: 1px solid transparent;
-  border-radius: var(--radius);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.18s ease;
-  width: 100%;
-  text-align: left;
-  color: var(--ink-soft);
-}
-
-.filter-btn:hover {
-  background: var(--parchment);
-  border-color: var(--parchment);
-}
-
-.filter-btn.active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--cream);
-}
-
-.filter-icon {
-  font-size: 14px;
-  width: 18px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.filter-label {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  flex: 1;
-}
-
-.filter-count {
-  font-size: 11px;
-  font-weight: 600;
-  opacity: 0.55;
-  background: rgba(0,0,0,0.08);
-  padding: 1px 7px;
-  border-radius: 10px;
-}
-
-.filter-btn.active .filter-count {
-  background: rgba(255,255,255,0.18);
-  opacity: 0.85;
-}
-
-/* Restaurant List */
-.restaurant-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-bottom: 24px;
-}
-
-.rest-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  border: 1px solid var(--parchment);
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: all 0.18s ease;
-  background: #fff;
-  animation: card-in 0.3s ease both;
-}
-
-@keyframes card-in {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: none; }
-}
-
-.rest-card:hover {
-  border-color: var(--gold);
-  box-shadow: var(--shadow-sm);
-  transform: translateX(2px);
-}
-
-.rest-card.hidden {
-  display: none;
-}
-
-.rest-card-thumb {
-  width: 44px;
-  height: 44px;
-  border-radius: 3px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.rest-card-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.rest-card-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.rest-card-meta {
-  font-size: 10px;
-  color: var(--ink-faint);
-  letter-spacing: 0.04em;
-  margin-top: 2px;
-}
-
-.rest-card-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* ─── Map ─────────────────────────────────────────────────── */
 .map-container {
   flex: 1;
   position: relative;
+  min-height: 0;
 }
 
 #map {
@@ -281,21 +114,190 @@ html, body {
 
 .map-overlay-badge {
   position: absolute;
-  bottom: 28px;
-  right: 20px;
+  bottom: 70px;
+  right: 12px;
   background: var(--ink);
   color: var(--gold);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.10em;
-  padding: 7px 14px;
+  padding: 6px 12px;
   border-radius: 20px;
   z-index: 500;
   pointer-events: none;
   box-shadow: var(--shadow);
 }
 
-/* ─── Leaflet overrides ───────────────────────────────────── */
+.sidebar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 42vh;
+  background: var(--cream);
+  border-top: 1px solid var(--parchment);
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 24px rgba(26,20,16,0.12);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 600;
+  transition: height 0.3s ease;
+}
+
+.sidebar.expanded { height: 80vh; }
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--parchment); border-radius: 2px; }
+
+.sidebar-handle {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sidebar-handle-bar {
+  width: 36px;
+  height: 4px;
+  background: var(--parchment);
+  border-radius: 2px;
+}
+
+.sidebar-section { padding: 8px 16px 0; }
+
+.sidebar-title {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--parchment);
+}
+
+.filter-list {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin-bottom: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.filter-list::-webkit-scrollbar { display: none; }
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid var(--parchment);
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: var(--ink-soft);
+}
+
+.filter-btn:hover { border-color: var(--gold); }
+
+.filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+}
+
+.filter-icon { font-size: 13px; }
+
+.filter-label {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.filter-count {
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.55;
+  background: rgba(0,0,0,0.08);
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(255,255,255,0.18);
+  opacity: 0.85;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 4px 0 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.restaurant-list::-webkit-scrollbar { display: none; }
+
+.rest-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  max-width: 140px;
+  border: 1px solid var(--parchment);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  background: #fff;
+  overflow: hidden;
+  flex-shrink: 0;
+  animation: card-in 0.3s ease both;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.rest-card:hover, .rest-card:active {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.rest-card-thumb {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+}
+
+.rest-card-info { padding: 8px; }
+
+.rest-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.rest-card-meta {
+  font-size: 9px;
+  color: var(--ink-faint);
+}
+
+.rest-card-dot { display: none; }
+
 .leaflet-popup-content-wrapper {
   background: var(--ink);
   color: #fff;
@@ -306,26 +308,18 @@ html, body {
   border: 1px solid rgba(201,168,76,0.3);
 }
 
-.leaflet-popup-tip {
-  background: var(--ink);
-}
+.leaflet-popup-tip { background: var(--ink); }
+.leaflet-popup-content { margin: 0; width: 200px !important; }
 
-.leaflet-popup-content {
-  margin: 0;
-  width: 220px !important;
-}
-
-.popup-inner {
-  padding: 14px 16px;
-}
+.popup-inner { padding: 12px 14px; }
 
 .popup-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   color: #fff;
   line-height: 1.2;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .popup-cat {
@@ -333,14 +327,14 @@ html, body {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .popup-desc {
   font-size: 11px;
   color: rgba(255,255,255,0.65);
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .popup-price {
@@ -352,7 +346,7 @@ html, body {
 .popup-btn {
   display: block;
   width: 100%;
-  padding: 8px;
+  padding: 9px;
   background: var(--gold);
   color: var(--ink);
   font-size: 10px;
@@ -367,13 +361,12 @@ html, body {
 
 .popup-btn:hover { background: var(--gold-lt); }
 
-/* Custom marker */
 .custom-marker {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
   box-shadow: 0 4px 14px rgba(0,0,0,0.35);
@@ -389,11 +382,10 @@ html, body {
 
 .marker-icon-inner {
   transform: rotate(45deg);
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1;
 }
 
-/* ─── Detail Panel ─────────────────────────────────────────── */
 .detail-backdrop {
   position: fixed;
   inset: 0;
@@ -405,10 +397,7 @@ html, body {
   backdrop-filter: blur(3px);
 }
 
-.detail-backdrop.open {
-  opacity: 1;
-  pointer-events: all;
-}
+.detail-backdrop.open { opacity: 1; pointer-events: all; }
 
 .detail-panel {
   position: fixed;
@@ -422,11 +411,11 @@ html, body {
   box-shadow: 0 -10px 60px rgba(26,20,16,0.25);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   overflow: hidden;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
-.detail-panel.open {
-  transform: translateX(-50%) translateY(0);
-}
+.detail-panel.open { transform: translateX(-50%) translateY(0); }
 
 .detail-close {
   position: absolute;
@@ -435,10 +424,10 @@ html, body {
   background: rgba(26,20,16,0.6);
   color: #fff;
   border: none;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
   z-index: 10;
   display: flex;
@@ -451,16 +440,11 @@ html, body {
 
 .detail-image-wrap {
   position: relative;
-  height: 200px;
+  height: 180px;
   overflow: hidden;
 }
 
-.detail-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.detail-image { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .detail-image-overlay {
   position: absolute;
@@ -470,8 +454,8 @@ html, body {
 
 .detail-badge {
   position: absolute;
-  bottom: 14px;
-  left: 16px;
+  bottom: 12px;
+  left: 14px;
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -483,15 +467,13 @@ html, body {
   border: 1px solid rgba(201,168,76,0.4);
 }
 
-.detail-body {
-  padding: 20px 24px 28px;
-}
+.detail-body { padding: 18px 20px 32px; }
 
 .detail-meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .detail-category {
@@ -502,15 +484,11 @@ html, body {
   color: var(--gold);
 }
 
-.detail-price {
-  font-size: 12px;
-  color: var(--ink-faint);
-  font-weight: 500;
-}
+.detail-price { font-size: 12px; color: var(--ink-faint); font-weight: 500; }
 
 .detail-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 400;
   color: var(--ink);
   line-height: 1.1;
@@ -521,7 +499,7 @@ html, body {
   font-size: 13px;
   line-height: 1.65;
   color: var(--ink-soft);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .detail-address {
@@ -530,16 +508,91 @@ html, body {
   gap: 8px;
   font-size: 12px;
   color: var(--ink-faint);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-.addr-icon {
-  color: var(--gold);
-  font-size: 14px;
-}
+.addr-icon { color: var(--gold); font-size: 14px; }
 
-.detail-stars {
-  color: var(--gold);
-  font-size: 14px;
-  letter-spacing: 2px;
+.detail-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
+
+/* ─── Desktop (≥ 768px) ───────────────────────────────────── */
+@media (min-width: 768px) {
+  :root { --header-h: 72px; }
+
+  .header-tagline { display: block; }
+  .logo-main { font-size: 26px; }
+  .logo-accent { font-size: 18px; }
+
+  .app-layout { flex-direction: row; }
+
+  .sidebar {
+    position: relative;
+    bottom: auto; left: auto; right: auto;
+    width: var(--sidebar-w);
+    height: 100%;
+    border-top: none;
+    border-right: 1px solid var(--parchment);
+    border-radius: 0;
+    box-shadow: none;
+    flex-shrink: 0;
+  }
+
+  .sidebar.expanded { height: 100%; }
+  .sidebar-handle { display: none; }
+  .sidebar-section { padding: 20px 20px 0; }
+
+  .filter-list {
+    flex-direction: column;
+    overflow-x: visible;
+    gap: 4px;
+  }
+
+  .filter-btn {
+    border-radius: var(--radius);
+    padding: 9px 12px;
+    width: 100%;
+  }
+
+  .restaurant-list {
+    flex-direction: column;
+    overflow-x: visible;
+    gap: 6px;
+    padding-bottom: 24px;
+  }
+
+  .rest-card {
+    flex-direction: row;
+    min-width: unset;
+    max-width: unset;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--radius);
+  }
+
+  .rest-card:hover { transform: translateX(2px); }
+
+  .rest-card-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .rest-card-name {
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rest-card-dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .map-overlay-badge { bottom: 28px; right: 20px; }
 }

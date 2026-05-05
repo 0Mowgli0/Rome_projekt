@@ -14,7 +14,6 @@ const map = L.map('map', {
 
 L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-// Stamen Toner Lite — clean, editorial look
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
   subdomains: 'abcd',
@@ -55,13 +54,10 @@ async function loadData() {
 // ── Filter UI ────────────────────────────────────────────────
 function buildFilters() {
   const list = document.getElementById('filterList');
-
-  // Update all-count
   document.getElementById('count-all').textContent = allRestaurants.length;
 
   for (const [key, cat] of Object.entries(categories)) {
     const count = allRestaurants.filter(r => r.category === key).length;
-
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
     btn.dataset.cat = key;
@@ -79,15 +75,12 @@ function buildFilters() {
 
 function setFilter(cat) {
   activeCategory = cat;
-
   document.querySelectorAll('.filter-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.cat === cat);
   });
-
   const filtered = cat === 'all'
     ? allRestaurants
     : allRestaurants.filter(r => r.category === cat);
-
   renderRestaurants(filtered);
   updateMarkerVisibility(filtered);
   updateCount(filtered.length);
@@ -97,7 +90,6 @@ function setFilter(cat) {
 function renderRestaurants(list) {
   const container = document.getElementById('restaurantList');
   container.innerHTML = '';
-
   list.forEach((r, i) => {
     const card = document.createElement('div');
     card.className = 'rest-card';
@@ -107,7 +99,7 @@ function renderRestaurants(list) {
       <img class="rest-card-thumb" src="${r.image}" alt="${r.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=44&h=44&fit=crop'">
       <div class="rest-card-info">
         <div class="rest-card-name">${r.name}</div>
-        <div class="rest-card-meta">${categories[r.category]?.label || r.category} &nbsp;·&nbsp; ${r.price}</div>
+        <div class="rest-card-meta">${categories[r.category]?.label || r.category} · ${r.price}</div>
       </div>
       <div class="rest-card-dot" style="background:${CAT_COLORS[r.category]}"></div>
     `;
@@ -128,16 +120,15 @@ function createMarkerIcon(cat, active = false) {
     html: `<div class="custom-marker${active ? ' active' : ''}" style="background:${color}">
              <span class="marker-icon-inner">${icon}</span>
            </div>`,
-    iconSize:   [34, 34],
-    iconAnchor: [17, 34],
-    popupAnchor:[0, -36],
+    iconSize:   [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor:[0, -34],
   });
 }
 
 function placeMarkers(list) {
   list.forEach(r => {
     if (markers[r.id]) return;
-
     const marker = L.marker([r.lat, r.lng], {
       icon: createMarkerIcon(r.category),
       title: r.name,
@@ -153,18 +144,13 @@ function placeMarkers(list) {
       <button class="popup-btn" onclick="showDetailById(${r.id})">View Details</button>
     `;
 
-    marker.bindPopup(popupHtml, { maxWidth: 240, minWidth: 220 });
-
+    marker.bindPopup(popupHtml, { maxWidth: 220, minWidth: 200 });
     marker.on('click', () => {
       resetActiveMarker();
       marker.setIcon(createMarkerIcon(r.category, true));
       activeMarker = { marker, cat: r.category };
     });
-
-    marker.on('popupclose', () => {
-      resetActiveMarker();
-    });
-
+    marker.on('popupclose', () => resetActiveMarker());
     markers[r.id] = { marker, restaurant: r };
   });
 }
@@ -178,7 +164,6 @@ function resetActiveMarker() {
 
 function updateMarkerVisibility(visible) {
   const visibleIds = new Set(visible.map(r => r.id));
-
   Object.values(markers).forEach(({ marker, restaurant }) => {
     if (visibleIds.has(restaurant.id)) {
       if (!map.hasLayer(marker)) map.addLayer(marker);
@@ -211,7 +196,7 @@ function showDetailById(id) {
 window.showDetailById = showDetailById;
 
 function showDetail(r) {
-  document.getElementById('detailImage').src    = r.image;
+  document.getElementById('detailImage').src           = r.image;
   document.getElementById('detailName').textContent    = r.name;
   document.getElementById('detailDesc').textContent    = r.description;
   document.getElementById('detailAddress').textContent = r.address;
@@ -219,7 +204,6 @@ function showDetail(r) {
   document.getElementById('detailCategory').textContent = categories[r.category]?.label || r.category;
   document.getElementById('detailBadge').textContent   = categories[r.category]?.label || r.category;
   document.getElementById('detailStars').textContent   = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
-
   panel.classList.add('open');
   backdrop.classList.add('open');
 }
@@ -235,6 +219,16 @@ backdrop.addEventListener('click', closeDetail);
 // ── Helpers ──────────────────────────────────────────────────
 function updateCount(n) {
   document.getElementById('visibleCount').textContent = n;
+}
+
+// ── Sidebar toggle (mobile) ───────────────────────────────────
+const sidebar = document.getElementById('sidebar');
+const handle  = document.getElementById('sidebarHandle');
+if (handle) {
+  handle.addEventListener('click', () => {
+    sidebar.classList.toggle('expanded');
+    setTimeout(() => map.invalidateSize(), 320);
+  });
 }
 
 // ── Boot ─────────────────────────────────────────────────────

@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurants of Rome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Roma Tavola — Restaurants of Rome</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,8 +16,8 @@
     <div class="header-inner">
       <div class="logo">
         <span class="logo-accent">✦</span>
-        <span class="logo-main">Restaurants of Rome</span>
-        <span class="logo-sub">Guide</span>
+        <span class="logo-main">Roma Tavola</span>
+        <span class="logo-sub">Restaurant Guide</span>
       </div>
       <p class="header-tagline">Discover the finest tables of the Eternal City</p>
     </div>
@@ -25,14 +25,16 @@
 
   <div class="app-layout">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-handle" id="sidebarHandle">
+        <div class="sidebar-handle-bar"></div>
+      </div>
       <div class="sidebar-section">
         <h3 class="sidebar-title">Filter by Category</h3>
         <div class="filter-list" id="filterList">
           <button class="filter-btn active" data-cat="all">
             <span class="filter-icon">◈</span>
-            <span class="filter-label">All Restaurants</span>
+            <span class="filter-label">All</span>
             <span class="filter-count" id="count-all">0</span>
           </button>
         </div>
@@ -40,13 +42,10 @@
 
       <div class="sidebar-section">
         <h3 class="sidebar-title">Listings</h3>
-        <div class="restaurant-list" id="restaurantList">
-          <!-- Populated by JS -->
-        </div>
+        <div class="restaurant-list" id="restaurantList"></div>
       </div>
     </aside>
 
-    <!-- Map -->
     <main class="map-container">
       <div id="map"></div>
       <div class="map-overlay-badge">
@@ -56,7 +55,6 @@
 
   </div>
 
-  <!-- Detail Panel -->
   <div class="detail-panel" id="detailPanel">
     <button class="detail-close" id="detailClose">✕</button>
     <div class="detail-image-wrap">
