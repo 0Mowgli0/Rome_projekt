@@ -5,6 +5,7 @@ let activeCategory = 'all';
 let markers        = {};
 let activeMarker   = null;
 let clusterGroup   = null;
+let locationMarker = null;
 
 // ── Map init ─────────────────────────────────────────────────
 const map = L.map('map', {
@@ -245,22 +246,40 @@ document.getElementById('locateBtn').addEventListener('click', () => {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
       const { latitude, longitude } = pos.coords;
+
+      if (locationMarker) {
+        map.removeLayer(locationMarker);
+      }
+
       map.flyTo([latitude, longitude], 15, { duration: 1 });
 
-      L.circleMarker([latitude, longitude], {
-        radius: 10,
-        fillColor: '#C9A84C',
-        color: '#fff',
-        weight: 2,
-        fillOpacity: 0.9,
-      }).addTo(map).bindPopup('📍 You are here').openPopup();
+      const youIcon = L.divIcon({
+        className: '',
+        html: `<div style="
+          width: 28px;
+          height: 28px;
+          background: #C9A84C;
+          border: 3px solid #fff;
+          border-radius: 50%;
+          box-shadow: 0 0 0 6px rgba(201,168,76,0.4);
+          animation: pulse 1.5s ease infinite;
+        "></div>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
+      });
+
+      locationMarker = L.marker([latitude, longitude], { icon: youIcon, zIndexOffset: 9999 })
+        .addTo(map)
+        .bindPopup('<b>📍 You are here</b>')
+        .openPopup();
 
       btn.textContent = '📍';
     },
     () => {
       alert('Could not get your location. Make sure location access is allowed.');
       btn.textContent = '📍';
-    }
+    },
+    { enableHighAccuracy: true, timeout: 10000 }
   );
 });
 
