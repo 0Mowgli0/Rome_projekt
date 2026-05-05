@@ -307,16 +307,17 @@ function showDetailById(id) {
 window.showDetailById = showDetailById;
 
 function showDetail(r) {
-  document.getElementById('detailImage').src            = r.image;
-  document.getElementById('detailName').textContent     = r.name;
-  document.getElementById('detailDesc').textContent     = r.description;
-  document.getElementById('detailAddress').textContent  = r.address;
-  document.getElementById('detailPrice').textContent    = r.price;
-  document.getElementById('detailHours').textContent    = r.hours || 'Hours not available';
-  document.getElementById('detailCategory').textContent = categories[r.category]?.label || r.category;
-  document.getElementById('detailBadge').textContent    = categories[r.category]?.label || r.category;
-  document.getElementById('detailStars').textContent    = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
-  document.getElementById('directionsBtn').href         = r.maps_url;
+  document.getElementById('detailImage').src             = r.image;
+  document.getElementById('detailName').textContent      = r.name;
+  document.getElementById('detailDesc').textContent      = r.description;
+  document.getElementById('detailAddress').textContent   = r.address;
+  document.getElementById('detailAddress').href          = r.website;
+  document.getElementById('detailPrice').textContent     = r.price;
+  document.getElementById('detailHours').textContent     = r.hours || 'Hours not available';
+  document.getElementById('detailCategory').textContent  = categories[r.category]?.label || r.category;
+  document.getElementById('detailBadge').textContent     = categories[r.category]?.label || r.category;
+  document.getElementById('detailStars').textContent     = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+  document.getElementById('directionsBtn').href          = r.maps_url;
   panel.classList.add('open');
   backdrop.classList.add('open');
 }

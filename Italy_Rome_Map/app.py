@@ -4,7 +4,7 @@ import os
 app = Flask(__name__)
 
 RESTAURANTS = [
-    # Fine Dining
+    # ── Fine Dining ───────────────────────────────────────────
     {
         "id": 1,
         "name": "La Pergola",
@@ -17,7 +17,8 @@ RESTAURANTS = [
         "price": "€€€€",
         "hours": "Tue–Sat: 7:30pm–11pm | Closed Sun & Mon",
         "maps_url": "https://maps.google.com/?q=La+Pergola+Rome",
-        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
+        "website": "https://romecavalieri.com/la-pergola/",
+        "image": "/static/img/la_pergola.png"
     },
     {
         "id": 2,
@@ -31,6 +32,7 @@ RESTAURANTS = [
         "price": "€€€€",
         "hours": "Tue–Sat: 7:30pm–10:30pm | Closed Sun & Mon",
         "maps_url": "https://maps.google.com/?q=Il+Pagliaccio+Rome",
+        "website": "https://www.ristoranteilpagliaccio.com/",
         "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=250&fit=crop"
     },
     {
@@ -45,10 +47,11 @@ RESTAURANTS = [
         "price": "€€€€",
         "hours": "Mon–Sun: 7pm–10:30pm",
         "maps_url": "https://maps.google.com/?q=Aroma+Restaurant+Rome",
+        "website": "https://www.aromarestaurant.it/",
         "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop"
     },
     {
-        "id": 14,
+        "id": 4,
         "name": "Mimì e Cocò Trast",
         "category": "fine_dining",
         "description": "A charming Trastevere gem serving classic Italian dishes with heart. The tiramisu is reportedly one of the best in Rome — rich, creamy and utterly indulgent.",
@@ -59,10 +62,11 @@ RESTAURANTS = [
         "price": "€€€",
         "hours": "Mon–Sun: 12pm–3pm, 7pm–11pm",
         "maps_url": "https://maps.google.com/?q=Mimi+e+Coco+Trastevere+Rome",
+        "website": "https://www.mimiecoco.com/en/homepage/",
         "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=250&fit=crop"
     },
     {
-        "id": 15,
+        "id": 5,
         "name": "La Zanzara",
         "category": "fine_dining",
         "description": "A contemporary Italian restaurant near the Vatican with a sleek interior and a menu that balances tradition with creativity. Known for excellent pasta and a buzzing aperitivo scene.",
@@ -73,11 +77,13 @@ RESTAURANTS = [
         "price": "€€€€",
         "hours": "Mon–Sun: 8am–2am",
         "maps_url": "https://maps.google.com/?q=La+Zanzara+Roma",
+        "website": "https://www.lazanzararoma.com/",
         "image": "https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=400&h=250&fit=crop"
     },
-    # Trattoria
+
+    # ── Trattoria ─────────────────────────────────────────────
     {
-        "id": 4,
+        "id": 6,
         "name": "Da Enzo al 29",
         "category": "trattoria",
         "description": "A beloved Trastevere institution since 1935. Authentic Roman soul food — cacio e pepe, carbonara, and oxtail — served with no-nonsense warmth.",
@@ -88,10 +94,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sat: 12pm–3pm, 7pm–10pm | Closed Sun",
         "maps_url": "https://maps.google.com/?q=Da+Enzo+al+29+Rome",
+        "website": "https://www.daenzoal29.com/",
         "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=400&h=250&fit=crop"
     },
     {
-        "id": 5,
+        "id": 7,
         "name": "Flavio al Velavevodetto",
         "category": "trattoria",
         "description": "Built into Monte Testaccio — literally into ancient Roman pottery shards. The rigatoni con pajata and artichokes here are a spiritual experience.",
@@ -102,10 +109,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sun: 12:30pm–3pm, 7:30pm–11pm",
         "maps_url": "https://maps.google.com/?q=Flavio+al+Velavevodetto+Rome",
+        "website": "https://www.flavioalvelavevodetto.it/",
         "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=250&fit=crop"
     },
     {
-        "id": 6,
+        "id": 8,
         "name": "Trattoria Vecchia Roma",
         "category": "trattoria",
         "description": "Tucked in the Jewish Ghetto, this family-run gem has been serving Roman-Jewish specialties since 1890. The fried artichokes are non-negotiable.",
@@ -116,11 +124,13 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Thu–Tue: 12pm–3pm, 7pm–11pm | Closed Wed",
         "maps_url": "https://maps.google.com/?q=Trattoria+Vecchia+Roma",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1053991-Reviews-Trattoria_Vecchia_Roma-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1534482421-64566f976cfa?w=400&h=250&fit=crop"
     },
-    # Café
+
+    # ── Café ──────────────────────────────────────────────────
     {
-        "id": 7,
+        "id": 9,
         "name": "Sant'Eustachio il Caffè",
         "category": "cafe",
         "description": "The most debated espresso in Rome. Since 1938, their secret-recipe gran caffè has drawn pilgrims from around the world. Standing room only — as it should be.",
@@ -131,10 +141,11 @@ RESTAURANTS = [
         "price": "€",
         "hours": "Mon–Sun: 7:30am–1am",
         "maps_url": "https://maps.google.com/?q=Sant'Eustachio+il+Caffe+Rome",
+        "website": "https://www.santeustachioilcaffe.it/",
         "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=250&fit=crop"
     },
     {
-        "id": 8,
+        "id": 10,
         "name": "Antico Caffè Greco",
         "category": "cafe",
         "description": "Rome's oldest café, opened in 1760 on Via Condotti. Keats, Goethe, and Casanova all sat here. The hot chocolate is dangerously good.",
@@ -145,10 +156,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sun: 9am–9pm",
         "maps_url": "https://maps.google.com/?q=Antico+Caffe+Greco+Rome",
+        "website": "https://www.anticocaffegreco.eu/",
         "image": "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=400&h=250&fit=crop"
     },
     {
-        "id": 9,
+        "id": 11,
         "name": "Caffè della Pace",
         "category": "cafe",
         "description": "Draped in ivy near Piazza Navona, this 1891 café is Rome's most photogenic. Aperitivo hour here, with the ivy-framed facade glowing gold, is pure cinema.",
@@ -159,11 +171,13 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Tue–Sun: 9am–2am | Closed Mon",
         "maps_url": "https://maps.google.com/?q=Caffe+della+Pace+Rome",
+        "website": "https://www.caffedellapace.it/",
         "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=250&fit=crop"
     },
-    # Pizza
+
+    # ── Pizza ─────────────────────────────────────────────────
     {
-        "id": 10,
+        "id": 12,
         "name": "Pizzarium",
         "category": "pizza",
         "description": "Gabriele Bonci's legendary pizza al taglio near the Vatican. The focaccia-like crust, creative seasonal toppings, and sold-by-weight format changed Roman pizza forever.",
@@ -174,10 +188,11 @@ RESTAURANTS = [
         "price": "€",
         "hours": "Mon–Sat: 11am–10pm | Closed Sun",
         "maps_url": "https://maps.google.com/?q=Pizzarium+Bonci+Rome",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1884226-Reviews-Pizzarium-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop"
     },
     {
-        "id": 11,
+        "id": 13,
         "name": "Seu Pizza Illuminati",
         "category": "pizza",
         "description": "Pier Daniele Seu's Trastevere pizzeria pushes Neapolitan tradition into the future. The dough is fermented 48 hours, toppings are chef-driven. Book ahead.",
@@ -188,10 +203,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Tue–Sun: 7pm–11:30pm | Closed Mon",
         "maps_url": "https://maps.google.com/?q=Seu+Pizza+Illuminati+Rome",
+        "website": "https://www.seupizza.com/",
         "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=250&fit=crop"
     },
     {
-        "id": 16,
+        "id": 14,
         "name": "Mariuccia",
         "category": "pizza",
         "description": "A neighbourhood pizzeria with loyal locals and solid Roman-style pies. Unpretentious, consistent, and exactly what you want after a long day of sightseeing.",
@@ -202,10 +218,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sun: 12pm–3pm, 7pm–11pm",
         "maps_url": "https://maps.google.com/?q=Mariuccia+Ristorante+Pizzeria+Roma",
+        "website": "https://mariucciagroup.it/",
         "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop"
     },
     {
-        "id": 17,
+        "id": 15,
         "name": "Trapizzino",
         "category": "pizza",
         "description": "The inventors of the trapizzino — a thick pizza pocket stuffed with slow-cooked Roman fillings like oxtail or chicken cacciatore. A street food revolution in a triangle.",
@@ -216,10 +233,11 @@ RESTAURANTS = [
         "price": "€",
         "hours": "Mon–Sun: 11am–11pm",
         "maps_url": "https://maps.google.com/?q=Trapizzino+Trastevere+Rome",
+        "website": "https://www.trapizzino.it/en/",
         "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=250&fit=crop"
     },
     {
-        "id": 18,
+        "id": 16,
         "name": "Roscioli",
         "category": "pizza",
         "description": "A Roman institution that does everything well — supplì, pizza slices, charcuterie, wine. The perfect mid-afternoon stop when hunger strikes near Campo de' Fiori.",
@@ -230,138 +248,73 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sat: 8am–8pm | Closed Sun",
         "maps_url": "https://maps.google.com/?q=Roscioli+Salumeria+Rome",
+        "website": "https://salumeriaroscioli.com/",
         "image": "https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&h=250&fit=crop"
     },
-    # Gelato
     {
-        "id": 12,
-        "name": "Fatamorgana",
-        "category": "dessert",
-        "description": "Rome's most inventive gelateria — all gluten-free, with flavors like basil-walnut-honey and rose-cardamom. Maria Agnese Spagnuolo is a genius. Multiple locations.",
-        "address": "Via Roma Libera, 11",
-        "lat": 41.8849,
-        "lng": 12.4694,
-        "rating": 5,
-        "price": "€",
-        "hours": "Mon–Sun: 12pm–11:30pm",
-        "maps_url": "https://maps.google.com/?q=Fatamorgana+Gelateria+Rome",
-        "image": "https://images.unsplash.com/photo-1488900128323-21503983a07e?w=400&h=250&fit=crop"
+        "id": 17,
+        "name": "L'Antica Pizzeria Di Trevi",
+        "category": "pizza",
+        "description": "Neapolitan-style pizza near the Trevi Fountain — soft, pillowy crusts and quality toppings. A welcome change from the Roman al taglio style, and great value at €14–17.",
+        "address": "Via dei Lucchesi, 28",
+        "lat": 41.8996,
+        "lng": 12.4841,
+        "rating": 4,
+        "price": "€€",
+        "hours": "Mon–Sun: 11am–11pm",
+        "maps_url": "https://maps.google.com/?q=L'Antica+Pizzeria+Di+Trevi+Rome",
+        "website": "https://ristorantetrivioroma.com/",
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop"
     },
     {
-        "id": 13,
-        "name": "Gelateria del Teatro",
-        "category": "dessert",
-        "description": "Handcrafted gelato near Piazza Navona using seasonal, local ingredients. Watch it being made through the glass. The ricotta-fig and sage-honey flavors are transcendent.",
-        "address": "Via dei Coronari, 65",
-        "lat": 41.9006,
+        "id": 18,
+        "name": "La Renella",
+        "category": "pizza",
+        "description": "A proper Roman bakery-pizzeria in Trastevere serving traditional pizza sold by weight. No gimmicks, just excellent dough and classic Roman toppings made the old-fashioned way.",
+        "address": "Via del Moro, 15",
+        "lat": 41.8907,
         "lng": 12.4707,
-        "rating": 5,
+        "rating": 4,
         "price": "€",
-        "hours": "Mon–Sun: 11am–11pm",
-        "maps_url": "https://maps.google.com/?q=Gelateria+del+Teatro+Rome",
-        "image": "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=400&h=250&fit=crop"
+        "hours": "Mon–Sun: 8am–10pm",
+        "maps_url": "https://maps.google.com/?q=La+Renella+Trastevere+Rome",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1095877-Reviews-La_Renella-Rome_Lazio.html",
+        "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=250&fit=crop"
     },
     {
         "id": 19,
-        "name": "Il Maritozzaro",
-        "category": "dessert",
-        "description": "Rome's answer to the cream bun — the maritozzo. Soft, pillowy brioche split open and stuffed with an obscene amount of fresh whipped cream. A Roman morning ritual.",
-        "address": "Via Ettore Rolli, 50",
-        "lat": 41.8732,
-        "lng": 12.4673,
-        "rating": 5,
+        "name": "Alice Pizza",
+        "category": "pizza",
+        "description": "Rome's beloved pizza al taglio chain with a focaccia-style base piled high with creative toppings. Sold by weight, always fresh, multiple locations across the city.",
+        "address": "Via Palermo, 46",
+        "lat": 41.8998,
+        "lng": 12.4933,
+        "rating": 4,
         "price": "€",
-        "hours": "Mon–Sun: 5am–2am",
-        "maps_url": "https://maps.google.com/?q=Il+Maritozzaro+Rome",
-        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop"
+        "hours": "Mon–Sun: 9am–10pm",
+        "maps_url": "https://maps.google.com/?q=Alice+Pizza+Rome",
+        "website": "https://www.alicepizza.it/",
+        "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop"
     },
     {
         "id": 20,
-        "name": "Giolitti",
-        "category": "dessert",
-        "description": "A Roman gelato institution since 1900, just steps from the Pantheon. Over 100 flavors, legendary quality, and a queue that proves it's worth every minute of the wait.",
-        "address": "Via degli Uffici del Vicario, 40",
-        "lat": 41.9001,
-        "lng": 12.4769,
-        "rating": 5,
+        "name": "Mami",
+        "category": "pizza",
+        "description": "A casual spot near Piazza Navona serving Roman pizza snacks for around €5. Quick, tasty and wallet-friendly — perfect for a bite between sightseeing stops.",
+        "address": "Via della Pace, 27",
+        "lat": 41.8992,
+        "lng": 12.4713,
+        "rating": 4,
         "price": "€",
-        "hours": "Mon–Sun: 7am–1am",
-        "maps_url": "https://maps.google.com/?q=Giolitti+Gelateria+Rome",
-        "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&h=250&fit=crop"
-    },
-    {
-        "id": 21,
-        "name": "Two Sizes",
-        "category": "dessert",
-        "description": "A tiny shop near Campo de' Fiori serving just one thing: tiramisu in two sizes. Classic or pistachio, cup or tub — both utterly perfect. No gimmicks, just excellence.",
-        "address": "Via del Governo Vecchio, 88",
-        "lat": 41.8984,
-        "lng": 12.4697,
-        "rating": 5,
-        "price": "€",
-        "hours": "Mon–Sun: 11am–10pm",
-        "maps_url": "https://maps.google.com/?q=Two+Sizes+Tiramisu+Rome",
+        "hours": "Mon–Sun: 10am–10pm",
+        "maps_url": "https://maps.google.com/?q=Mami+Rome+Navona",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d7745058-Reviews-MAMI-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=250&fit=crop"
     },
+
+    # ── Pasta ─────────────────────────────────────────────────
     {
-        "id": 22,
-        "name": "Mr 100 Tiramisu",
-        "category": "dessert",
-        "description": "Rome's most talked-about tiramisu spot. Creative flavors, photogenic cups, and a cult following. Book a table via TheFork or Tripadvisor — it fills up fast.",
-        "address": "Via del Governo Vecchio, Rome",
-        "lat": 41.8990,
-        "lng": 12.4700,
-        "rating": 4,
-        "price": "€",
-        "hours": "Mon–Sun: 11am–11pm",
-        "maps_url": "https://maps.google.com/?q=Mr+100+Tiramisu+Rome",
-        "image": "https://images.unsplash.com/photo-1542124948-dc391252a940?w=400&h=250&fit=crop"
-    },
-    {
-        "id": 23,
-        "name": "Pompi",
-        "category": "dessert",
-        "description": "Self-proclaimed 'kingdom of tiramisu' since 1960. Classic and creative variations served in generous portions. Also does excellent gelato. A Rome dessert pilgrimage.",
-        "address": "Via Albalonga, 7",
-        "lat": 41.8836,
-        "lng": 12.5069,
-        "rating": 4,
-        "price": "€",
-        "hours": "Mon–Sun: 9am–11pm",
-        "maps_url": "https://maps.google.com/?q=Pompi+Tiramisu+Rome",
-        "image": "https://images.unsplash.com/photo-1504877947697-f15e4c2c2588?w=400&h=250&fit=crop"
-    },
-    {
-        "id": 24,
-        "name": "Gelateria della Palma",
-        "category": "dessert",
-        "description": "150 flavors under one roof near the Pantheon. Wild combinations, huge portions, and always packed. Go off-peak for the full experience without the chaos.",
-        "address": "Via della Maddalena, 19-23",
-        "lat": 41.9005,
-        "lng": 12.4765,
-        "rating": 4,
-        "price": "€",
-        "hours": "Mon–Sun: 8am–12am",
-        "maps_url": "https://maps.google.com/?q=Gelateria+della+Palma+Rome",
-        "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=250&fit=crop"
-    },
-    {
-        "id": 25,
-        "name": "Gelateria La Romana",
-        "category": "dessert",
-        "description": "Artisanal gelato and crepes near Piazza Navona. The crêpes at €4.50 are a steal — crispy, filled to order, and a perfect afternoon treat between sightseeing stops.",
-        "address": "Piazza di S. Andrea della Valle, 1",
-        "lat": 41.8967,
-        "lng": 12.4741,
-        "rating": 4,
-        "price": "€",
-        "hours": "Mon–Sun: 11am–11:30pm",
-        "maps_url": "https://maps.google.com/?q=Gelateria+La+Romana+Rome+Navona",
-        "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=400&h=250&fit=crop"
-    },
-    # Pasta
-    {
-        "id": 26,
+        "id": 21,
         "name": "Osteria Da Fortunata",
         "category": "pasta",
         "description": "TikTok famous for a reason — handmade pasta rolled right in front of you in the window. Polarising reviews online but the atmosphere and fresh pasta are hard to beat.",
@@ -372,10 +325,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sun: 12pm–11pm",
         "maps_url": "https://maps.google.com/?q=Osteria+Da+Fortunata+Rome",
+        "website": "https://osteriadafortunata.it/en/",
         "image": "https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=400&h=250&fit=crop"
     },
     {
-        "id": 27,
+        "id": 22,
         "name": "Pasta Eat",
         "category": "pasta",
         "description": "Choose your pasta shape, choose your sauce, pay by weight and go. Fresh, fast, and fantastic value at €8 a dish. Three locations across Rome — the Spanish Steps branch is closest.",
@@ -386,10 +340,11 @@ RESTAURANTS = [
         "price": "€",
         "hours": "Mon–Sun: 11am–10pm",
         "maps_url": "https://maps.google.com/?q=Pastaeat+Rome+Spagna",
+        "website": "https://pastaeat.shop/",
         "image": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=400&h=250&fit=crop"
     },
     {
-        "id": 28,
+        "id": 23,
         "name": "Pastasciutta",
         "category": "pasta",
         "description": "Takeaway pasta served in little boxes — simple, satisfying, and brilliant for lunch on the go. Just 8 minutes from the hotel and only €8 a dish. Rome street food done right.",
@@ -400,10 +355,11 @@ RESTAURANTS = [
         "price": "€",
         "hours": "Mon–Sat: 11am–4pm | Closed Sun",
         "maps_url": "https://maps.google.com/?q=Pastasciutta+Via+delle+Grazie+Rome",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d12543100-Reviews-Pastasciutta-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=250&fit=crop"
     },
     {
-        "id": 29,
+        "id": 24,
         "name": "That's Amore",
         "category": "pasta",
         "description": "A cheerful pasta restaurant with a straightforward menu and solid execution. Main courses run €14–16 and the portions are generous. Good vibes, good food, no fuss.",
@@ -414,10 +370,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sun: 12pm–11pm",
         "maps_url": "https://maps.google.com/?q=That's+Amore+Restaurant+Rome",
+        "website": "https://thatsamore-restaurant.com/menu/",
         "image": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&h=250&fit=crop"
     },
     {
-        "id": 30,
+        "id": 25,
         "name": "Al42 by Pasta Chef",
         "category": "pasta",
         "description": "Tucked in the bohemian Monti neighbourhood, this tiny pasta spot earns rave reviews for quality and value. Fresh pasta, €10–12, and a room full of happy locals.",
@@ -428,10 +385,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Tue–Sun: 12pm–3pm, 7pm–10:30pm | Closed Mon",
         "maps_url": "https://maps.google.com/?q=Al42+Pasta+Chef+Monti+Rome",
+        "website": "https://www.al42.it/",
         "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&h=250&fit=crop"
     },
     {
-        "id": 31,
+        "id": 26,
         "name": "Nannarella",
         "category": "pasta",
         "description": "A proper Roman osteria on the edge of Trastevere with a short menu and long flavour. Classic pasta dishes at honest prices — around €13 for a main. Book ahead.",
@@ -442,10 +400,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Tue–Sun: 12pm–3pm, 7pm–11pm | Closed Mon",
         "maps_url": "https://maps.google.com/?q=Nannarella+Osteria+Trastevere+Rome",
+        "website": "https://www.facebook.com/profile.php?id=100064042055340",
         "image": "https://images.unsplash.com/photo-1572441713132-c542f4cf966c?w=400&h=250&fit=crop"
     },
     {
-        "id": 32,
+        "id": 27,
         "name": "Hostaria Dino e Tony",
         "category": "pasta",
         "description": "Run by two brothers near the Vatican, this family-style trattoria serves hearty Roman pasta and pizza in a warm, unpretentious setting. Mains around €12–13.",
@@ -456,10 +415,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sat: 12pm–3pm, 7pm–10:30pm | Closed Sun",
         "maps_url": "https://maps.google.com/?q=Hostaria+Dino+e+Tony+Rome",
+        "website": "https://www.facebook.com/h.dinoetony/",
         "image": "https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=400&h=250&fit=crop"
     },
     {
-        "id": 33,
+        "id": 28,
         "name": "Trattoria Della Stampa",
         "category": "pasta",
         "description": "Called the best pasta in Rome by more than one TikToker. Rustic interior, bold flavours, and pasta that earns its reputation. Expect to pay €16–19 but leave very satisfied.",
@@ -470,10 +430,11 @@ RESTAURANTS = [
         "price": "€€€",
         "hours": "Mon–Sun: 12pm–3pm, 7pm–11pm",
         "maps_url": "https://maps.google.com/?q=Trattoria+Della+Stampa+Rome",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d723262-Reviews-Trattoria_Della_Stampa-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=400&h=250&fit=crop"
     },
     {
-        "id": 34,
+        "id": 29,
         "name": "Tonnarello",
         "category": "pasta",
         "description": "A Trastevere staple with outdoor seating on a cobblestone street. Pasta, pizza and meat dishes in a lively setting — perfect for a long lunch or relaxed dinner.",
@@ -484,10 +445,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sun: 12pm–3pm, 7pm–12am",
         "maps_url": "https://maps.google.com/?q=Tonnarello+Trastevere+Rome",
+        "website": "https://www.locandatonnarello.com/",
         "image": "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=400&h=250&fit=crop"
     },
     {
-        "id": 35,
+        "id": 30,
         "name": "Hosteria Grappolo d'Oro",
         "category": "pasta",
         "description": "A traditional Roman hosteria near Campo de' Fiori serving pasta, meat and fish. Classic décor, reliable cooking, and prices around €15–18 for a main course.",
@@ -498,10 +460,11 @@ RESTAURANTS = [
         "price": "€€€",
         "hours": "Mon–Sat: 12pm–3pm, 7pm–11pm | Closed Sun",
         "maps_url": "https://maps.google.com/?q=Hosteria+Grappolo+d'oro+Rome",
+        "website": "https://hosteriagrappolodoro.it/en/",
         "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=250&fit=crop"
     },
     {
-        "id": 36,
+        "id": 31,
         "name": "Taverna Trilussa",
         "category": "pasta",
         "description": "One of Trastevere's most respected restaurants. Beautiful setting, excellent pasta, and an atmosphere that feels genuinely Roman. Budget €15–20 for a main.",
@@ -512,10 +475,11 @@ RESTAURANTS = [
         "price": "€€€",
         "hours": "Mon–Sun: 7pm–11:30pm",
         "maps_url": "https://maps.google.com/?q=Taverna+Trilussa+Rome",
+        "website": "https://www.tavernatrilussa.it/",
         "image": "https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?w=400&h=250&fit=crop"
     },
     {
-        "id": 37,
+        "id": 32,
         "name": "Egg Pasta Fresca",
         "category": "pasta",
         "description": "Fresh egg pasta made and served near the Vatican. Takeaway boxes of proper Roman pasta for around €7 — possibly the best value meal you'll find in the city.",
@@ -526,11 +490,13 @@ RESTAURANTS = [
         "price": "€",
         "hours": "Mon–Sat: 11am–4pm | Closed Sun",
         "maps_url": "https://maps.google.com/?q=Egg+Pasta+Fresca+Rome+Vatican",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d6475306-Reviews-EGG_Pasta_Fresca-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=400&h=250&fit=crop"
     },
-    # Sandwich
+
+    # ── Sandwich ──────────────────────────────────────────────
     {
-        "id": 38,
+        "id": 33,
         "name": "Magnifico Food Store",
         "category": "sandwich",
         "description": "A brilliant deli in Trastevere stacked with quality Italian ingredients. The panini here are generously filled and made to order — exactly what you want for lunch on the move.",
@@ -541,10 +507,11 @@ RESTAURANTS = [
         "price": "€",
         "hours": "Mon–Sat: 9am–8pm | Closed Sun",
         "maps_url": "https://maps.google.com/?q=Magnifico+Food+Store+Trastevere+Rome",
+        "website": "https://www.magnificofood.it/en",
         "image": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&h=250&fit=crop"
     },
     {
-        "id": 39,
+        "id": 34,
         "name": "All'Antico Vinaio",
         "category": "sandwich",
         "description": "The Florence legend has landed in Rome. Enormous schiacciata sandwiches stuffed with cured meats, truffle cream and aged cheeses. Around €10 and absolutely worth the queue.",
@@ -555,10 +522,11 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sun: 10am–10pm",
         "maps_url": "https://maps.google.com/?q=All'Antico+Vinaio+Rome",
-        "image": "https://images.unsplash.com/photo-1554433607-66b5efe9d304?w=400&h=250&fit=crop"
+        "website": "https://www.allanticovinaio.com/roma/",
+        "image": "/static/img/allantico_vinaio.png"
     },
     {
-        "id": 40,
+        "id": 35,
         "name": "Prosciutteria Cantina dei Papi",
         "category": "sandwich",
         "description": "Near the Trevi Fountain, this prosciutteria serves loaded boards and overstuffed sandwiches at prices that feel almost too good. Around €10, great value in an expensive area.",
@@ -569,11 +537,13 @@ RESTAURANTS = [
         "price": "€€",
         "hours": "Mon–Sun: 11am–11pm",
         "maps_url": "https://maps.google.com/?q=Prosciutteria+Cantina+dei+Papi+Rome",
+        "website": "https://www.cantinadeipapi.com/prosciutteria-trevi/",
         "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&h=250&fit=crop"
     },
-    # Food Snacks
+
+    # ── Snacks ────────────────────────────────────────────────
     {
-        "id": 41,
+        "id": 36,
         "name": "Supplì Roma",
         "category": "snack",
         "description": "The definitive destination for supplì — Rome's answer to arancini. Crispy outside, molten mozzarella inside. At just €2–3 each they're the perfect mid-afternoon fix.",
@@ -584,10 +554,11 @@ RESTAURANTS = [
         "price": "€",
         "hours": "Mon–Sat: 10am–10pm | Closed Sun",
         "maps_url": "https://maps.google.com/?q=Suppli+Roma+Trastevere",
+        "website": "https://www.suppliroma.it/our-specialties/?lang=en",
         "image": "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&h=250&fit=crop"
     },
     {
-        "id": 42,
+        "id": 37,
         "name": "Giselda",
         "category": "snack",
         "description": "A cosy spot on Viale di Trastevere that works brilliantly for breakfast or a mid-morning snack. Fresh pastries, light bites and good coffee in a neighbourhood setting.",
@@ -598,39 +569,225 @@ RESTAURANTS = [
         "price": "€",
         "hours": "Mon–Sun: 7am–8pm",
         "maps_url": "https://maps.google.com/?q=Giselda+Trastevere+Rome",
+        "website": "https://www.facebook.com/GiseldaTrastevere/",
         "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=250&fit=crop"
+    },
+
+    # ── Dessert ───────────────────────────────────────────────
+    {
+        "id": 38,
+        "name": "Fatamorgana",
+        "category": "dessert",
+        "description": "Rome's most inventive gelateria — all gluten-free, with flavors like basil-walnut-honey and rose-cardamom. Maria Agnese Spagnuolo is a genius. Multiple locations.",
+        "address": "Via Roma Libera, 11",
+        "lat": 41.8849,
+        "lng": 12.4694,
+        "rating": 5,
+        "price": "€",
+        "hours": "Mon–Sun: 12pm–11:30pm",
+        "maps_url": "https://maps.google.com/?q=Fatamorgana+Gelateria+Rome",
+        "website": "https://www.gelateriafatamorgana.com/",
+        "image": "https://images.unsplash.com/photo-1488900128323-21503983a07e?w=400&h=250&fit=crop"
+    },
+    {
+        "id": 39,
+        "name": "Gelateria del Teatro",
+        "category": "dessert",
+        "description": "Handcrafted gelato near Piazza Navona using seasonal, local ingredients. Watch it being made through the glass. The ricotta-fig and sage-honey flavors are transcendent.",
+        "address": "Via dei Coronari, 65",
+        "lat": 41.9006,
+        "lng": 12.4707,
+        "rating": 5,
+        "price": "€",
+        "hours": "Mon–Sun: 11am–11pm",
+        "maps_url": "https://maps.google.com/?q=Gelateria+del+Teatro+Rome",
+        "website": "https://www.gelateriadelteatroroma.com/",
+        "image": "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=400&h=250&fit=crop"
+    },
+    {
+        "id": 40,
+        "name": "Il Maritozzaro",
+        "category": "dessert",
+        "description": "Rome's answer to the cream bun — the maritozzo. Soft, pillowy brioche split open and stuffed with an obscene amount of fresh whipped cream. A Roman morning ritual.",
+        "address": "Via Ettore Rolli, 50",
+        "lat": 41.8732,
+        "lng": 12.4673,
+        "rating": 5,
+        "price": "€",
+        "hours": "Mon–Sun: 5am–2am",
+        "maps_url": "https://maps.google.com/?q=Il+Maritozzaro+Rome",
+        "website": "https://www.ilmaritozzorosso.com/",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop"
+    },
+    {
+        "id": 41,
+        "name": "Giolitti",
+        "category": "dessert",
+        "description": "A Roman gelato institution since 1900, just steps from the Pantheon. Over 100 flavors, legendary quality, and a queue that proves it's worth every minute of the wait.",
+        "address": "Via degli Uffici del Vicario, 40",
+        "lat": 41.9001,
+        "lng": 12.4769,
+        "rating": 5,
+        "price": "€",
+        "hours": "Mon–Sun: 7am–1am",
+        "maps_url": "https://maps.google.com/?q=Giolitti+Gelateria+Rome",
+        "website": "https://www.giolitti.it/",
+        "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&h=250&fit=crop"
+    },
+    {
+        "id": 42,
+        "name": "Two Sizes",
+        "category": "dessert",
+        "description": "A tiny shop near Campo de' Fiori serving just one thing: tiramisu in two sizes. Classic or pistachio, cup or tub — both utterly perfect. No gimmicks, just excellence.",
+        "address": "Via del Governo Vecchio, 88",
+        "lat": 41.8984,
+        "lng": 12.4697,
+        "rating": 5,
+        "price": "€",
+        "hours": "Mon–Sun: 11am–10pm",
+        "maps_url": "https://maps.google.com/?q=Two+Sizes+Tiramisu+Rome",
+        "website": "https://www.facebook.com/twosizestiramisu/",
+        "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=250&fit=crop"
     },
     {
         "id": 43,
-        "name": "Alice Pizza",
-        "category": "snack",
-        "description": "Rome's beloved pizza al taglio chain with a focaccia-style base piled high with creative toppings. Sold by weight, always fresh, always satisfying. Multiple locations.",
-        "address": "Via Palermo, 46",
-        "lat": 41.8998,
-        "lng": 12.4933,
+        "name": "Mr 100 Tiramisu",
+        "category": "dessert",
+        "description": "Rome's most talked-about tiramisu spot. Creative flavors, photogenic cups, and a cult following. Book a table via TheFork or Tripadvisor — it fills up fast.",
+        "address": "Via del Governo Vecchio, Rome",
+        "lat": 41.8990,
+        "lng": 12.4700,
         "rating": 4,
         "price": "€",
-        "hours": "Mon–Sun: 9am–10pm",
-        "maps_url": "https://maps.google.com/?q=Alice+Pizza+Rome",
-        "image": "https://images.unsplash.com/photo-1594007654729-407eeec4be84?w=400&h=250&fit=crop"
+        "hours": "Mon–Sun: 11am–11pm",
+        "maps_url": "https://maps.google.com/?q=Mr+100+Tiramisu+Rome",
+        "website": "https://www.facebook.com/Mr100Tiramisu/",
+        "image": "https://images.unsplash.com/photo-1542124948-dc391252a940?w=400&h=250&fit=crop"
     },
     {
         "id": 44,
-        "name": "Mami",
-        "category": "snack",
-        "description": "A tiny spot near Piazza Navona serving Roman street snacks for around €5. Casual, quick and surprisingly good — perfect for a bite between monuments.",
-        "address": "Via della Pace, 27",
-        "lat": 41.8998,
-        "lng": 12.4715,
+        "name": "Pompi",
+        "category": "dessert",
+        "description": "Self-proclaimed 'kingdom of tiramisu' since 1960. Classic and creative variations served in generous portions. Also does excellent gelato. A Rome dessert pilgrimage.",
+        "address": "Via Albalonga, 7",
+        "lat": 41.8836,
+        "lng": 12.5069,
         "rating": 4,
         "price": "€",
-        "hours": "Mon–Sun: 10am–10pm",
-        "maps_url": "https://maps.google.com/?q=Mami+Rome+Navona",
-        "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=250&fit=crop"
+        "hours": "Mon–Sun: 9am–11pm",
+        "maps_url": "https://maps.google.com/?q=Pompi+Tiramisu+Rome",
+        "website": "https://www.barpompi.it/",
+        "image": "https://images.unsplash.com/photo-1504877947697-f15e4c2c2588?w=400&h=250&fit=crop"
     },
-    # Drinks
     {
         "id": 45,
+        "name": "Gelateria della Palma",
+        "category": "dessert",
+        "description": "150 flavors under one roof near the Pantheon. Wild combinations, huge portions, and always packed. Go off-peak for the full experience without the chaos.",
+        "address": "Via della Maddalena, 19-23",
+        "lat": 41.9005,
+        "lng": 12.4765,
+        "rating": 4,
+        "price": "€",
+        "hours": "Mon–Sun: 8am–12am",
+        "maps_url": "https://maps.google.com/?q=Gelateria+della+Palma+Rome",
+        "website": "https://www.dellapalma.it/en/homepage-en/",
+        "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=250&fit=crop"
+    },
+    {
+        "id": 46,
+        "name": "Gelateria La Romana",
+        "category": "dessert",
+        "description": "Artisanal gelato and crepes near Piazza Navona. The crêpes at €4.50 are a steal — crispy, filled to order, and a perfect afternoon treat between sightseeing stops.",
+        "address": "Piazza di S. Andrea della Valle, 1",
+        "lat": 41.8967,
+        "lng": 12.4741,
+        "rating": 4,
+        "price": "€",
+        "hours": "Mon–Sun: 11am–11:30pm",
+        "maps_url": "https://maps.google.com/?q=Gelateria+La+Romana+Rome+Navona",
+        "website": "https://www.gelateriaromana.com/",
+        "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=400&h=250&fit=crop"
+    },
+    {
+        "id": 47,
+        "name": "Romeo Gelato",
+        "category": "dessert",
+        "description": "Conveniently located right next to the Trevi Fountain. Note that many visitors report it as overpriced — go for the location but manage expectations on value.",
+        "address": "Via del Lavatore, 45",
+        "lat": 41.9008,
+        "lng": 12.4838,
+        "rating": 2,
+        "price": "€€€",
+        "hours": "Mon–Sun: 10am–11pm",
+        "maps_url": "https://maps.google.com/?q=Romeo+Gelato+Trevi+Rome",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d12616025-Reviews-Romeo_Gelato_Italiano-Rome_Lazio.html",
+        "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&h=250&fit=crop"
+    },
+    {
+        "id": 48,
+        "name": "Limon'è",
+        "category": "dessert",
+        "description": "A cheerful tourist-friendly spot near the Trevi Fountain serving fresh lemonade and lemon gelato. Refreshing on a hot Roman afternoon — budget €7 per drink.",
+        "address": "Via in Arcione, 91",
+        "lat": 41.9012,
+        "lng": 12.4848,
+        "rating": 3,
+        "price": "€€",
+        "hours": "Mon–Sun: 10am–10pm",
+        "maps_url": "https://maps.google.com/?q=Limone+Rome+Trevi",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d12902256-Reviews-Limon_e-Rome_Lazio.html",
+        "image": "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=400&h=250&fit=crop"
+    },
+    {
+        "id": 49,
+        "name": "L'Antico Forno di Fontana di Trevi",
+        "category": "dessert",
+        "description": "A beloved bakery steps from the Trevi Fountain serving fresh pastries, cornetti and Roman baked goods. Prices from €1 — the best value snack stop in an expensive neighbourhood.",
+        "address": "Via delle Muratte, Rome",
+        "lat": 41.9010,
+        "lng": 12.4832,
+        "rating": 4,
+        "price": "€",
+        "hours": "Mon–Sun: 7am–9pm",
+        "maps_url": "https://maps.google.com/?q=Antico+Forno+Fontana+di+Trevi+Rome",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d3590512-Reviews-L_Antico_Forno_di_Fontana_di_Trevi-Rome_Lazio.html",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop"
+    },
+    {
+        "id": 50,
+        "name": "Forno Monteforte",
+        "category": "dessert",
+        "description": "A renowned Roman pastry shop with a loyal local following. The pastries and baked goods here are exceptional — expect to pay €5–7 and leave very happy.",
+        "address": "Via della Rotonda, Rome",
+        "lat": 41.8997,
+        "lng": 12.4768,
+        "rating": 5,
+        "price": "€",
+        "hours": "Mon–Sat: 8am–8pm | Closed Sun",
+        "maps_url": "https://maps.google.com/?q=Forno+Monteforte+Rome",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1848024-Reviews-Forno_Monteforte-Rome_Lazio.html",
+        "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=250&fit=crop"
+    },
+    {
+        "id": 51,
+        "name": "Fiordiluna",
+        "category": "dessert",
+        "description": "A Trastevere gelateria with a loyal local crowd and seriously good sorbet. The fruit sorbets are especially worth trying — intensely flavoured and refreshing at around €4.",
+        "address": "Via della Lungaretta, Rome",
+        "lat": 41.8896,
+        "lng": 12.4703,
+        "rating": 4,
+        "price": "€",
+        "hours": "Mon–Sun: 12pm–11:30pm",
+        "maps_url": "https://maps.google.com/?q=Fiordiluna+Trastevere+Rome",
+        "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1848024-Reviews-Fiordiluna-Rome_Lazio.html",
+        "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=250&fit=crop"
+    },
+
+    # ── Drinks ────────────────────────────────────────────────
+    {
+        "id": 52,
         "name": "The Court Cocktail Bar",
         "category": "drinks",
         "description": "Rooftop cocktail bar at Palazzo Manfredi with an unobstructed view of the Colosseum. Expensive but unforgettable. Book a table in advance — it fills up every night.",
@@ -641,10 +798,11 @@ RESTAURANTS = [
         "price": "€€€€",
         "hours": "Mon–Sun: 5pm–1am",
         "maps_url": "https://maps.google.com/?q=The+Court+Bar+Palazzo+Manfredi+Rome",
+        "website": "https://www.manfredihotels.com/en/the-court/",
         "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&h=250&fit=crop"
     },
     {
-        "id": 46,
+        "id": 53,
         "name": "Bar San Calisto",
         "category": "drinks",
         "description": "One of Rome's oldest and most beloved bars in the heart of Trastevere. Aperol for €4, no pretension, full of locals. The perfect place to start or end an evening.",
@@ -655,13 +813,14 @@ RESTAURANTS = [
         "price": "€",
         "hours": "Mon–Sat: 6am–2am | Closed Sun",
         "maps_url": "https://maps.google.com/?q=Bar+San+Calisto+Rome",
+        "website": "https://barsancalisto.it/",
         "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=250&fit=crop"
     },
 ]
 
 CATEGORIES = {
     "fine_dining": {"label": "Fine Dining", "color": "#C9A84C", "icon": "🍽️"},
-    "trattoria":   {"label": "Trattoria",   "color": "#E05C3A", "icon": "🫕"},
+    "trattoria":   {"label": "Trattoria",   "color": "#E05C3A", "icon": "🫓"},
     "cafe":        {"label": "Café",        "color": "#6B9E78", "icon": "☕"},
     "pizza":       {"label": "Pizza",       "color": "#D4547A", "icon": "🍕"},
     "dessert":     {"label": "Dessert",     "color": "#9B6BB5", "icon": "🍦"},

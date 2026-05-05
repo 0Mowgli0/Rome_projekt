@@ -536,6 +536,18 @@ html, body {
 
 .detail-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
 
+.address-link {
+  color: var(--ink-faint);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+
+.address-link:hover {
+  color: var(--gold);
+}
+
 .locate-btn {
   position: absolute;
   top: 16px;
