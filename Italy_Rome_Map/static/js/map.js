@@ -331,3 +331,9 @@ if (handle) {
 
 // ── Boot ─────────────────────────────────────────────────────
 loadData();
+
+// ── Fix mobile initial view ───────────────────────────────────
+setTimeout(() => {
+  map.invalidateSize();
+  map.setView([41.9028, 12.4964], 14);
+}, 300);

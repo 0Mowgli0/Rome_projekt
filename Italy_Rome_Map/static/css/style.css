@@ -113,19 +113,7 @@ html, body {
 }
 
 .map-overlay-badge {
-  position: absolute;
-  bottom: 70px;
-  right: 12px;
-  background: var(--ink);
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.10em;
-  padding: 6px 12px;
-  border-radius: 20px;
-  z-index: 500;
-  pointer-events: none;
-  box-shadow: var(--shadow);
+  display: none;
 }
 
 .sidebar {
@@ -548,11 +536,11 @@ html, body {
 
 .detail-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
 
-/* Locate button */
 .locate-btn {
   position: absolute;
-  bottom: 100px;
+  top: 16px;
   right: 12px;
+  bottom: auto;
   width: 40px;
   height: 40px;
   background: var(--ink);
@@ -658,9 +646,7 @@ html, body {
   }
 
   .filter-icon { font-size: 16px; }
-
   .filter-label { font-size: 14px; }
-
   .filter-count { font-size: 12px; padding: 2px 8px; }
 
   .restaurant-list {
@@ -697,7 +683,6 @@ html, body {
   }
 
   .rest-card-meta { font-size: 11px; margin-top: 2px; }
-
   .rest-card-stars { font-size: 11px; margin-top: 4px; }
 
   .rest-card-dot {
@@ -708,18 +693,12 @@ html, body {
     flex-shrink: 0;
   }
 
-  .map-overlay-badge {
-    bottom: 28px;
-    right: 20px;
-    font-size: 12px;
-    padding: 8px 16px;
-  }
-
   .locate-btn {
-    bottom: 80px;
-    right: 20px;
-    width: 46px;
-    height: 46px;
-    font-size: 20px;
-  }
+  top: 16px;
+  right: 20px;
+  bottom: auto;
+  width: 46px;
+  height: 46px;
+  font-size: 20px;
+}
 }
