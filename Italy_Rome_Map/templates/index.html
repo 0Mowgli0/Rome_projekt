@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurants of Rome</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-accent">✦</span>
+        <span class="logo-main">Restaurants of Rome</span>
+        <span class="logo-sub">Guide</span>
+      </div>
+      <p class="header-tagline">Discover the finest tables of the Eternal City</p>
+    </div>
+  </header>
+
+  <div class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Filter by Category</h3>
+        <div class="filter-list" id="filterList">
+          <button class="filter-btn active" data-cat="all">
+            <span class="filter-icon">◈</span>
+            <span class="filter-label">All Restaurants</span>
+            <span class="filter-count" id="count-all">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Listings</h3>
+        <div class="restaurant-list" id="restaurantList">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </aside>
+
+    <!-- Map -->
+    <main class="map-container">
+      <div id="map"></div>
+      <div class="map-overlay-badge">
+        <span id="visibleCount">0</span> places shown
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Detail Panel -->
+  <div class="detail-panel" id="detailPanel">
+    <button class="detail-close" id="detailClose">✕</button>
+    <div class="detail-image-wrap">
+      <img class="detail-image" id="detailImage" src="" alt="">
+      <div class="detail-image-overlay"></div>
+      <div class="detail-badge" id="detailBadge"></div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-meta">
+        <span class="detail-category" id="detailCategory"></span>
+        <span class="detail-price" id="detailPrice"></span>
+      </div>
+      <h2 class="detail-name" id="detailName"></h2>
+      <p class="detail-desc" id="detailDesc"></p>
+      <div class="detail-address">
+        <span class="addr-icon">◎</span>
+        <span id="detailAddress"></span>
+      </div>
+      <div class="detail-stars" id="detailStars"></div>
+    </div>
+  </div>
+  <div class="detail-backdrop" id="detailBackdrop"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/js/map.js"></script>
+</body>
+</html>

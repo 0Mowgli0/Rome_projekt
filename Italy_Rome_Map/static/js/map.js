@@ -1,0 +1,241 @@
+// ── State ───────────────────────────────────────────────────
+let allRestaurants = [];
+let categories     = {};
+let activeCategory = 'all';
+let markers        = {};
+let activeMarker   = null;
+
+// ── Map init ─────────────────────────────────────────────────
+const map = L.map('map', {
+  center: [41.9028, 12.4964],
+  zoom: 14,
+  zoomControl: false,
+});
+
+L.control.zoom({ position: 'bottomleft' }).addTo(map);
+
+// Stamen Toner Lite — clean, editorial look
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+  subdomains: 'abcd',
+  maxZoom: 19
+}).addTo(map);
+
+// ── Category colors ──────────────────────────────────────────
+const CAT_COLORS = {
+  fine_dining: '#C9A84C',
+  trattoria:   '#E05C3A',
+  cafe:        '#6B9E78',
+  pizza:       '#D4547A',
+  gelato:      '#5B8EC4',
+};
+
+const CAT_ICONS = {
+  fine_dining: '✦',
+  trattoria:   '◈',
+  cafe:        '◉',
+  pizza:       '◆',
+  gelato:      '◇',
+};
+
+// ── Fetch data ───────────────────────────────────────────────
+async function loadData() {
+  const res  = await fetch('/api/restaurants');
+  const data = await res.json();
+
+  allRestaurants = data.restaurants;
+  categories     = data.categories;
+
+  buildFilters();
+  renderRestaurants(allRestaurants);
+  placeMarkers(allRestaurants);
+  updateCount(allRestaurants.length);
+}
+
+// ── Filter UI ────────────────────────────────────────────────
+function buildFilters() {
+  const list = document.getElementById('filterList');
+
+  // Update all-count
+  document.getElementById('count-all').textContent = allRestaurants.length;
+
+  for (const [key, cat] of Object.entries(categories)) {
+    const count = allRestaurants.filter(r => r.category === key).length;
+
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.cat = key;
+    btn.innerHTML = `
+      <span class="filter-icon" style="color:${CAT_COLORS[key]}">${CAT_ICONS[key]}</span>
+      <span class="filter-label">${cat.label}</span>
+      <span class="filter-count" id="count-${key}">${count}</span>
+    `;
+    btn.addEventListener('click', () => setFilter(key));
+    list.appendChild(btn);
+  }
+
+  document.querySelector('[data-cat="all"]').addEventListener('click', () => setFilter('all'));
+}
+
+function setFilter(cat) {
+  activeCategory = cat;
+
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.cat === cat);
+  });
+
+  const filtered = cat === 'all'
+    ? allRestaurants
+    : allRestaurants.filter(r => r.category === cat);
+
+  renderRestaurants(filtered);
+  updateMarkerVisibility(filtered);
+  updateCount(filtered.length);
+}
+
+// ── Restaurant sidebar list ──────────────────────────────────
+function renderRestaurants(list) {
+  const container = document.getElementById('restaurantList');
+  container.innerHTML = '';
+
+  list.forEach((r, i) => {
+    const card = document.createElement('div');
+    card.className = 'rest-card';
+    card.dataset.id = r.id;
+    card.style.animationDelay = `${i * 30}ms`;
+    card.innerHTML = `
+      <img class="rest-card-thumb" src="${r.image}" alt="${r.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=44&h=44&fit=crop'">
+      <div class="rest-card-info">
+        <div class="rest-card-name">${r.name}</div>
+        <div class="rest-card-meta">${categories[r.category]?.label || r.category} &nbsp;·&nbsp; ${r.price}</div>
+      </div>
+      <div class="rest-card-dot" style="background:${CAT_COLORS[r.category]}"></div>
+    `;
+    card.addEventListener('click', () => {
+      flyToMarker(r);
+      showDetail(r);
+    });
+    container.appendChild(card);
+  });
+}
+
+// ── Markers ──────────────────────────────────────────────────
+function createMarkerIcon(cat, active = false) {
+  const color = CAT_COLORS[cat] || '#888';
+  const icon  = CAT_ICONS[cat]  || '●';
+  return L.divIcon({
+    className: '',
+    html: `<div class="custom-marker${active ? ' active' : ''}" style="background:${color}">
+             <span class="marker-icon-inner">${icon}</span>
+           </div>`,
+    iconSize:   [34, 34],
+    iconAnchor: [17, 34],
+    popupAnchor:[0, -36],
+  });
+}
+
+function placeMarkers(list) {
+  list.forEach(r => {
+    if (markers[r.id]) return;
+
+    const marker = L.marker([r.lat, r.lng], {
+      icon: createMarkerIcon(r.category),
+      title: r.name,
+    }).addTo(map);
+
+    const popupHtml = `
+      <div class="popup-inner">
+        <div class="popup-cat">${categories[r.category]?.label || r.category}</div>
+        <div class="popup-name">${r.name}</div>
+        <div class="popup-desc">${r.description.slice(0, 90)}…</div>
+        <div class="popup-price">${r.price}</div>
+      </div>
+      <button class="popup-btn" onclick="showDetailById(${r.id})">View Details</button>
+    `;
+
+    marker.bindPopup(popupHtml, { maxWidth: 240, minWidth: 220 });
+
+    marker.on('click', () => {
+      resetActiveMarker();
+      marker.setIcon(createMarkerIcon(r.category, true));
+      activeMarker = { marker, cat: r.category };
+    });
+
+    marker.on('popupclose', () => {
+      resetActiveMarker();
+    });
+
+    markers[r.id] = { marker, restaurant: r };
+  });
+}
+
+function resetActiveMarker() {
+  if (activeMarker) {
+    activeMarker.marker.setIcon(createMarkerIcon(activeMarker.cat, false));
+    activeMarker = null;
+  }
+}
+
+function updateMarkerVisibility(visible) {
+  const visibleIds = new Set(visible.map(r => r.id));
+
+  Object.values(markers).forEach(({ marker, restaurant }) => {
+    if (visibleIds.has(restaurant.id)) {
+      if (!map.hasLayer(marker)) map.addLayer(marker);
+    } else {
+      if (map.hasLayer(marker)) map.removeLayer(marker);
+    }
+  });
+}
+
+function flyToMarker(r) {
+  map.flyTo([r.lat, r.lng], 16, { duration: 0.8 });
+  setTimeout(() => {
+    if (markers[r.id]) {
+      markers[r.id].marker.openPopup();
+      resetActiveMarker();
+      markers[r.id].marker.setIcon(createMarkerIcon(r.category, true));
+      activeMarker = { marker: markers[r.id].marker, cat: r.category };
+    }
+  }, 900);
+}
+
+// ── Detail panel ─────────────────────────────────────────────
+const panel    = document.getElementById('detailPanel');
+const backdrop = document.getElementById('detailBackdrop');
+
+function showDetailById(id) {
+  const r = allRestaurants.find(x => x.id === id);
+  if (r) showDetail(r);
+}
+window.showDetailById = showDetailById;
+
+function showDetail(r) {
+  document.getElementById('detailImage').src    = r.image;
+  document.getElementById('detailName').textContent    = r.name;
+  document.getElementById('detailDesc').textContent    = r.description;
+  document.getElementById('detailAddress').textContent = r.address;
+  document.getElementById('detailPrice').textContent   = r.price;
+  document.getElementById('detailCategory').textContent = categories[r.category]?.label || r.category;
+  document.getElementById('detailBadge').textContent   = categories[r.category]?.label || r.category;
+  document.getElementById('detailStars').textContent   = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+
+  panel.classList.add('open');
+  backdrop.classList.add('open');
+}
+
+function closeDetail() {
+  panel.classList.remove('open');
+  backdrop.classList.remove('open');
+}
+
+document.getElementById('detailClose').addEventListener('click', closeDetail);
+backdrop.addEventListener('click', closeDetail);
+
+// ── Helpers ──────────────────────────────────────────────────
+function updateCount(n) {
+  document.getElementById('visibleCount').textContent = n;
+}
+
+// ── Boot ─────────────────────────────────────────────────────
+loadData();

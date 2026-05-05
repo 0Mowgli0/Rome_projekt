@@ -1,0 +1,545 @@
+/* ─── Reset & Base ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:     #F7F2EC;
+  --parchment: #EDE5D8;
+  --ink:       #1A1410;
+  --ink-soft:  #4A3F35;
+  --ink-faint: #9A8F85;
+  --gold:      #C9A84C;
+  --gold-lt:   #E8D49A;
+  --terracotta:#C8552A;
+  --sage:      #6B9E78;
+  --rose:      #D4547A;
+  --slate:     #5B8EC4;
+
+  --sidebar-w: 320px;
+  --header-h:  72px;
+  --radius:    4px;
+  --shadow:    0 8px 40px rgba(26,20,16,0.14);
+  --shadow-sm: 0 2px 12px rgba(26,20,16,0.10);
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  overflow: hidden;
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  background: var(--ink);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo-accent {
+  color: var(--gold);
+  font-size: 18px;
+  animation: spin-slow 8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.logo-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.logo-sub {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.85;
+}
+
+.header-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.02em;
+  margin-left: auto;
+  padding-right: 8px;
+}
+
+/* ─── Layout ─────────────────────────────────────────────── */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  padding-top: var(--header-h);
+}
+
+/* ─── Sidebar ─────────────────────────────────────────────── */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  background: var(--cream);
+  border-right: 1px solid var(--parchment);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--parchment); border-radius: 2px; }
+
+.sidebar-section {
+  padding: 20px 20px 0;
+}
+
+.sidebar-title {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--parchment);
+}
+
+/* Filter buttons */
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  width: 100%;
+  text-align: left;
+  color: var(--ink-soft);
+}
+
+.filter-btn:hover {
+  background: var(--parchment);
+  border-color: var(--parchment);
+}
+
+.filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+}
+
+.filter-icon {
+  font-size: 14px;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.filter-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  flex: 1;
+}
+
+.filter-count {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.55;
+  background: rgba(0,0,0,0.08);
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(255,255,255,0.18);
+  opacity: 0.85;
+}
+
+/* Restaurant List */
+.restaurant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 24px;
+}
+
+.rest-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--parchment);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  background: #fff;
+  animation: card-in 0.3s ease both;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.rest-card:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(2px);
+}
+
+.rest-card.hidden {
+  display: none;
+}
+
+.rest-card-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 3px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.rest-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.rest-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rest-card-meta {
+  font-size: 10px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+.rest-card-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── Map ─────────────────────────────────────────────────── */
+.map-container {
+  flex: 1;
+  position: relative;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-overlay-badge {
+  position: absolute;
+  bottom: 28px;
+  right: 20px;
+  background: var(--ink);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  padding: 7px 14px;
+  border-radius: 20px;
+  z-index: 500;
+  pointer-events: none;
+  box-shadow: var(--shadow);
+}
+
+/* ─── Leaflet overrides ───────────────────────────────────── */
+.leaflet-popup-content-wrapper {
+  background: var(--ink);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.3);
+}
+
+.leaflet-popup-tip {
+  background: var(--ink);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  width: 220px !important;
+}
+
+.popup-inner {
+  padding: 14px 16px;
+}
+
+.popup-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.popup-cat {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.popup-desc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.popup-price {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gold-lt);
+}
+
+.popup-btn {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.popup-btn:hover { background: var(--gold-lt); }
+
+/* Custom marker */
+.custom-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  border: 2px solid rgba(255,255,255,0.9);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.custom-marker:hover, .custom-marker.active {
+  transform: rotate(-45deg) scale(1.2);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+
+.marker-icon-inner {
+  transform: rotate(45deg);
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* ─── Detail Panel ─────────────────────────────────────────── */
+.detail-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,20,16,0.55);
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.detail-backdrop.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.detail-panel {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: min(480px, 100vw);
+  background: var(--cream);
+  border-radius: 16px 16px 0 0;
+  z-index: 1200;
+  box-shadow: 0 -10px 60px rgba(26,20,16,0.25);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+.detail-panel.open {
+  transform: translateX(-50%) translateY(0);
+}
+
+.detail-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: rgba(26,20,16,0.6);
+  color: #fff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 13px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.detail-close:hover { background: var(--ink); }
+
+.detail-image-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(26,20,16,0.6));
+}
+
+.detail-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(26,20,16,0.7);
+  padding: 4px 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(201,168,76,0.4);
+}
+
+.detail-body {
+  padding: 20px 24px 28px;
+}
+
+.detail-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.detail-category {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.detail-price {
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+
+.detail-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.detail-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+.detail-address {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+
+.addr-icon {
+  color: var(--gold);
+  font-size: 14px;
+}
+
+.detail-stars {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
