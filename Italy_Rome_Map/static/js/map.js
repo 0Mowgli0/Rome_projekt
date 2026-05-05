@@ -37,15 +37,23 @@ const CAT_COLORS = {
   trattoria:   '#E05C3A',
   cafe:        '#6B9E78',
   pizza:       '#D4547A',
-  gelato:      '#5B8EC4',
+  dessert:     '#9B6BB5',
+  pasta:       '#E8A838',
+  sandwich:    '#7BAE7F',
+  snack:       '#E07B54',
+  drinks:      '#4A90C4',
 };
 
 const CAT_ICONS = {
-  fine_dining: '✦',
-  trattoria:   '🍝',
+  fine_dining: '🍽️',
+  trattoria:   '🫕',
   cafe:        '☕',
   pizza:       '🍕',
-  gelato:      '🍦',
+  dessert:     '🍦',
+  pasta:       '🍝',
+  sandwich:    '🥪',
+  snack:       '🍿',
+  drinks:      '🍹',
 };
 
 // ── Fetch data ───────────────────────────────────────────────
