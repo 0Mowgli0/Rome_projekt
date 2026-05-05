@@ -6,7 +6,7 @@ let markers        = {};
 let activeMarker   = null;
 let clusterGroup   = null;
 let locationMarker = null;
-
+let userLocation = null;
 // ── Map init ─────────────────────────────────────────────────
 const map = L.map('map', {
   center: [41.9028, 12.4964],
@@ -259,6 +259,7 @@ document.getElementById('locateBtn').addEventListener('click', () => {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
       const { latitude, longitude } = pos.coords;
+      userLocation = { lat: latitude, lng: longitude };
 
       if (locationMarker) {
         map.removeLayer(locationMarker);
@@ -318,6 +319,25 @@ function showDetail(r) {
   document.getElementById('detailBadge').textContent     = categories[r.category]?.label || r.category;
   document.getElementById('detailStars').textContent     = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
   document.getElementById('directionsBtn').href          = r.maps_url;
+
+  // Walking time estimate
+  const walkEl = document.getElementById('detailWalkTime');
+  if (userLocation) {
+    const R = 6371000;
+    const dLat = (r.lat - userLocation.lat) * Math.PI / 180;
+    const dLng = (r.lng - userLocation.lng) * Math.PI / 180;
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(userLocation.lat * Math.PI / 180) *
+              Math.cos(r.lat * Math.PI / 180) *
+              Math.sin(dLng/2) * Math.sin(dLng/2);
+    const distance = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    const minutes = Math.round((distance * 1.3) / 80);
+    walkEl.textContent = `🚶 ${minutes} min walk away`;
+    walkEl.style.display = 'flex';
+  } else {
+    walkEl.style.display = 'none';
+  }
+
   panel.classList.add('open');
   backdrop.classList.add('open');
 }
