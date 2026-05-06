@@ -411,17 +411,30 @@ function isOpenNow(r) {
 
 // ── Fetch data ───────────────────────────────────────────────
 async function loadData() {
-  const res  = await fetch('/api/restaurants');
-  const data = await res.json();
+  try {
+    const res = await fetch('/api/restaurants');
+    if (!res.ok) throw new Error('Network response was not ok');
 
-  allRestaurants = data.restaurants;
-  categories     = data.categories;
+    const data = await res.json();
+    allRestaurants = data.restaurants;
+    categories     = data.categories;
 
-  buildFilters();
-  renderRestaurants(allRestaurants);
-  placeMarkers(allRestaurants);
-  updateCount(allRestaurants.length);
-  applyLanguage();
+    buildFilters();
+    renderRestaurants(allRestaurants);
+    placeMarkers(allRestaurants);
+    updateCount(allRestaurants.length);
+    applyLanguage();
+
+    // Hide loading overlay smoothly
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    loadingOverlay.classList.add('hidden');
+    setTimeout(() => loadingOverlay.style.display = 'none', 500);
+
+  } catch (err) {
+    console.error('Failed to load data:', err);
+    document.getElementById('loadingOverlay').style.display = 'none';
+    document.getElementById('errorOverlay').classList.remove('hidden');
+  }
 }
 
 // ── Filter UI ────────────────────────────────────────────────
@@ -780,6 +793,19 @@ onboardSkip.addEventListener('click', () => {
 
 helpBtn.addEventListener('click', () => {
   onboardBackdrop.classList.remove('hidden');
+});
+
+// ── Error retry ───────────────────────────────────────────────
+document.getElementById('errorRetry').addEventListener('click', () => {
+  document.getElementById('errorOverlay').classList.add('hidden');
+  const overlay = document.getElementById('loadingOverlay');
+  overlay.style.display = 'flex';
+  overlay.classList.remove('hidden');
+  document.querySelector('.loading-bar-fill').style.animation = 'none';
+  setTimeout(() => {
+    document.querySelector('.loading-bar-fill').style.animation = 'loading-progress 1.8s ease forwards';
+    loadData();
+  }, 50);
 });
 
 // ── Boot ─────────────────────────────────────────────────────

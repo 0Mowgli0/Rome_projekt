@@ -17,6 +17,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Roma Tavola">
   <link rel="apple-touch-icon" href="/static/img/icon-192.png">
+  <link rel="icon" href="/static/img/icon-192.png" type="image/png">
 </head>
 <body>
 
@@ -115,6 +116,26 @@
     </div>
   </div>
   <div class="detail-backdrop" id="detailBackdrop"></div>
+
+    <!-- Loading overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-inner">
+      <div class="loading-star">✦</div>
+      <div class="loading-text">Roma Tavola</div>
+      <div class="loading-sub">Loading restaurants…</div>
+      <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+    </div>
+  </div>
+
+ <!-- Error overlay -->
+  <div class="error-overlay hidden" id="errorOverlay">
+    <div class="error-inner">
+      <div class="error-icon">🍝</div>
+      <div class="error-title">Mamma mia!</div>
+      <div class="error-sub">Something went wrong loading the restaurants. Check your connection and try again.</div>
+      <button class="error-btn" id="errorRetry">Try Again →</button>
+    </div>
+  </div>
 
   <!-- Onboarding overlay -->
   <div class="onboard-backdrop" id="onboardBackdrop">
