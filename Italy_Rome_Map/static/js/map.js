@@ -401,6 +401,29 @@ if (handle) {
   });
 }
 
+// ── Onboarding ────────────────────────────────────────────────
+const onboardBackdrop = document.getElementById('onboardBackdrop');
+const onboardBtn      = document.getElementById('onboardBtn');
+const onboardSkip     = document.getElementById('onboardSkip');
+const helpBtn         = document.getElementById('helpBtn');
+
+if (localStorage.getItem('onboardDone')) {
+  onboardBackdrop.classList.add('hidden');
+}
+
+onboardBtn.addEventListener('click', () => {
+  onboardBackdrop.classList.add('hidden');
+});
+
+onboardSkip.addEventListener('click', () => {
+  localStorage.setItem('onboardDone', 'true');
+  onboardBackdrop.classList.add('hidden');
+});
+
+helpBtn.addEventListener('click', () => {
+  onboardBackdrop.classList.remove('hidden');
+});
+
 // ── Boot ─────────────────────────────────────────────────────
 loadData();
 

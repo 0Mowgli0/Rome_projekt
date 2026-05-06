@@ -20,14 +20,18 @@
 </head>
 <body>
 
-  <header class="site-header">
+ <header class="site-header">
     <div class="header-inner">
       <div class="logo">
         <span class="logo-accent">✦</span>
         <span class="logo-main">Roma Tavola</span>
         <span class="logo-sub">Restaurant Guide</span>
       </div>
-      <p class="header-tagline">Discover the finest tables of the Eternal City</p>
+      <div class="header-location">
+        <img src="https://flagcdn.com/w20/it.png" alt="Italy" style="width:20px; height:14px; border-radius:2px;">
+        <span>Rome, Italy</span>
+      </div>
+      <button class="help-btn" id="helpBtn" title="How to use">?</button>
     </div>
   </header>
 
@@ -111,6 +115,51 @@
     </div>
   </div>
   <div class="detail-backdrop" id="detailBackdrop"></div>
+
+  <!-- Onboarding overlay -->
+  <div class="onboard-backdrop" id="onboardBackdrop">
+    <div class="onboard-panel" id="onboardPanel">
+      <div class="onboard-logo">
+        <span class="onboard-star">✦</span>
+        <span class="onboard-title">Roma Tavola</span>
+      </div>
+      <p class="onboard-sub">Your personal guide to eating well in Rome</p>
+
+      <div class="onboard-steps">
+        <div class="onboard-step">
+          <span class="onboard-icon">🗺️</span>
+          <div>
+            <div class="onboard-step-title">Explore the map</div>
+            <div class="onboard-step-desc">Tap any marker to see details. Zoom in to ungroup clustered pins.</div>
+          </div>
+        </div>
+        <div class="onboard-step">
+          <span class="onboard-icon">☕</span>
+          <div>
+            <div class="onboard-step-title">Filter by category & price</div>
+            <div class="onboard-step-desc">Use the sidebar to filter by type of food or budget.</div>
+          </div>
+        </div>
+        <div class="onboard-step">
+          <span class="onboard-icon">📍</span>
+          <div>
+            <div class="onboard-step-title">Find what's nearby</div>
+            <div class="onboard-step-desc">Tap the location button to see walk times and sort restaurants by distance.</div>
+          </div>
+        </div>
+        <div class="onboard-step">
+          <span class="onboard-icon">→</span>
+          <div>
+            <div class="onboard-step-title">Get directions</div>
+            <div class="onboard-step-desc">Open any restaurant and tap Get Directions to navigate straight there.</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="onboard-btn" id="onboardBtn">Let's Eat →</button>
+      <p class="onboard-skip" id="onboardSkip">Don't show this again</p>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
