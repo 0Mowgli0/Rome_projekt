@@ -2,11 +2,18 @@
 let allRestaurants = [];
 let categories     = {};
 let activeCategory = 'all';
+let activePrice    = 'all';
 let markers        = {};
 let activeMarker   = null;
 let clusterGroup   = null;
 let locationMarker = null;
-let userLocation = null;
+let userLocation   = null;
+
+try {
+  const saved = localStorage.getItem('userLocation');
+  if (saved) userLocation = JSON.parse(saved);
+} catch(e) {}
+
 // ── Map init ─────────────────────────────────────────────────
 const map = L.map('map', {
   center: [41.9028, 12.4964],
@@ -97,39 +104,48 @@ function setFilter(cat) {
   document.querySelectorAll('.filter-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.cat === cat);
   });
-
-  const query = document.getElementById('searchInput').value.toLowerCase().trim();
-  const base  = cat === 'all' ? allRestaurants : allRestaurants.filter(r => r.category === cat);
-  const filtered = query ? base.filter(r =>
-    r.name.toLowerCase().includes(query) ||
-    r.description.toLowerCase().includes(query)
-  ) : base;
-
-  renderRestaurants(filtered);
-  updateMarkerVisibility(filtered);
-  updateCount(filtered.length);
-  fitMapToVisible(filtered);
+  applyFilters();
 }
 
 // ── Search ───────────────────────────────────────────────────
 document.getElementById('searchInput').addEventListener('input', function () {
-  const query = this.value.toLowerCase().trim();
-  const base  = activeCategory === 'all'
-    ? allRestaurants
-    : allRestaurants.filter(r => r.category === activeCategory);
+  applyFilters();
+});
 
-  const filtered = query
-    ? base.filter(r =>
-        r.name.toLowerCase().includes(query) ||
-        r.description.toLowerCase().includes(query)
-      )
-    : base;
+// ── Apply all filters ─────────────────────────────────────────
+function applyFilters() {
+  const query = document.getElementById('searchInput').value.toLowerCase().trim();
+
+  let filtered = allRestaurants;
+
+  if (activeCategory !== 'all') {
+    filtered = filtered.filter(r => r.category === activeCategory);
+  }
+
+  if (activePrice !== 'all') {
+    filtered = filtered.filter(r => r.price === activePrice);
+  }
+
+  if (query) {
+    filtered = filtered.filter(r =>
+      r.name.toLowerCase().includes(query) ||
+      r.description.toLowerCase().includes(query)
+    );
+  }
+
+  if (userLocation) {
+    filtered = [...filtered].sort((a, b) => {
+      const distA = Math.pow(a.lat - userLocation.lat, 2) + Math.pow(a.lng - userLocation.lng, 2);
+      const distB = Math.pow(b.lat - userLocation.lat, 2) + Math.pow(b.lng - userLocation.lng, 2);
+      return distA - distB;
+    });
+  }
 
   renderRestaurants(filtered);
   updateMarkerVisibility(filtered);
   updateCount(filtered.length);
   if (filtered.length > 0) fitMapToVisible(filtered);
-});
+}
 
 // ── Restaurant sidebar list ──────────────────────────────────
 function renderRestaurants(list) {
@@ -149,15 +165,14 @@ function renderRestaurants(list) {
       </div>
       <div class="rest-card-dot" style="background:${CAT_COLORS[r.category]}"></div>
     `;
-   card.addEventListener('click', () => {
-  flyToMarker(r);
-  showDetail(r);
-  // Auto-collapse drawer on mobile
-  if (window.innerWidth < 768) {
-    sidebar.classList.remove('expanded');
-    setTimeout(() => map.invalidateSize(), 320);
-  }
-});
+    card.addEventListener('click', () => {
+      flyToMarker(r);
+      showDetail(r);
+      if (window.innerWidth < 768) {
+        sidebar.classList.remove('expanded');
+        setTimeout(() => map.invalidateSize(), 320);
+      }
+    });
     container.appendChild(card);
   });
 }
@@ -260,6 +275,8 @@ document.getElementById('locateBtn').addEventListener('click', () => {
     (pos) => {
       const { latitude, longitude } = pos.coords;
       userLocation = { lat: latitude, lng: longitude };
+      localStorage.setItem('userLocation', JSON.stringify(userLocation));
+      applyFilters();
 
       if (locationMarker) {
         map.removeLayer(locationMarker);
@@ -321,21 +338,29 @@ function showDetail(r) {
   document.getElementById('directionsBtn').href          = r.maps_url;
 
   // Walking time estimate
-  const walkEl = document.getElementById('detailWalkTime');
-  if (userLocation) {
-    const R = 6371000;
-    const dLat = (r.lat - userLocation.lat) * Math.PI / 180;
-    const dLng = (r.lng - userLocation.lng) * Math.PI / 180;
-    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-              Math.cos(userLocation.lat * Math.PI / 180) *
-              Math.cos(r.lat * Math.PI / 180) *
-              Math.sin(dLng/2) * Math.sin(dLng/2);
-    const distance = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    const minutes = Math.round((distance * 1.3) / 80);
-    walkEl.textContent = `🚶 ${minutes} min walk away`;
-    walkEl.style.display = 'flex';
-  } else {
-    walkEl.style.display = 'none';
+  try {
+    const walkEl = document.getElementById('detailWalkTime');
+    if (userLocation) {
+      const R = 6371000;
+      const dLat = (r.lat - userLocation.lat) * Math.PI / 180;
+      const dLng = (r.lng - userLocation.lng) * Math.PI / 180;
+      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(userLocation.lat * Math.PI / 180) *
+                Math.cos(r.lat * Math.PI / 180) *
+                Math.sin(dLng/2) * Math.sin(dLng/2);
+      const distance = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      const minutes = Math.round((distance * 1.3) / 80);
+      if (distance > 30000) {
+        walkEl.textContent = '📍 Set location in Rome for walk times';
+      } else {
+        walkEl.textContent = `🚶 ${minutes} min walk away`;
+      }
+      walkEl.style.display = 'flex';
+    } else {
+      walkEl.style.display = 'none';
+    }
+  } catch(e) {
+    console.error('Walk time error:', e);
   }
 
   panel.classList.add('open');
@@ -354,6 +379,17 @@ backdrop.addEventListener('click', closeDetail);
 function updateCount(n) {
   document.getElementById('visibleCount').textContent = n;
 }
+
+// ── Price filter ──────────────────────────────────────────────
+document.querySelectorAll('.price-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    activePrice = btn.dataset.price;
+    document.querySelectorAll('.price-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.price === activePrice);
+    });
+    applyFilters();
+  });
+});
 
 // ── Sidebar toggle (mobile) ───────────────────────────────────
 const sidebar = document.getElementById('sidebar');

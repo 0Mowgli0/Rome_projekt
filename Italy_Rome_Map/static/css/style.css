@@ -636,6 +636,36 @@ html, body {
   margin-bottom: 12px;
 }
 
+/* Price filter */
+.price-filter-list {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.price-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--parchment);
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  transition: all 0.18s ease;
+}
+
+.price-btn:hover { border-color: var(--gold); }
+
+.price-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+}
+
 /* Pulse animation for location marker */
 @keyframes pulse {
   0%   { box-shadow: 0 0 0 0 rgba(201,168,76,0.5); }
@@ -757,5 +787,15 @@ html, body {
   width: 46px;
   height: 46px;
   font-size: 20px;
+}
+.price-filter-list {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.price-btn {
+  font-size: 12px;
+  padding: 8px 16px;
 }
 }
