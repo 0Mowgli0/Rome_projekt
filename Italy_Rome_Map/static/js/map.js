@@ -697,7 +697,12 @@ function showDetail(r) {
                 Math.sin(dLng/2) * Math.sin(dLng/2);
       const distance = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
       const minutes = Math.round((distance * 1.3) / 80);
-      walkEl.textContent = distance > 30000 ? t('walk_set') : t('walk', minutes);
+      if (minutes >= 60) {
+        const hours = Math.round(minutes / 60);
+        walkEl.textContent = `🚶 ~${hours}h walk`;
+      } else {
+        walkEl.textContent = t('walk', minutes);
+      }
       walkEl.style.display = 'flex';
     } else {
       walkEl.style.display = 'none';
