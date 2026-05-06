@@ -20,7 +20,7 @@
 </head>
 <body>
 
- <header class="site-header">
+  <header class="site-header">
     <div class="header-inner">
       <div class="logo">
         <span class="logo-accent">✦</span>
@@ -28,7 +28,7 @@
         <span class="logo-sub">Restaurant Guide</span>
       </div>
       <div class="header-location">
-        <img src="https://flagcdn.com/w20/it.png" alt="Italy" style="width:20px; height:14px; border-radius:2px;">
+        <img id="langFlag" src="https://flagcdn.com/w20/gb.png" alt="Language" style="width:24px; height:17px; border-radius:2px; cursor:pointer;" title="Switch language">
         <span>Rome, Italy</span>
       </div>
       <button class="help-btn" id="helpBtn" title="How to use">?</button>
@@ -123,35 +123,42 @@
         <span class="onboard-star">✦</span>
         <span class="onboard-title">Roma Tavola</span>
       </div>
-      <p class="onboard-sub">Your personal guide to eating well in Rome</p>
+      <p class="onboard-sub" id="onboardSub">Your personal guide to eating well in Rome</p>
 
       <div class="onboard-steps">
         <div class="onboard-step">
           <span class="onboard-icon">🗺️</span>
           <div>
-            <div class="onboard-step-title">Explore the map</div>
-            <div class="onboard-step-desc">Tap any marker to see details. Zoom in to ungroup clustered pins.</div>
+            <div class="onboard-step-title" id="onboardStep1Title">Explore the map</div>
+            <div class="onboard-step-desc" id="onboardStep1Desc">Tap any marker to see details. Zoom in to ungroup clustered pins.</div>
           </div>
         </div>
         <div class="onboard-step">
           <span class="onboard-icon">☕</span>
           <div>
-            <div class="onboard-step-title">Filter by category & price</div>
-            <div class="onboard-step-desc">Use the sidebar to filter by type of food or budget.</div>
+            <div class="onboard-step-title" id="onboardStep2Title">Filter by category & price</div>
+            <div class="onboard-step-desc" id="onboardStep2Desc">Use the sidebar to filter by type of food or budget.</div>
           </div>
         </div>
         <div class="onboard-step">
           <span class="onboard-icon">📍</span>
           <div>
-            <div class="onboard-step-title">Find what's nearby</div>
-            <div class="onboard-step-desc">Tap the location button to see walk times and sort restaurants by distance.</div>
+            <div class="onboard-step-title" id="onboardStep3Title">Find what's nearby</div>
+            <div class="onboard-step-desc" id="onboardStep3Desc">Tap the location button to see walk times and sort restaurants by distance.</div>
           </div>
         </div>
         <div class="onboard-step">
           <span class="onboard-icon">→</span>
           <div>
-            <div class="onboard-step-title">Get directions</div>
-            <div class="onboard-step-desc">Open any restaurant and tap Get Directions to navigate straight there.</div>
+            <div class="onboard-step-title" id="onboardStep4Title">Get directions</div>
+            <div class="onboard-step-desc" id="onboardStep4Desc">Open any restaurant and tap Get Directions to navigate straight there.</div>
+          </div>
+        </div>
+        <div class="onboard-step">
+          <span class="onboard-icon">🌍</span>
+          <div>
+            <div class="onboard-step-title" id="onboardStep5Title">Switch language</div>
+            <div class="onboard-step-desc" id="onboardStep5Desc">Tap the flag in the top right to switch between English, Swedish, Italian, German, Spanish and French.</div>
           </div>
         </div>
       </div>
