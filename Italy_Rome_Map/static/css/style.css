@@ -271,6 +271,7 @@ html, body {
   min-width: 140px;
   max-width: 140px;
   border: 1px solid var(--parchment);
+  border-left: 4px solid #EDE5D8;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.18s ease;
@@ -830,13 +831,19 @@ html, body {
 }
 
 .header-location {
-  display: none;
+  display: flex;
   align-items: center;
   gap: 8px;
   color: rgba(255,255,255,0.6);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.header-location span {
+  display: none;
 }
 
 .header-location span:first-child {
@@ -851,6 +858,18 @@ html, body {
   transform: scale(1.2);
   opacity: 0.85;
 }
+
+.rest-card-dot { display: none; }
+
+.open-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.open-status.open   { background: #4CAF50; }
+.open-status.closed { background: #E05C3A; }
 
 /* Pulse animation for location marker */
 @keyframes pulse {
@@ -943,14 +962,15 @@ html, body {
     padding-bottom: 24px;
   }
 
-  .rest-card {
+     .rest-card {
     flex-direction: row;
     min-width: unset;
     max-width: unset;
     align-items: center;
     gap: 14px;
-    padding: 12px 16px;
+    padding: 10px 12px 10px 16px;
     border-radius: var(--radius);
+    border-left: 4px solid #EDE5D8;
   }
 
   .rest-card:hover { transform: translateX(2px); }
@@ -999,4 +1019,8 @@ html, body {
     font-size: 12px;
     padding: 8px 16px;
   }
+  
+  .header-location span {
+  display: inline;
+}
 }

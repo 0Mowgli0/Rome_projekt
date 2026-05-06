@@ -377,6 +377,38 @@ const CAT_ICONS = {
   drinks:      '🍹',
 };
 
+// ── Open/Closed check ─────────────────────────────────────────
+function isOpenNow(r) {
+  if (!r.hours_structured) return null;
+
+  // Use Rome time (UTC+1 in winter, UTC+2 in summer)
+  const now = new Date();
+  const romeTime = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Rome' }));
+  const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  const day = days[romeTime.getDay()];
+  const currentMinutes = romeTime.getHours() * 60 + romeTime.getMinutes();
+
+  const slots = r.hours_structured[day];
+  if (!slots || slots.length === 0) return false;
+
+  for (const slot of slots) {
+    const [openH, openM]   = slot.open.split(':').map(Number);
+    const [closeH, closeM] = slot.close.split(':').map(Number);
+    let openMins  = openH * 60 + openM;
+    let closeMins = closeH * 60 + closeM;
+
+    // Handle past midnight (e.g. close at 02:00)
+    if (closeMins <= openMins) closeMins += 24 * 60;
+    if (currentMinutes < openMins) {
+      // Check if we're in the overnight window
+      if (currentMinutes + 24 * 60 <= closeMins) return true;
+    } else if (currentMinutes >= openMins && currentMinutes < closeMins) {
+      return true;
+    }
+  }
+  return false;
+}
+
 // ── Fetch data ───────────────────────────────────────────────
 async function loadData() {
   const res  = await fetch('/api/restaurants');
@@ -468,6 +500,8 @@ function renderRestaurants(list) {
   container.innerHTML = '';
   list.forEach((r, i) => {
     const catLabel = t('categories')[r.category] || categories[r.category]?.label || r.category;
+    const isOpen = isOpenNow(r);
+
     const card = document.createElement('div');
     card.className = 'rest-card';
     card.dataset.id = r.id;
@@ -479,8 +513,8 @@ function renderRestaurants(list) {
         <div class="rest-card-meta">${catLabel} · ${r.price}</div>
         <div class="rest-card-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
       </div>
-      <div class="rest-card-dot" style="background:${CAT_COLORS[r.category]}"></div>
     `;
+    card.style.borderLeftColor = isOpen === true ? '#4CAF50' : isOpen === false ? '#E05C3A' : '#EDE5D8';
     card.addEventListener('click', () => {
       flyToMarker(r);
       showDetail(r);
@@ -492,7 +526,6 @@ function renderRestaurants(list) {
     container.appendChild(card);
   });
 }
-
 // ── Markers ──────────────────────────────────────────────────
 function createMarkerIcon(cat, active = false) {
   const color = CAT_COLORS[cat] || '#888';

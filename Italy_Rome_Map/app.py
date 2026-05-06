@@ -16,9 +16,18 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€€€€",
         "hours": "Tue–Sat: 7:30pm–11pm | Closed Sun & Mon",
+        "hours_structured": {
+            "mon": [],
+            "tue": [{"open": "19:30", "close": "23:00"}],
+            "wed": [{"open": "19:30", "close": "23:00"}],
+            "thu": [{"open": "19:30", "close": "23:00"}],
+            "fri": [{"open": "19:30", "close": "23:00"}],
+            "sat": [{"open": "19:30", "close": "23:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=La+Pergola+Rome",
         "website": "https://romecavalieri.com/la-pergola/",
-        "image": "/static/img/la_pergola.png"
+        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
     },
     {
         "id": 2,
@@ -31,6 +40,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€€€€",
         "hours": "Tue–Sat: 7:30pm–10:30pm | Closed Sun & Mon",
+        "hours_structured": {
+            "mon": [],
+            "tue": [{"open": "19:30", "close": "22:30"}],
+            "wed": [{"open": "19:30", "close": "22:30"}],
+            "thu": [{"open": "19:30", "close": "22:30"}],
+            "fri": [{"open": "19:30", "close": "22:30"}],
+            "sat": [{"open": "19:30", "close": "22:30"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Il+Pagliaccio+Rome",
         "website": "https://www.ristoranteilpagliaccio.com/",
         "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=250&fit=crop"
@@ -46,6 +64,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€€€€",
         "hours": "Mon–Sun: 7pm–10:30pm",
+        "hours_structured": {
+            "mon": [{"open": "19:00", "close": "22:30"}],
+            "tue": [{"open": "19:00", "close": "22:30"}],
+            "wed": [{"open": "19:00", "close": "22:30"}],
+            "thu": [{"open": "19:00", "close": "22:30"}],
+            "fri": [{"open": "19:00", "close": "22:30"}],
+            "sat": [{"open": "19:00", "close": "22:30"}],
+            "sun": [{"open": "19:00", "close": "22:30"}]
+        },
         "maps_url": "https://maps.google.com/?q=Aroma+Restaurant+Rome",
         "website": "https://www.aromarestaurant.it/",
         "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop"
@@ -61,6 +88,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€€",
         "hours": "Mon–Sun: 12pm–3pm, 7pm–11pm",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sun": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Mimi+e+Coco+Trastevere+Rome",
         "website": "https://www.mimiecoco.com/en/homepage/",
         "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=250&fit=crop"
@@ -76,6 +112,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€€€",
         "hours": "Mon–Sun: 8am–2am",
+        "hours_structured": {
+            "mon": [{"open": "08:00", "close": "02:00"}],
+            "tue": [{"open": "08:00", "close": "02:00"}],
+            "wed": [{"open": "08:00", "close": "02:00"}],
+            "thu": [{"open": "08:00", "close": "02:00"}],
+            "fri": [{"open": "08:00", "close": "02:00"}],
+            "sat": [{"open": "08:00", "close": "02:00"}],
+            "sun": [{"open": "08:00", "close": "02:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=La+Zanzara+Roma",
         "website": "https://www.lazanzararoma.com/",
         "image": "https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=400&h=250&fit=crop"
@@ -93,6 +138,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Mon–Sat: 12pm–3pm, 7pm–10pm | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:00"}],
+            "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:00"}],
+            "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:00"}],
+            "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:00"}],
+            "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:00"}],
+            "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Da+Enzo+al+29+Rome",
         "website": "https://www.daenzoal29.com/",
         "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=400&h=250&fit=crop"
@@ -108,6 +162,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Mon–Sun: 12:30pm–3pm, 7:30pm–11pm",
+        "hours_structured": {
+            "mon": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+            "tue": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+            "wed": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+            "thu": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+            "fri": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+            "sat": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+            "sun": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Flavio+al+Velavevodetto+Rome",
         "website": "https://www.flavioalvelavevodetto.it/",
         "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=250&fit=crop"
@@ -123,6 +186,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Thu–Tue: 12pm–3pm, 7pm–11pm | Closed Wed",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "wed": [],
+            "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sun": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Trattoria+Vecchia+Roma",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1053991-Reviews-Trattoria_Vecchia_Roma-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1534482421-64566f976cfa?w=400&h=250&fit=crop"
@@ -140,6 +212,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€",
         "hours": "Mon–Sun: 7:30am–1am",
+        "hours_structured": {
+            "mon": [{"open": "07:30", "close": "01:00"}],
+            "tue": [{"open": "07:30", "close": "01:00"}],
+            "wed": [{"open": "07:30", "close": "01:00"}],
+            "thu": [{"open": "07:30", "close": "01:00"}],
+            "fri": [{"open": "07:30", "close": "01:00"}],
+            "sat": [{"open": "07:30", "close": "01:00"}],
+            "sun": [{"open": "07:30", "close": "01:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Sant'Eustachio+il+Caffe+Rome",
         "website": "https://www.santeustachioilcaffe.it/",
         "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=250&fit=crop"
@@ -155,6 +236,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Mon–Sun: 9am–9pm",
+        "hours_structured": {
+            "mon": [{"open": "09:00", "close": "21:00"}],
+            "tue": [{"open": "09:00", "close": "21:00"}],
+            "wed": [{"open": "09:00", "close": "21:00"}],
+            "thu": [{"open": "09:00", "close": "21:00"}],
+            "fri": [{"open": "09:00", "close": "21:00"}],
+            "sat": [{"open": "09:00", "close": "21:00"}],
+            "sun": [{"open": "09:00", "close": "21:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Antico+Caffe+Greco+Rome",
         "website": "https://www.anticocaffegreco.eu/",
         "image": "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=400&h=250&fit=crop"
@@ -170,6 +260,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Tue–Sun: 9am–2am | Closed Mon",
+        "hours_structured": {
+            "mon": [],
+            "tue": [{"open": "09:00", "close": "02:00"}],
+            "wed": [{"open": "09:00", "close": "02:00"}],
+            "thu": [{"open": "09:00", "close": "02:00"}],
+            "fri": [{"open": "09:00", "close": "02:00"}],
+            "sat": [{"open": "09:00", "close": "02:00"}],
+            "sun": [{"open": "09:00", "close": "02:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Caffe+della+Pace+Rome",
         "website": "https://www.caffedellapace.it/",
         "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=250&fit=crop"
@@ -187,6 +286,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€",
         "hours": "Mon–Sat: 11am–10pm | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "22:00"}],
+            "tue": [{"open": "11:00", "close": "22:00"}],
+            "wed": [{"open": "11:00", "close": "22:00"}],
+            "thu": [{"open": "11:00", "close": "22:00"}],
+            "fri": [{"open": "11:00", "close": "22:00"}],
+            "sat": [{"open": "11:00", "close": "22:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Pizzarium+Bonci+Rome",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1884226-Reviews-Pizzarium-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop"
@@ -202,6 +310,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€€",
         "hours": "Tue–Sun: 7pm–11:30pm | Closed Mon",
+        "hours_structured": {
+            "mon": [],
+            "tue": [{"open": "19:00", "close": "23:30"}],
+            "wed": [{"open": "19:00", "close": "23:30"}],
+            "thu": [{"open": "19:00", "close": "23:30"}],
+            "fri": [{"open": "19:00", "close": "23:30"}],
+            "sat": [{"open": "19:00", "close": "23:30"}],
+            "sun": [{"open": "19:00", "close": "23:30"}]
+        },
         "maps_url": "https://maps.google.com/?q=Seu+Pizza+Illuminati+Rome",
         "website": "https://www.seupizza.com/",
         "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=250&fit=crop"
@@ -217,6 +334,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Mon–Sun: 12pm–3pm, 7pm–11pm",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sun": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Mariuccia+Ristorante+Pizzeria+Roma",
         "website": "https://mariucciagroup.it/",
         "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop"
@@ -232,6 +358,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€",
         "hours": "Mon–Sun: 11am–11pm",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "23:00"}],
+            "tue": [{"open": "11:00", "close": "23:00"}],
+            "wed": [{"open": "11:00", "close": "23:00"}],
+            "thu": [{"open": "11:00", "close": "23:00"}],
+            "fri": [{"open": "11:00", "close": "23:00"}],
+            "sat": [{"open": "11:00", "close": "23:00"}],
+            "sun": [{"open": "11:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Trapizzino+Trastevere+Rome",
         "website": "https://www.trapizzino.it/en/",
         "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=250&fit=crop"
@@ -247,6 +382,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€€",
         "hours": "Mon–Sat: 8am–8pm | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "08:00", "close": "20:00"}],
+            "tue": [{"open": "08:00", "close": "20:00"}],
+            "wed": [{"open": "08:00", "close": "20:00"}],
+            "thu": [{"open": "08:00", "close": "20:00"}],
+            "fri": [{"open": "08:00", "close": "20:00"}],
+            "sat": [{"open": "08:00", "close": "20:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Roscioli+Salumeria+Rome",
         "website": "https://salumeriaroscioli.com/",
         "image": "https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&h=250&fit=crop"
@@ -262,6 +406,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Mon–Sun: 11am–11pm",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "23:00"}],
+            "tue": [{"open": "11:00", "close": "23:00"}],
+            "wed": [{"open": "11:00", "close": "23:00"}],
+            "thu": [{"open": "11:00", "close": "23:00"}],
+            "fri": [{"open": "11:00", "close": "23:00"}],
+            "sat": [{"open": "11:00", "close": "23:00"}],
+            "sun": [{"open": "11:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=L'Antica+Pizzeria+Di+Trevi+Rome",
         "website": "https://ristorantetrivioroma.com/",
         "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop"
@@ -277,6 +430,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 8am–10pm",
+        "hours_structured": {
+            "mon": [{"open": "08:00", "close": "22:00"}],
+            "tue": [{"open": "08:00", "close": "22:00"}],
+            "wed": [{"open": "08:00", "close": "22:00"}],
+            "thu": [{"open": "08:00", "close": "22:00"}],
+            "fri": [{"open": "08:00", "close": "22:00"}],
+            "sat": [{"open": "08:00", "close": "22:00"}],
+            "sun": [{"open": "08:00", "close": "22:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=La+Renella+Trastevere+Rome",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1095877-Reviews-La_Renella-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=250&fit=crop"
@@ -292,6 +454,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 9am–10pm",
+        "hours_structured": {
+            "mon": [{"open": "09:00", "close": "22:00"}],
+            "tue": [{"open": "09:00", "close": "22:00"}],
+            "wed": [{"open": "09:00", "close": "22:00"}],
+            "thu": [{"open": "09:00", "close": "22:00"}],
+            "fri": [{"open": "09:00", "close": "22:00"}],
+            "sat": [{"open": "09:00", "close": "22:00"}],
+            "sun": [{"open": "09:00", "close": "22:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Alice+Pizza+Rome",
         "website": "https://www.alicepizza.it/",
         "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop"
@@ -307,6 +478,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 10am–10pm",
+        "hours_structured": {
+            "mon": [{"open": "10:00", "close": "22:00"}],
+            "tue": [{"open": "10:00", "close": "22:00"}],
+            "wed": [{"open": "10:00", "close": "22:00"}],
+            "thu": [{"open": "10:00", "close": "22:00"}],
+            "fri": [{"open": "10:00", "close": "22:00"}],
+            "sat": [{"open": "10:00", "close": "22:00"}],
+            "sun": [{"open": "10:00", "close": "22:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Mami+Rome+Navona",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d7745058-Reviews-MAMI-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=250&fit=crop"
@@ -324,6 +504,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Mon–Sun: 12pm–11pm",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "23:00"}],
+            "tue": [{"open": "12:00", "close": "23:00"}],
+            "wed": [{"open": "12:00", "close": "23:00"}],
+            "thu": [{"open": "12:00", "close": "23:00"}],
+            "fri": [{"open": "12:00", "close": "23:00"}],
+            "sat": [{"open": "12:00", "close": "23:00"}],
+            "sun": [{"open": "12:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Osteria+Da+Fortunata+Rome",
         "website": "https://osteriadafortunata.it/en/",
         "image": "https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=400&h=250&fit=crop"
@@ -339,6 +528,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 11am–10pm",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "22:00"}],
+            "tue": [{"open": "11:00", "close": "22:00"}],
+            "wed": [{"open": "11:00", "close": "22:00"}],
+            "thu": [{"open": "11:00", "close": "22:00"}],
+            "fri": [{"open": "11:00", "close": "22:00"}],
+            "sat": [{"open": "11:00", "close": "22:00"}],
+            "sun": [{"open": "11:00", "close": "22:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Pastaeat+Rome+Spagna",
         "website": "https://pastaeat.shop/",
         "image": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=400&h=250&fit=crop"
@@ -354,6 +552,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sat: 11am–4pm | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "16:00"}],
+            "tue": [{"open": "11:00", "close": "16:00"}],
+            "wed": [{"open": "11:00", "close": "16:00"}],
+            "thu": [{"open": "11:00", "close": "16:00"}],
+            "fri": [{"open": "11:00", "close": "16:00"}],
+            "sat": [{"open": "11:00", "close": "16:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Pastasciutta+Via+delle+Grazie+Rome",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d12543100-Reviews-Pastasciutta-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=250&fit=crop"
@@ -369,6 +576,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Mon–Sun: 12pm–11pm",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "23:00"}],
+            "tue": [{"open": "12:00", "close": "23:00"}],
+            "wed": [{"open": "12:00", "close": "23:00"}],
+            "thu": [{"open": "12:00", "close": "23:00"}],
+            "fri": [{"open": "12:00", "close": "23:00"}],
+            "sat": [{"open": "12:00", "close": "23:00"}],
+            "sun": [{"open": "12:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=That's+Amore+Restaurant+Rome",
         "website": "https://thatsamore-restaurant.com/menu/",
         "image": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&h=250&fit=crop"
@@ -384,6 +600,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€€",
         "hours": "Tue–Sun: 12pm–3pm, 7pm–10:30pm | Closed Mon",
+        "hours_structured": {
+            "mon": [],
+            "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "sun": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}]
+        },
         "maps_url": "https://maps.google.com/?q=Al42+Pasta+Chef+Monti+Rome",
         "website": "https://www.al42.it/",
         "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&h=250&fit=crop"
@@ -399,6 +624,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Tue–Sun: 12pm–3pm, 7pm–11pm | Closed Mon",
+        "hours_structured": {
+            "mon": [],
+            "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sun": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Nannarella+Osteria+Trastevere+Rome",
         "website": "https://www.facebook.com/profile.php?id=100064042055340",
         "image": "https://images.unsplash.com/photo-1572441713132-c542f4cf966c?w=400&h=250&fit=crop"
@@ -414,6 +648,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Mon–Sat: 12pm–3pm, 7pm–10:30pm | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Hostaria+Dino+e+Tony+Rome",
         "website": "https://www.facebook.com/h.dinoetony/",
         "image": "https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=400&h=250&fit=crop"
@@ -429,6 +672,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€€€",
         "hours": "Mon–Sun: 12pm–3pm, 7pm–11pm",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sun": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Trattoria+Della+Stampa+Rome",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d723262-Reviews-Trattoria_Della_Stampa-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=400&h=250&fit=crop"
@@ -444,6 +696,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Mon–Sun: 12pm–3pm, 7pm–12am",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "00:00"}],
+            "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "00:00"}],
+            "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "00:00"}],
+            "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "00:00"}],
+            "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "00:00"}],
+            "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "00:00"}],
+            "sun": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "00:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Tonnarello+Trastevere+Rome",
         "website": "https://www.locandatonnarello.com/",
         "image": "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=400&h=250&fit=crop"
@@ -459,6 +720,15 @@ RESTAURANTS = [
         "rating": 3,
         "price": "€€€",
         "hours": "Mon–Sat: 12pm–3pm, 7pm–11pm | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Hosteria+Grappolo+d'oro+Rome",
         "website": "https://hosteriagrappolodoro.it/en/",
         "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=250&fit=crop"
@@ -474,6 +744,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€€€",
         "hours": "Mon–Sun: 7pm–11:30pm",
+        "hours_structured": {
+            "mon": [{"open": "19:00", "close": "23:30"}],
+            "tue": [{"open": "19:00", "close": "23:30"}],
+            "wed": [{"open": "19:00", "close": "23:30"}],
+            "thu": [{"open": "19:00", "close": "23:30"}],
+            "fri": [{"open": "19:00", "close": "23:30"}],
+            "sat": [{"open": "19:00", "close": "23:30"}],
+            "sun": [{"open": "19:00", "close": "23:30"}]
+        },
         "maps_url": "https://maps.google.com/?q=Taverna+Trilussa+Rome",
         "website": "https://www.tavernatrilussa.it/",
         "image": "https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?w=400&h=250&fit=crop"
@@ -489,6 +768,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sat: 11am–4pm | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "16:00"}],
+            "tue": [{"open": "11:00", "close": "16:00"}],
+            "wed": [{"open": "11:00", "close": "16:00"}],
+            "thu": [{"open": "11:00", "close": "16:00"}],
+            "fri": [{"open": "11:00", "close": "16:00"}],
+            "sat": [{"open": "11:00", "close": "16:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Egg+Pasta+Fresca+Rome+Vatican",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d6475306-Reviews-EGG_Pasta_Fresca-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=400&h=250&fit=crop"
@@ -506,6 +794,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sat: 9am–8pm | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "09:00", "close": "20:00"}],
+            "tue": [{"open": "09:00", "close": "20:00"}],
+            "wed": [{"open": "09:00", "close": "20:00"}],
+            "thu": [{"open": "09:00", "close": "20:00"}],
+            "fri": [{"open": "09:00", "close": "20:00"}],
+            "sat": [{"open": "09:00", "close": "20:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Magnifico+Food+Store+Trastevere+Rome",
         "website": "https://www.magnificofood.it/en",
         "image": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&h=250&fit=crop"
@@ -521,6 +818,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€€",
         "hours": "Mon–Sun: 10am–10pm",
+        "hours_structured": {
+            "mon": [{"open": "10:00", "close": "22:00"}],
+            "tue": [{"open": "10:00", "close": "22:00"}],
+            "wed": [{"open": "10:00", "close": "22:00"}],
+            "thu": [{"open": "10:00", "close": "22:00"}],
+            "fri": [{"open": "10:00", "close": "22:00"}],
+            "sat": [{"open": "10:00", "close": "22:00"}],
+            "sun": [{"open": "10:00", "close": "22:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=All'Antico+Vinaio+Rome",
         "website": "https://www.allanticovinaio.com/roma/",
         "image": "/static/img/allantico_vinaio.png"
@@ -536,6 +842,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€€",
         "hours": "Mon–Sun: 11am–11pm",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "23:00"}],
+            "tue": [{"open": "11:00", "close": "23:00"}],
+            "wed": [{"open": "11:00", "close": "23:00"}],
+            "thu": [{"open": "11:00", "close": "23:00"}],
+            "fri": [{"open": "11:00", "close": "23:00"}],
+            "sat": [{"open": "11:00", "close": "23:00"}],
+            "sun": [{"open": "11:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Prosciutteria+Cantina+dei+Papi+Rome",
         "website": "https://www.cantinadeipapi.com/prosciutteria-trevi/",
         "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&h=250&fit=crop"
@@ -553,6 +868,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€",
         "hours": "Mon–Sat: 10am–10pm | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "10:00", "close": "22:00"}],
+            "tue": [{"open": "10:00", "close": "22:00"}],
+            "wed": [{"open": "10:00", "close": "22:00"}],
+            "thu": [{"open": "10:00", "close": "22:00"}],
+            "fri": [{"open": "10:00", "close": "22:00"}],
+            "sat": [{"open": "10:00", "close": "22:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Suppli+Roma+Trastevere",
         "website": "https://www.suppliroma.it/our-specialties/?lang=en",
         "image": "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&h=250&fit=crop"
@@ -568,6 +892,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 7am–8pm",
+        "hours_structured": {
+            "mon": [{"open": "07:00", "close": "20:00"}],
+            "tue": [{"open": "07:00", "close": "20:00"}],
+            "wed": [{"open": "07:00", "close": "20:00"}],
+            "thu": [{"open": "07:00", "close": "20:00"}],
+            "fri": [{"open": "07:00", "close": "20:00"}],
+            "sat": [{"open": "07:00", "close": "20:00"}],
+            "sun": [{"open": "07:00", "close": "20:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Giselda+Trastevere+Rome",
         "website": "https://www.facebook.com/GiseldaTrastevere/",
         "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=250&fit=crop"
@@ -585,6 +918,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€",
         "hours": "Mon–Sun: 12pm–11:30pm",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "23:30"}],
+            "tue": [{"open": "12:00", "close": "23:30"}],
+            "wed": [{"open": "12:00", "close": "23:30"}],
+            "thu": [{"open": "12:00", "close": "23:30"}],
+            "fri": [{"open": "12:00", "close": "23:30"}],
+            "sat": [{"open": "12:00", "close": "23:30"}],
+            "sun": [{"open": "12:00", "close": "23:30"}]
+        },
         "maps_url": "https://maps.google.com/?q=Fatamorgana+Gelateria+Rome",
         "website": "https://www.gelateriafatamorgana.com/",
         "image": "https://images.unsplash.com/photo-1488900128323-21503983a07e?w=400&h=250&fit=crop"
@@ -600,6 +942,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€",
         "hours": "Mon–Sun: 11am–11pm",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "23:00"}],
+            "tue": [{"open": "11:00", "close": "23:00"}],
+            "wed": [{"open": "11:00", "close": "23:00"}],
+            "thu": [{"open": "11:00", "close": "23:00"}],
+            "fri": [{"open": "11:00", "close": "23:00"}],
+            "sat": [{"open": "11:00", "close": "23:00"}],
+            "sun": [{"open": "11:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Gelateria+del+Teatro+Rome",
         "website": "https://www.gelateriadelteatroroma.com/",
         "image": "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=400&h=250&fit=crop"
@@ -615,6 +966,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€",
         "hours": "Mon–Sun: 5am–2am",
+        "hours_structured": {
+            "mon": [{"open": "05:00", "close": "02:00"}],
+            "tue": [{"open": "05:00", "close": "02:00"}],
+            "wed": [{"open": "05:00", "close": "02:00"}],
+            "thu": [{"open": "05:00", "close": "02:00"}],
+            "fri": [{"open": "05:00", "close": "02:00"}],
+            "sat": [{"open": "05:00", "close": "02:00"}],
+            "sun": [{"open": "05:00", "close": "02:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Il+Maritozzaro+Rome",
         "website": "https://www.ilmaritozzorosso.com/",
         "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop"
@@ -630,6 +990,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€",
         "hours": "Mon–Sun: 7am–1am",
+        "hours_structured": {
+            "mon": [{"open": "07:00", "close": "01:00"}],
+            "tue": [{"open": "07:00", "close": "01:00"}],
+            "wed": [{"open": "07:00", "close": "01:00"}],
+            "thu": [{"open": "07:00", "close": "01:00"}],
+            "fri": [{"open": "07:00", "close": "01:00"}],
+            "sat": [{"open": "07:00", "close": "01:00"}],
+            "sun": [{"open": "07:00", "close": "01:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Giolitti+Gelateria+Rome",
         "website": "https://www.giolitti.it/",
         "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&h=250&fit=crop"
@@ -645,6 +1014,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€",
         "hours": "Mon–Sun: 11am–10pm",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "22:00"}],
+            "tue": [{"open": "11:00", "close": "22:00"}],
+            "wed": [{"open": "11:00", "close": "22:00"}],
+            "thu": [{"open": "11:00", "close": "22:00"}],
+            "fri": [{"open": "11:00", "close": "22:00"}],
+            "sat": [{"open": "11:00", "close": "22:00"}],
+            "sun": [{"open": "11:00", "close": "22:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Two+Sizes+Tiramisu+Rome",
         "website": "https://www.facebook.com/twosizestiramisu/",
         "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=250&fit=crop"
@@ -660,6 +1038,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 11am–11pm",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "23:00"}],
+            "tue": [{"open": "11:00", "close": "23:00"}],
+            "wed": [{"open": "11:00", "close": "23:00"}],
+            "thu": [{"open": "11:00", "close": "23:00"}],
+            "fri": [{"open": "11:00", "close": "23:00"}],
+            "sat": [{"open": "11:00", "close": "23:00"}],
+            "sun": [{"open": "11:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Mr+100+Tiramisu+Rome",
         "website": "https://www.facebook.com/Mr100Tiramisu/",
         "image": "https://images.unsplash.com/photo-1542124948-dc391252a940?w=400&h=250&fit=crop"
@@ -675,6 +1062,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 9am–11pm",
+        "hours_structured": {
+            "mon": [{"open": "09:00", "close": "23:00"}],
+            "tue": [{"open": "09:00", "close": "23:00"}],
+            "wed": [{"open": "09:00", "close": "23:00"}],
+            "thu": [{"open": "09:00", "close": "23:00"}],
+            "fri": [{"open": "09:00", "close": "23:00"}],
+            "sat": [{"open": "09:00", "close": "23:00"}],
+            "sun": [{"open": "09:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Pompi+Tiramisu+Rome",
         "website": "https://www.barpompi.it/",
         "image": "https://images.unsplash.com/photo-1504877947697-f15e4c2c2588?w=400&h=250&fit=crop"
@@ -690,6 +1086,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 8am–12am",
+        "hours_structured": {
+            "mon": [{"open": "08:00", "close": "00:00"}],
+            "tue": [{"open": "08:00", "close": "00:00"}],
+            "wed": [{"open": "08:00", "close": "00:00"}],
+            "thu": [{"open": "08:00", "close": "00:00"}],
+            "fri": [{"open": "08:00", "close": "00:00"}],
+            "sat": [{"open": "08:00", "close": "00:00"}],
+            "sun": [{"open": "08:00", "close": "00:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Gelateria+della+Palma+Rome",
         "website": "https://www.dellapalma.it/en/homepage-en/",
         "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=250&fit=crop"
@@ -705,6 +1110,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 11am–11:30pm",
+        "hours_structured": {
+            "mon": [{"open": "11:00", "close": "23:30"}],
+            "tue": [{"open": "11:00", "close": "23:30"}],
+            "wed": [{"open": "11:00", "close": "23:30"}],
+            "thu": [{"open": "11:00", "close": "23:30"}],
+            "fri": [{"open": "11:00", "close": "23:30"}],
+            "sat": [{"open": "11:00", "close": "23:30"}],
+            "sun": [{"open": "11:00", "close": "23:30"}]
+        },
         "maps_url": "https://maps.google.com/?q=Gelateria+La+Romana+Rome+Navona",
         "website": "https://www.gelateriaromana.com/",
         "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=400&h=250&fit=crop"
@@ -720,6 +1134,15 @@ RESTAURANTS = [
         "rating": 2,
         "price": "€€€",
         "hours": "Mon–Sun: 10am–11pm",
+        "hours_structured": {
+            "mon": [{"open": "10:00", "close": "23:00"}],
+            "tue": [{"open": "10:00", "close": "23:00"}],
+            "wed": [{"open": "10:00", "close": "23:00"}],
+            "thu": [{"open": "10:00", "close": "23:00"}],
+            "fri": [{"open": "10:00", "close": "23:00"}],
+            "sat": [{"open": "10:00", "close": "23:00"}],
+            "sun": [{"open": "10:00", "close": "23:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Romeo+Gelato+Trevi+Rome",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d12616025-Reviews-Romeo_Gelato_Italiano-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&h=250&fit=crop"
@@ -735,6 +1158,15 @@ RESTAURANTS = [
         "rating": 3,
         "price": "€€",
         "hours": "Mon–Sun: 10am–10pm",
+        "hours_structured": {
+            "mon": [{"open": "10:00", "close": "22:00"}],
+            "tue": [{"open": "10:00", "close": "22:00"}],
+            "wed": [{"open": "10:00", "close": "22:00"}],
+            "thu": [{"open": "10:00", "close": "22:00"}],
+            "fri": [{"open": "10:00", "close": "22:00"}],
+            "sat": [{"open": "10:00", "close": "22:00"}],
+            "sun": [{"open": "10:00", "close": "22:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Limone+Rome+Trevi",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d12902256-Reviews-Limon_e-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=400&h=250&fit=crop"
@@ -750,6 +1182,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 7am–9pm",
+        "hours_structured": {
+            "mon": [{"open": "07:00", "close": "21:00"}],
+            "tue": [{"open": "07:00", "close": "21:00"}],
+            "wed": [{"open": "07:00", "close": "21:00"}],
+            "thu": [{"open": "07:00", "close": "21:00"}],
+            "fri": [{"open": "07:00", "close": "21:00"}],
+            "sat": [{"open": "07:00", "close": "21:00"}],
+            "sun": [{"open": "07:00", "close": "21:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=Antico+Forno+Fontana+di+Trevi+Rome",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d3590512-Reviews-L_Antico_Forno_di_Fontana_di_Trevi-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop"
@@ -765,6 +1206,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€",
         "hours": "Mon–Sat: 8am–8pm | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "08:00", "close": "20:00"}],
+            "tue": [{"open": "08:00", "close": "20:00"}],
+            "wed": [{"open": "08:00", "close": "20:00"}],
+            "thu": [{"open": "08:00", "close": "20:00"}],
+            "fri": [{"open": "08:00", "close": "20:00"}],
+            "sat": [{"open": "08:00", "close": "20:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Forno+Monteforte+Rome",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1848024-Reviews-Forno_Monteforte-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=250&fit=crop"
@@ -775,11 +1225,20 @@ RESTAURANTS = [
         "category": "dessert",
         "description": "A Trastevere gelateria with a loyal local crowd and seriously good sorbet. The fruit sorbets are especially worth trying — intensely flavoured and refreshing at around €4.",
         "address": "Via della Lungaretta, Rome",
-        "lat": 41.889634193199534,
-        "lng": 12.472587664105568,
+        "lat": 41.8896,
+        "lng": 12.4703,
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 12pm–11:30pm",
+        "hours_structured": {
+            "mon": [{"open": "12:00", "close": "23:30"}],
+            "tue": [{"open": "12:00", "close": "23:30"}],
+            "wed": [{"open": "12:00", "close": "23:30"}],
+            "thu": [{"open": "12:00", "close": "23:30"}],
+            "fri": [{"open": "12:00", "close": "23:30"}],
+            "sat": [{"open": "12:00", "close": "23:30"}],
+            "sun": [{"open": "12:00", "close": "23:30"}]
+        },
         "maps_url": "https://maps.google.com/?q=Fiordiluna+Trastevere+Rome",
         "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1848024-Reviews-Fiordiluna-Rome_Lazio.html",
         "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=250&fit=crop"
@@ -797,6 +1256,15 @@ RESTAURANTS = [
         "rating": 5,
         "price": "€€€€",
         "hours": "Mon–Sun: 5pm–1am",
+        "hours_structured": {
+            "mon": [{"open": "17:00", "close": "01:00"}],
+            "tue": [{"open": "17:00", "close": "01:00"}],
+            "wed": [{"open": "17:00", "close": "01:00"}],
+            "thu": [{"open": "17:00", "close": "01:00"}],
+            "fri": [{"open": "17:00", "close": "01:00"}],
+            "sat": [{"open": "17:00", "close": "01:00"}],
+            "sun": [{"open": "17:00", "close": "01:00"}]
+        },
         "maps_url": "https://maps.google.com/?q=The+Court+Bar+Palazzo+Manfredi+Rome",
         "website": "https://www.manfredihotels.com/en/the-court/",
         "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&h=250&fit=crop"
@@ -812,6 +1280,15 @@ RESTAURANTS = [
         "rating": 4,
         "price": "€",
         "hours": "Mon–Sat: 6am–2am | Closed Sun",
+        "hours_structured": {
+            "mon": [{"open": "06:00", "close": "02:00"}],
+            "tue": [{"open": "06:00", "close": "02:00"}],
+            "wed": [{"open": "06:00", "close": "02:00"}],
+            "thu": [{"open": "06:00", "close": "02:00"}],
+            "fri": [{"open": "06:00", "close": "02:00"}],
+            "sat": [{"open": "06:00", "close": "02:00"}],
+            "sun": []
+        },
         "maps_url": "https://maps.google.com/?q=Bar+San+Calisto+Rome",
         "website": "https://barsancalisto.it/",
         "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=250&fit=crop"
