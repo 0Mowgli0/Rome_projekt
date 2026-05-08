@@ -1,3 +1,67 @@
+// ── City selector ─────────────────────────────────────────────
+async function loadCities() {
+  try {
+    const res = await fetch('/api/cities');
+    const data = await res.json();
+    const grid = document.getElementById('cityGrid');
+    grid.innerHTML = '';
+    data.cities.forEach(city => {
+      const card = document.createElement('div');
+      card.className = 'city-card';
+      card.innerHTML = `
+        <img class="city-card-img" src="${city.image}" alt="${city.name}">
+        <div class="city-card-overlay"></div>
+        <div class="city-card-body">
+          <div class="city-card-country">${city.country}</div>
+          <div class="city-card-name">${city.name}</div>
+          <div class="city-card-desc">${city.description}</div>
+        </div>
+        <div class="city-card-count">${city.count} places</div>
+      `;
+      card.addEventListener('click', () => selectCity(city.id, city.name));
+      grid.appendChild(card);
+    });
+  } catch(e) {
+    console.error('Failed to load cities:', e);
+  }
+}
+
+let currentCity = null;
+
+function selectCity(cityId, cityName) {
+  currentCity = cityId;
+  document.getElementById('citySelector').classList.add('hidden');
+  document.getElementById('mapApp').classList.remove('hidden');
+  document.getElementById('cityNameHeader').textContent = cityName;
+  // Update URL
+  window.history.pushState({}, '', '/' + cityId);
+  // Load city data
+  loadData(cityId);
+  // Init map if not already done
+  setTimeout(() => map.invalidateSize(), 300);
+}
+
+// Check URL on load
+const pathCity = window.location.pathname.replace('/', '').toLowerCase();
+if (pathCity && pathCity !== '') {
+  // Go straight to city
+  document.getElementById('citySelector').classList.add('hidden');
+  document.getElementById('mapApp').classList.remove('hidden');
+  currentCity = pathCity;
+  document.getElementById('cityNameHeader').textContent = pathCity.charAt(0).toUpperCase() + pathCity.slice(1);
+} else {
+  // Show city selector
+  loadCities();
+}
+
+// Back to cities
+document.getElementById('backToCities').addEventListener('click', () => {
+  document.getElementById('mapApp').classList.add('hidden');
+  document.getElementById('citySelector').classList.remove('hidden');
+  window.history.pushState({}, '', '/');
+  loadCities();
+});
+
 // ── Translations ──────────────────────────────────────────────
 const TRANSLATIONS = {
   en: {
@@ -501,14 +565,23 @@ document.getElementById('backToGuide').addEventListener('click', () => {
 });
 
 // ── Fetch data ───────────────────────────────────────────────
-async function loadData() {
+async function loadData(cityId = 'rome') {
   try {
-    const res = await fetch('/api/restaurants');
+    const res = await fetch(`/api/cities/${cityId}`);
     if (!res.ok) throw new Error('Network response was not ok');
 
     const data = await res.json();
     allRestaurants = data.restaurants;
     categories     = data.categories;
+
+    // Reset markers
+    clusterGroup.clearLayers();
+    markers = {};
+
+    // Center map on city
+    if (data.city) {
+      map.setView([data.city.center.lat, data.city.center.lng], data.city.zoom);
+    }
 
     buildFilters();
     renderRestaurants(allRestaurants);
@@ -516,7 +589,6 @@ async function loadData() {
     updateCount(allRestaurants.length);
     applyLanguage();
 
-    // Hide loading overlay smoothly
     const loadingOverlay = document.getElementById('loadingOverlay');
     loadingOverlay.classList.add('hidden');
     setTimeout(() => loadingOverlay.style.display = 'none', 500);
@@ -527,7 +599,6 @@ async function loadData() {
     document.getElementById('errorOverlay').classList.remove('hidden');
   }
 }
-
 // ── Filter UI ────────────────────────────────────────────────
 function buildFilters() {
   const list = document.getElementById('filterList');
@@ -909,9 +980,10 @@ document.getElementById('errorRetry').addEventListener('click', () => {
 });
 
 // ── Boot ─────────────────────────────────────────────────────
-loadData();
+if (pathCity && pathCity !== '') {
+  loadData(pathCity);
+}
 
 setTimeout(() => {
   map.invalidateSize();
-  map.setView([41.9028, 12.4964], 14);
 }, 300);

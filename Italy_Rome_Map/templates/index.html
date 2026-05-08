@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Roma Tavola — Restaurants of Rome</title>
+  <title>Tavola — Curated Restaurant Guides for Italy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -15,199 +15,221 @@
   <meta name="theme-color" content="#1A1410">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Roma Tavola">
+  <meta name="apple-mobile-web-app-title" content="Tavola">
   <link rel="apple-touch-icon" href="/static/img/icon-192.png">
   <link rel="icon" href="/static/img/icon-192.png" type="image/png">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="logo">
-        <span class="logo-accent">✦</span>
-        <span class="logo-main">Roma Tavola</span>
-        <span class="logo-sub">Restaurant Guide</span>
+  <!-- ── City Selector ─────────────────────────────────── -->
+  <div class="city-selector" id="citySelector">
+    <div class="city-selector-inner">
+      <div class="city-selector-logo">
+        <span class="city-logo-accent">✦</span>
+        <span class="city-logo-main">Tavola</span>
       </div>
-      <div class="header-location">
-        <img id="langFlag" src="https://flagcdn.com/w20/gb.png" alt="Language" style="width:32px; height:22px; border-radius:3px; cursor:pointer;" title="Switch language">
-        <span>Rome, Italy</span>
+      <p class="city-selector-sub">Curated restaurant guides for Italy</p>
+      <p class="city-selector-tagline">No ads. No fake reviews. Just places worth eating.</p>
+      <div class="city-grid" id="cityGrid">
+        <!-- Cities loaded dynamically -->
       </div>
-      <button class="help-btn" id="helpBtn" title="How to use">?</button>
-    </div>
-  </header>
-
-  <div class="app-layout">
-
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-handle" id="sidebarHandle">
-        <div class="sidebar-handle-bar"></div>
-      </div>
-
-      <div class="search-wrap">
-        <span class="search-icon">🔍</span>
-        <input class="search-input" id="searchInput" type="text" placeholder="Search restaurants…">
-      </div>
-
-      <div class="sidebar-section">
-        <h3 class="sidebar-title">Filter by Category</h3>
-        <div class="filter-list" id="filterList">
-          <button class="filter-btn active" data-cat="all">
-            <span class="filter-icon">🍽️</span>
-            <span class="filter-label">All</span>
-            <span class="filter-count" id="count-all">0</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <h3 class="sidebar-title">Filter by Price</h3>
-        <div class="price-filter-list" id="priceFilterList">
-          <button class="price-btn active" data-price="all">All</button>
-          <button class="price-btn" data-price="€">€</button>
-          <button class="price-btn" data-price="€€">€€</button>
-          <button class="price-btn" data-price="€€€">€€€</button>
-          <button class="price-btn" data-price="€€€€">€€€€</button>
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <h3 class="sidebar-title">Listings</h3>
-        <div class="restaurant-list" id="restaurantList"></div>
-      </div>
-    </aside>
-
-    <main class="map-container">
-      <div id="map"></div>
-      <div class="map-overlay-badge">
-        <span id="visibleCount">0</span> places shown
-      </div>
-      <button class="locate-btn" id="locateBtn" title="Find my location">📍</button>
-    </main>
-
-  </div>
-
-  <div class="detail-panel" id="detailPanel">
-    <button class="detail-close" id="detailClose">✕</button>
-    <div class="detail-image-wrap">
-      <img class="detail-image" id="detailImage" src="" alt="">
-      <div class="detail-image-overlay"></div>
-      <div class="detail-badge" id="detailBadge"></div>
-    </div>
-    <div class="detail-body">
-      <div class="detail-meta">
-        <span class="detail-category" id="detailCategory"></span>
-        <span class="detail-price" id="detailPrice"></span>
-      </div>
-      <h2 class="detail-name" id="detailName"></h2>
-      <p class="detail-desc" id="detailDesc"></p>
-      <div class="detail-address">
-        <span class="addr-icon">◎</span>
-        <a id="detailAddress" href="#" target="_blank" class="address-link"></a>
-      </div>
-      <div class="detail-hours">
-        <span class="hours-icon">🕐</span>
-        <span id="detailHours"></span>
-      </div>
-      <div class="detail-walk-time" id="detailWalkTime" style="display:none"></div>
-      <div class="detail-stars" id="detailStars"></div>
-      <a class="directions-btn" id="directionsBtn" href="#" target="_blank">
-        Get Directions →
-      </a>
     </div>
   </div>
-  <div class="detail-backdrop" id="detailBackdrop"></div>
+
+  <!-- ── Map App ────────────────────────────────────────── -->
+  <div class="map-app hidden" id="mapApp">
+
+    <header class="site-header">
+      <div class="header-inner">
+        <button class="back-to-cities" id="backToCities" title="Choose city">
+          ← <span class="city-name-header" id="cityNameHeader">Rome</span>
+        </button>
+        <div class="logo">
+          <span class="logo-accent">✦</span>
+          <span class="logo-main">Tavola</span>
+          <span class="logo-sub">Restaurant Guide</span>
+        </div>
+        <div class="header-location">
+          <img id="langFlag" src="https://flagcdn.com/w20/gb.png" alt="Language" style="width:32px; height:17px; border-radius:2px; cursor:pointer;" title="Switch language">
+          <span>Italy</span>
+        </div>
+        <button class="help-btn" id="helpBtn" title="How to use">?</button>
+      </div>
+    </header>
+
+    <div class="app-layout">
+
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-handle" id="sidebarHandle">
+          <div class="sidebar-handle-bar"></div>
+        </div>
+
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input class="search-input" id="searchInput" type="text" placeholder="Search restaurants…">
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Filter by Category</h3>
+          <div class="filter-list" id="filterList">
+            <button class="filter-btn active" data-cat="all">
+              <span class="filter-icon">🍽️</span>
+              <span class="filter-label">All</span>
+              <span class="filter-count" id="count-all">0</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Filter by Price</h3>
+          <div class="price-filter-list" id="priceFilterList">
+            <button class="price-btn active" data-price="all">All</button>
+            <button class="price-btn" data-price="€">€</button>
+            <button class="price-btn" data-price="€€">€€</button>
+            <button class="price-btn" data-price="€€€">€€€</button>
+            <button class="price-btn" data-price="€€€€">€€€€</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Listings</h3>
+          <div class="restaurant-list" id="restaurantList"></div>
+        </div>
+      </aside>
+
+      <main class="map-container">
+        <div id="map"></div>
+        <div class="map-overlay-badge">
+          <span id="visibleCount">0</span> places shown
+        </div>
+        <button class="locate-btn" id="locateBtn" title="Find my location">📍</button>
+        <div class="locate-tooltip hidden" id="locateTooltip">← Tap this to find your location</div>
+      </main>
+
+    </div>
+
+    <div class="detail-panel" id="detailPanel">
+      <button class="detail-close" id="detailClose">✕</button>
+      <div class="detail-image-wrap">
+        <img class="detail-image" id="detailImage" src="" alt="">
+        <div class="detail-image-overlay"></div>
+        <div class="detail-badge" id="detailBadge"></div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-meta">
+          <span class="detail-category" id="detailCategory"></span>
+          <span class="detail-price" id="detailPrice"></span>
+        </div>
+        <h2 class="detail-name" id="detailName"></h2>
+        <p class="detail-desc" id="detailDesc"></p>
+        <div class="detail-address">
+          <span class="addr-icon">◎</span>
+          <a id="detailAddress" href="#" target="_blank" class="address-link"></a>
+        </div>
+        <div class="detail-hours">
+          <span class="hours-icon">🕐</span>
+          <span id="detailHours"></span>
+        </div>
+        <div class="detail-walk-time" id="detailWalkTime" style="display:none"></div>
+        <div class="detail-stars" id="detailStars"></div>
+        <a class="directions-btn" id="directionsBtn" href="#" target="_blank">
+          Get Directions →
+        </a>
+      </div>
+    </div>
+    <div class="detail-backdrop" id="detailBackdrop"></div>
 
     <!-- Loading overlay -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="loading-inner">
-      <div class="loading-star">✦</div>
-      <div class="loading-text">Roma Tavola</div>
-      <div class="loading-sub">Loading restaurants…</div>
-      <div class="loading-bar"><div class="loading-bar-fill"></div></div>
-    </div>
-  </div>
-
- <!-- Error overlay -->
-  <div class="error-overlay hidden" id="errorOverlay">
-    <div class="error-inner">
-      <div class="error-icon">🍝</div>
-      <div class="error-title">Mamma mia!</div>
-      <div class="error-sub">Something went wrong loading the restaurants. Check your connection and try again.</div>
-      <button class="error-btn" id="errorRetry">Try Again →</button>
-    </div>
-  </div>
-
-  <!-- Onboarding overlay -->
-  <div class="onboard-backdrop" id="onboardBackdrop">
-    <div class="onboard-panel" id="onboardPanel">
-      <div class="onboard-logo">
-        <span class="onboard-star">✦</span>
-        <span class="onboard-title">Roma Tavola</span>
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-inner">
+        <div class="loading-star">✦</div>
+        <div class="loading-text">Tavola</div>
+        <div class="loading-sub">Loading restaurants…</div>
+        <div class="loading-bar"><div class="loading-bar-fill"></div></div>
       </div>
-      <p class="onboard-sub" id="onboardSub">Your personal guide to eating well in Rome</p>
-
-      <div class="onboard-steps">
-        <div class="onboard-step expandable" id="step1">
-          <span class="onboard-icon">🗺️</span>
-          <div class="onboard-step-content">
-            <div class="onboard-step-title" id="onboardStep1Title">Explore the map</div>
-            <div class="onboard-step-desc" id="onboardStep1Desc">Tap any marker to see details. Zoom in to ungroup clustered pins.</div>
-            <div class="onboard-step-extra" id="step1Extra">Tap any colored pin to see the restaurant popup. Tap 'View Details' for the full info panel. Zoom in to split grouped clusters into individual pins.</div>
-            <button class="onboard-show-btn" onclick="demoStep(1)">Show me →</button>
-          </div>
-          <span class="onboard-chevron">▾</span>
-        </div>
-        <div class="onboard-step expandable" id="step2">
-          <span class="onboard-icon">☕</span>
-          <div class="onboard-step-content">
-            <div class="onboard-step-title" id="onboardStep2Title">Filter by category & price</div>
-            <div class="onboard-step-desc" id="onboardStep2Desc">Use the sidebar to filter by type of food or budget.</div>
-            <div class="onboard-step-extra" id="step2Extra">Tap a category like Pizza or Dessert to show only those restaurants on the map. Use the price buttons (€ to €€€€) to filter by budget. Tap All to reset.</div>
-            <button class="onboard-show-btn" onclick="demoStep(2)">Show me →</button>
-          </div>
-          <span class="onboard-chevron">▾</span>
-        </div>
-        <div class="onboard-step expandable" id="step3">
-          <span class="onboard-icon">📍</span>
-          <div class="onboard-step-content">
-            <div class="onboard-step-title" id="onboardStep3Title">Find what's nearby</div>
-            <div class="onboard-step-desc" id="onboardStep3Desc">Tap the location button to see walk times and sort restaurants by distance.</div>
-            <div class="onboard-step-extra" id="step3Extra">Tap the 📍 button on the map. Allow location access when prompted. The list will sort by distance and each restaurant will show your walk time.</div>
-            <button class="onboard-show-btn" onclick="demoStep(3)">Show me →</button>
-          </div>
-          <span class="onboard-chevron">▾</span>
-        </div>
-        <div class="onboard-step expandable" id="step4">
-          <span class="onboard-icon">→</span>
-          <div class="onboard-step-content">
-            <div class="onboard-step-title" id="onboardStep4Title">Get directions</div>
-            <div class="onboard-step-desc" id="onboardStep4Desc">Open any restaurant and tap Get Directions to navigate straight there.</div>
-            <div class="onboard-step-extra" id="step4Extra">Tap any restaurant card or map pin. Scroll down in the detail panel and tap Get Directions — this opens Google Maps with navigation ready to go.</div>
-            <button class="onboard-show-btn" onclick="demoStep(4)">Show me →</button>
-          </div>
-          <span class="onboard-chevron">▾</span>
-        </div>
-        <div class="onboard-step expandable" id="step5">
-          <span class="onboard-icon">🌍</span>
-          <div class="onboard-step-content">
-            <div class="onboard-step-title" id="onboardStep5Title">Switch language</div>
-            <div class="onboard-step-desc" id="onboardStep5Desc">Tap the flag in the top right to switch between 6 languages.</div>
-            <div class="onboard-step-extra" id="step5Extra">Tap the flag icon in the top right corner of the header. Each tap cycles: 🇬🇧 English → 🇸🇪 Swedish → 🇮🇹 Italian → 🇩🇪 German → 🇪🇸 Spanish → 🇫🇷 French.</div>
-            <button class="onboard-show-btn" onclick="demoStep(5)">Show me →</button>
-          </div>
-          <span class="onboard-chevron">▾</span>
-        </div>
-      </div>
-
-      <button class="onboard-btn" id="onboardBtn">Let's Eat →</button>
-      <p class="onboard-skip" id="onboardSkip">Don't show this again</p>
     </div>
-  </div>
 
-  <!-- Back to guide pill -->
-  <div class="back-to-guide hidden" id="backToGuide">
-    ← Back to guide
-  </div>
+    <!-- Error overlay -->
+    <div class="error-overlay hidden" id="errorOverlay">
+      <div class="error-inner">
+        <div class="error-icon">🍝</div>
+        <div class="error-title">Mamma mia!</div>
+        <div class="error-sub">Something went wrong loading the restaurants. Check your connection and try again.</div>
+        <button class="error-btn" id="errorRetry">Try Again →</button>
+      </div>
+    </div>
+
+    <!-- Onboarding overlay -->
+    <div class="onboard-backdrop" id="onboardBackdrop">
+      <div class="onboard-panel" id="onboardPanel">
+        <div class="onboard-logo">
+          <span class="onboard-star">✦</span>
+          <span class="onboard-title">Tavola</span>
+        </div>
+        <p class="onboard-sub" id="onboardSub">Your personal guide to eating well in Italy</p>
+
+        <div class="onboard-steps">
+          <div class="onboard-step expandable" id="step1">
+            <span class="onboard-icon">🗺️</span>
+            <div class="onboard-step-content">
+              <div class="onboard-step-title" id="onboardStep1Title">Explore the map</div>
+              <div class="onboard-step-desc" id="onboardStep1Desc">Tap any marker to see details. Zoom in to ungroup clustered pins.</div>
+              <div class="onboard-step-extra" id="step1Extra">Tap any colored pin to see the restaurant popup. Tap 'View Details' for the full info panel. Zoom in to split grouped clusters into individual pins.</div>
+              <button class="onboard-show-btn" onclick="demoStep(1)">Show me →</button>
+            </div>
+            <span class="onboard-chevron">▾</span>
+          </div>
+          <div class="onboard-step expandable" id="step2">
+            <span class="onboard-icon">☕</span>
+            <div class="onboard-step-content">
+              <div class="onboard-step-title" id="onboardStep2Title">Filter by category & price</div>
+              <div class="onboard-step-desc" id="onboardStep2Desc">Use the sidebar to filter by type of food or budget.</div>
+              <div class="onboard-step-extra" id="step2Extra">Tap a category like Pizza or Dessert to show only those restaurants on the map. Use the price buttons (€ to €€€€) to filter by budget. Tap All to reset.</div>
+              <button class="onboard-show-btn" onclick="demoStep(2)">Show me →</button>
+            </div>
+            <span class="onboard-chevron">▾</span>
+          </div>
+          <div class="onboard-step expandable" id="step3">
+            <span class="onboard-icon">📍</span>
+            <div class="onboard-step-content">
+              <div class="onboard-step-title" id="onboardStep3Title">Find what's nearby</div>
+              <div class="onboard-step-desc" id="onboardStep3Desc">Tap the location button to see walk times and sort restaurants by distance.</div>
+              <div class="onboard-step-extra" id="step3Extra">Tap the 📍 button on the map. Allow location access when prompted. The list will sort by distance and each restaurant will show your walk time.</div>
+              <button class="onboard-show-btn" onclick="demoStep(3)">Show me →</button>
+            </div>
+            <span class="onboard-chevron">▾</span>
+          </div>
+          <div class="onboard-step expandable" id="step4">
+            <span class="onboard-icon">→</span>
+            <div class="onboard-step-content">
+              <div class="onboard-step-title" id="onboardStep4Title">Get directions</div>
+              <div class="onboard-step-desc" id="onboardStep4Desc">Open any restaurant and tap Get Directions to navigate straight there.</div>
+              <div class="onboard-step-extra" id="step4Extra">Tap any restaurant card or map pin. Scroll down in the detail panel and tap Get Directions — this opens Google Maps with navigation ready to go.</div>
+              <button class="onboard-show-btn" onclick="demoStep(4)">Show me →</button>
+            </div>
+            <span class="onboard-chevron">▾</span>
+          </div>
+          <div class="onboard-step expandable" id="step5">
+            <span class="onboard-icon">🌍</span>
+            <div class="onboard-step-content">
+              <div class="onboard-step-title" id="onboardStep5Title">Switch language</div>
+              <div class="onboard-step-desc" id="onboardStep5Desc">Tap the flag in the top right to switch between 6 languages.</div>
+              <div class="onboard-step-extra" id="step5Extra">Tap the flag icon in the top right corner of the header. Each tap cycles: 🇬🇧 English → 🇸🇪 Swedish → 🇮🇹 Italian → 🇩🇪 German → 🇪🇸 Spanish → 🇫🇷 French.</div>
+              <button class="onboard-show-btn" onclick="demoStep(5)">Show me →</button>
+            </div>
+            <span class="onboard-chevron">▾</span>
+          </div>
+        </div>
+
+        <button class="onboard-btn" id="onboardBtn">Let's Eat →</button>
+        <p class="onboard-skip" id="onboardSkip">Don't show this again</p>
+      </div>
+    </div>
+
+    <!-- Back to guide pill -->
+    <div class="back-to-guide hidden" id="backToGuide">← Back to guide</div>
+
+  </div><!-- end .map-app -->
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>

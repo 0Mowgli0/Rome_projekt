@@ -1110,7 +1110,178 @@ html, body {
   color: var(--ink);
 }
 
+/* ─── City Selector ──────────────────────────────────────── */
+.city-selector {
+  position: fixed;
+  inset: 0;
+  background: var(--ink);
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+}
 
+.city-selector.hidden { display: none; }
+
+.city-selector-inner {
+  width: min(600px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.city-selector-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.city-logo-accent {
+  color: var(--gold);
+  font-size: 28px;
+  animation: spin-slow 8s linear infinite;
+  display: inline-block;
+}
+
+.city-logo-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 0.08em;
+}
+
+.city-selector-sub {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.city-selector-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 48px;
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.city-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 200px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.city-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.city-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.city-card:hover .city-card-img {
+  transform: scale(1.05);
+}
+
+.city-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,20,16,0.9) 0%, rgba(26,20,16,0.3) 60%, transparent 100%);
+}
+
+.city-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  text-align: left;
+}
+
+.city-card-country {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.city-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.city-card-desc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+.city-card-count {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(201,168,76,0.9);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* ─── Back to cities button ──────────────────────────────── */
+.back-to-cities {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.back-to-cities:hover { color: var(--gold); }
+
+.city-name-header {
+  color: var(--gold);
+}
+
+/* ─── Map app hidden state ───────────────────────────────── */
+.map-app.hidden { display: none; }
+.map-app { display: flex; flex-direction: column; height: 100vh; }
 
 @media (max-width: 767px) {
   :root { --header-h: 60px; }
