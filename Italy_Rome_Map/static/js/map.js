@@ -409,6 +409,97 @@ function isOpenNow(r) {
   return false;
 }
 
+// ── Onboarding demo steps ─────────────────────────────────────
+function demoStep(step) {
+  // Close onboarding
+  document.getElementById('onboardBackdrop').classList.add('hidden');
+  // Show back pill
+  document.getElementById('backToGuide').classList.remove('hidden');
+
+  if (step === 1) {
+    // Zoom map to Rome center and pulse a marker
+    map.flyTo([41.9028, 12.4964], 15, { duration: 1.2 });
+    setTimeout(() => {
+      const firstMarker = Object.values(markers)[0];
+      if (firstMarker) {
+        clusterGroup.zoomToShowLayer(firstMarker.marker, () => {
+          firstMarker.marker.openPopup();
+        });
+      }
+    }, 1400);
+  }
+
+  if (step === 2) {
+    // Highlight filter buttons in sidebar
+    const filterList = document.getElementById('filterList');
+    filterList.classList.add('demo-highlight');
+    // On mobile expand sidebar
+    if (window.innerWidth < 768) {
+      document.getElementById('sidebar').classList.add('expanded');
+    }
+    // Scroll sidebar to top
+    document.getElementById('sidebar').scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => filterList.classList.remove('demo-highlight'), 4000);
+  }
+
+ if (step === 3) {
+    const locateBtn = document.getElementById('locateBtn');
+    locateBtn.classList.add('demo-highlight');
+    locateBtn.style.transform = 'scale(1.3)';
+    locateBtn.style.transition = 'transform 0.3s ease';
+    setTimeout(() => {
+      locateBtn.style.transform = 'scale(1)';
+      setTimeout(() => {
+        locateBtn.style.transform = 'scale(1.3)';
+        setTimeout(() => {
+          locateBtn.style.transform = '';
+          locateBtn.style.transition = '';
+          locateBtn.classList.remove('demo-highlight');
+        }, 300);
+      }, 300);
+    }, 300);
+  }
+
+  if (step === 4) {
+    // Open first restaurant detail panel
+    if (allRestaurants.length > 0) {
+      const r = allRestaurants[0];
+      showDetail(r);
+      // Highlight directions button after panel opens
+      setTimeout(() => {
+        const btn = document.getElementById('directionsBtn');
+        btn.classList.add('demo-highlight');
+        btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => btn.classList.remove('demo-highlight'), 3000);
+      }, 500);
+    }
+  }
+
+  if (step === 5) {
+    // Highlight flag
+    const flag = document.getElementById('langFlag');
+    flag.classList.add('demo-highlight');
+    flag.style.transform = 'scale(1.8)';
+    setTimeout(() => {
+      flag.style.transform = '';
+      flag.classList.remove('demo-highlight');
+    }, 3000);
+  }
+}
+window.demoStep = demoStep;
+
+// Back to guide
+document.getElementById('backToGuide').addEventListener('click', () => {
+  document.getElementById('backToGuide').classList.add('hidden');
+  document.getElementById('onboardBackdrop').classList.remove('hidden');
+  // Close detail panel if open
+  closeDetail();
+  // Collapse sidebar on mobile
+  if (window.innerWidth < 768) {
+    document.getElementById('sidebar').classList.remove('expanded');
+  }
+});
+
 // ── Fetch data ───────────────────────────────────────────────
 async function loadData() {
   try {
@@ -791,8 +882,17 @@ onboardSkip.addEventListener('click', () => {
   onboardBackdrop.classList.add('hidden');
 });
 
+
 helpBtn.addEventListener('click', () => {
   onboardBackdrop.classList.remove('hidden');
+});
+
+// Expandable steps
+document.querySelectorAll('.onboard-step.expandable').forEach(step => {
+  step.addEventListener('click', (e) => {
+    if (e.target.classList.contains('onboard-show-btn')) return;
+    step.classList.toggle('open');
+  });
 });
 
 // ── Error retry ───────────────────────────────────────────────

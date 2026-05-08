@@ -147,46 +147,66 @@
       <p class="onboard-sub" id="onboardSub">Your personal guide to eating well in Rome</p>
 
       <div class="onboard-steps">
-        <div class="onboard-step">
+        <div class="onboard-step expandable" id="step1">
           <span class="onboard-icon">🗺️</span>
-          <div>
+          <div class="onboard-step-content">
             <div class="onboard-step-title" id="onboardStep1Title">Explore the map</div>
             <div class="onboard-step-desc" id="onboardStep1Desc">Tap any marker to see details. Zoom in to ungroup clustered pins.</div>
+            <div class="onboard-step-extra" id="step1Extra">Tap any colored pin to see the restaurant popup. Tap 'View Details' for the full info panel. Zoom in to split grouped clusters into individual pins.</div>
+            <button class="onboard-show-btn" onclick="demoStep(1)">Show me →</button>
           </div>
+          <span class="onboard-chevron">▾</span>
         </div>
-        <div class="onboard-step">
+        <div class="onboard-step expandable" id="step2">
           <span class="onboard-icon">☕</span>
-          <div>
+          <div class="onboard-step-content">
             <div class="onboard-step-title" id="onboardStep2Title">Filter by category & price</div>
             <div class="onboard-step-desc" id="onboardStep2Desc">Use the sidebar to filter by type of food or budget.</div>
+            <div class="onboard-step-extra" id="step2Extra">Tap a category like Pizza or Dessert to show only those restaurants on the map. Use the price buttons (€ to €€€€) to filter by budget. Tap All to reset.</div>
+            <button class="onboard-show-btn" onclick="demoStep(2)">Show me →</button>
           </div>
+          <span class="onboard-chevron">▾</span>
         </div>
-        <div class="onboard-step">
+        <div class="onboard-step expandable" id="step3">
           <span class="onboard-icon">📍</span>
-          <div>
+          <div class="onboard-step-content">
             <div class="onboard-step-title" id="onboardStep3Title">Find what's nearby</div>
             <div class="onboard-step-desc" id="onboardStep3Desc">Tap the location button to see walk times and sort restaurants by distance.</div>
+            <div class="onboard-step-extra" id="step3Extra">Tap the 📍 button on the map. Allow location access when prompted. The list will sort by distance and each restaurant will show your walk time.</div>
+            <button class="onboard-show-btn" onclick="demoStep(3)">Show me →</button>
           </div>
+          <span class="onboard-chevron">▾</span>
         </div>
-        <div class="onboard-step">
+        <div class="onboard-step expandable" id="step4">
           <span class="onboard-icon">→</span>
-          <div>
+          <div class="onboard-step-content">
             <div class="onboard-step-title" id="onboardStep4Title">Get directions</div>
             <div class="onboard-step-desc" id="onboardStep4Desc">Open any restaurant and tap Get Directions to navigate straight there.</div>
+            <div class="onboard-step-extra" id="step4Extra">Tap any restaurant card or map pin. Scroll down in the detail panel and tap Get Directions — this opens Google Maps with navigation ready to go.</div>
+            <button class="onboard-show-btn" onclick="demoStep(4)">Show me →</button>
           </div>
+          <span class="onboard-chevron">▾</span>
         </div>
-        <div class="onboard-step">
+        <div class="onboard-step expandable" id="step5">
           <span class="onboard-icon">🌍</span>
-          <div>
+          <div class="onboard-step-content">
             <div class="onboard-step-title" id="onboardStep5Title">Switch language</div>
-            <div class="onboard-step-desc" id="onboardStep5Desc">Tap the flag in the top right to switch between English, Swedish, Italian, German, Spanish and French.</div>
+            <div class="onboard-step-desc" id="onboardStep5Desc">Tap the flag in the top right to switch between 6 languages.</div>
+            <div class="onboard-step-extra" id="step5Extra">Tap the flag icon in the top right corner of the header. Each tap cycles: 🇬🇧 English → 🇸🇪 Swedish → 🇮🇹 Italian → 🇩🇪 German → 🇪🇸 Spanish → 🇫🇷 French.</div>
+            <button class="onboard-show-btn" onclick="demoStep(5)">Show me →</button>
           </div>
+          <span class="onboard-chevron">▾</span>
         </div>
       </div>
 
       <button class="onboard-btn" id="onboardBtn">Let's Eat →</button>
       <p class="onboard-skip" id="onboardSkip">Don't show this again</p>
     </div>
+  </div>
+
+  <!-- Back to guide pill -->
+  <div class="back-to-guide hidden" id="backToGuide">
+    ← Back to guide
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
