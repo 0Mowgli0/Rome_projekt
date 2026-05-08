@@ -37,7 +37,7 @@ RESTAURANTS = [
         "address": "Via dei Banchi Vecchi, 129",
         "lat": 41.8975,
         "lng": 12.4665,
-        "rating": 5,
+        "rating": 4,
         "price": "€€€€",
         "hours": "Tue–Sat: 7:30pm–10:30pm | Closed Sun & Mon",
         "hours_structured": {
@@ -61,7 +61,7 @@ RESTAURANTS = [
         "address": "Via Labicana, 125",
         "lat": 41.8896,
         "lng": 12.4936,
-        "rating": 5,
+        "rating": 4,
         "price": "€€€€",
         "hours": "Mon–Sun: 7pm–10:30pm",
         "hours_structured": {
@@ -355,7 +355,7 @@ RESTAURANTS = [
         "address": "Piazza Trilussa, 46",
         "lat": 41.8915,
         "lng": 12.4698,
-        "rating": 5,
+        "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 11am–11pm",
         "hours_structured": {
@@ -987,7 +987,7 @@ RESTAURANTS = [
         "address": "Via degli Uffici del Vicario, 40",
         "lat": 41.9001,
         "lng": 12.4769,
-        "rating": 5,
+        "rating": 4,
         "price": "€",
         "hours": "Mon–Sun: 7am–1am",
         "hours_structured": {
