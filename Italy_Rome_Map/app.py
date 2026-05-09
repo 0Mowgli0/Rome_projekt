@@ -3,6 +3,31 @@ import os
 
 app = Flask(__name__)
 
+ROME_CATEGORIES = {
+    "fine_dining": {"label": "Fine Dining", "color": "#C9A84C", "icon": "🍽️"},
+    "trattoria":   {"label": "Trattoria",   "color": "#E05C3A", "icon": "🫓"},
+    "cafe":        {"label": "Café",        "color": "#6B9E78", "icon": "☕"},
+    "pizza":       {"label": "Pizza",       "color": "#D4547A", "icon": "🍕"},
+    "dessert":     {"label": "Dessert",     "color": "#9B6BB5", "icon": "🍦"},
+    "pasta":       {"label": "Pasta",       "color": "#E8A838", "icon": "🍝"},
+    "sandwich":    {"label": "Sandwich",    "color": "#7BAE7F", "icon": "🥪"},
+    "snack":       {"label": "Snacks",      "color": "#E07B54", "icon": "🍿"},
+    "drinks":      {"label": "Drinks",      "color": "#4A90C4", "icon": "🍹"},
+}
+
+FLORENCE_CATEGORIES = {
+    "fine_dining": {"label": "Fine Dining", "color": "#C9A84C", "icon": "🍽️"},
+    "bistecca":    {"label": "Bistecca",    "color": "#8B1A1A", "icon": "🥩"},
+    "trattoria":   {"label": "Trattoria",   "color": "#E05C3A", "icon": "🫓"},
+    "cafe":        {"label": "Café",        "color": "#6B9E78", "icon": "☕"},
+    "pizza":       {"label": "Pizza",       "color": "#D4547A", "icon": "🍕"},
+    "dessert":     {"label": "Dessert",     "color": "#9B6BB5", "icon": "🍦"},
+    "pasta":       {"label": "Pasta",       "color": "#E8A838", "icon": "🍝"},
+    "sandwich":    {"label": "Sandwich",    "color": "#7BAE7F", "icon": "🥪"},
+    "snack":       {"label": "Snacks",      "color": "#E07B54", "icon": "🍿"},
+    "drinks":      {"label": "Drinks",      "color": "#4A90C4", "icon": "🍹"},
+}
+
 CITIES = {
     "rome": {
         "id": "rome",
@@ -13,6 +38,7 @@ CITIES = {
         "zoom": 14,
         "description": "The Eternal City — where every meal feels like history.",
         "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&h=500&fit=crop",
+        "categories": ROME_CATEGORIES,
         "restaurants": [
             {
                 "id": 1,
@@ -1298,6 +1324,7 @@ CITIES = {
         "zoom": 14,
         "description": "The cradle of the Renaissance — where art, wine and bistecca reign supreme.",
         "image": "/static/img/florence.png",
+        "categories": FLORENCE_CATEGORIES,
         "restaurants": [
 
             # ── Fine Dining ───────────────────────────────────────────
@@ -2211,18 +2238,6 @@ CITIES = {
     }
 }
 
-CATEGORIES = {
-    "fine_dining": {"label": "Fine Dining", "color": "#C9A84C", "icon": "🍽️"},
-    "trattoria":   {"label": "Trattoria",   "color": "#E05C3A", "icon": "🫓"},
-    "cafe":        {"label": "Café",        "color": "#6B9E78", "icon": "☕"},
-    "pizza":       {"label": "Pizza",       "color": "#D4547A", "icon": "🍕"},
-    "dessert":     {"label": "Dessert",     "color": "#9B6BB5", "icon": "🍦"},
-    "pasta":       {"label": "Pasta",       "color": "#E8A838", "icon": "🍝"},
-    "sandwich":    {"label": "Sandwich",    "color": "#7BAE7F", "icon": "🥪"},
-    "snack":       {"label": "Snacks",      "color": "#E07B54", "icon": "🍿"},
-    "drinks":      {"label": "Drinks",      "color": "#4A90C4", "icon": "🍹"},
-    "bistecca":    {"label": "Bistecca",    "color": "#8B1A1A", "icon": "🥩"},
-}
 
 @app.route("/")
 def home():
@@ -2261,15 +2276,14 @@ def get_city(city_id):
             "zoom": city["zoom"]
         },
         "restaurants": city["restaurants"],
-        "categories": CATEGORIES
+        "categories": city.get("categories", ROME_CATEGORIES)
     })
 
 @app.route("/api/restaurants")
 def get_restaurants():
-    # Keep backward compatibility
     return jsonify({
         "restaurants": CITIES["rome"]["restaurants"],
-        "categories": CATEGORIES
+        "categories": ROME_CATEGORIES
     })
 
 if __name__ == "__main__":

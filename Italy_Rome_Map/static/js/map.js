@@ -662,6 +662,10 @@ async function loadData(cityId = 'rome') {
 // ── Filter UI ────────────────────────────────────────────────
 function buildFilters() {
   const list = document.getElementById('filterList');
+  // Clear existing category buttons except the All button
+  const existingBtns = list.querySelectorAll('.filter-btn:not([data-cat="all"])');
+  existingBtns.forEach(btn => btn.remove());
+  
   document.getElementById('count-all').textContent = allRestaurants.length;
 
   for (const [key, cat] of Object.entries(categories)) {
