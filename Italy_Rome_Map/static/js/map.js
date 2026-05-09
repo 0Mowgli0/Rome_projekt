@@ -108,6 +108,7 @@ const TRANSLATIONS = {
       sandwich: 'Sandwich',
       snack: 'Snacks',
       drinks: 'Drinks',
+      bistecca: 'Bistecca',
     }
   },
   sv: {
@@ -155,6 +156,7 @@ const TRANSLATIONS = {
       sandwich: 'Smörgås',
       snack: 'Snacks',
       drinks: 'Drinkar',
+      bistecca: 'Bistecca',
     }
   },
   it: {
@@ -202,6 +204,7 @@ const TRANSLATIONS = {
       sandwich: 'Panino',
       snack: 'Snack',
       drinks: 'Bevande',
+      bistecca: 'Bistecca',
     }
   },
   de: {
@@ -249,6 +252,7 @@ const TRANSLATIONS = {
       sandwich: 'Sandwich',
       snack: 'Snacks',
       drinks: 'Getränke',
+      bistecca: 'Bistecca',
     }
   },
   es: {
@@ -296,6 +300,7 @@ const TRANSLATIONS = {
       sandwich: 'Sándwich',
       snack: 'Snacks',
       drinks: 'Bebidas',
+      bistecca: 'Bistecca',
     }
   },
   fr: {
@@ -343,6 +348,7 @@ const TRANSLATIONS = {
       sandwich: 'Sandwich',
       snack: 'Snacks',
       drinks: 'Boissons',
+      bistecca: 'Bistecca',
     }
   }
 };
@@ -480,6 +486,7 @@ const CAT_COLORS = {
   sandwich:    '#7BAE7F',
   snack:       '#E07B54',
   drinks:      '#4A90C4',
+  bistecca:    '#8B1A1A',
 };
 
 const CAT_ICONS = {
@@ -492,8 +499,8 @@ const CAT_ICONS = {
   sandwich:    '🥪',
   snack:       '🍿',
   drinks:      '🍹',
+  bistecca:    '🥩',
 };
-
 // ── Open/Closed check ─────────────────────────────────────────
 function isOpenNow(r) {
   if (!r.hours_structured) return null;
