@@ -73,11 +73,11 @@ const TRANSLATIONS = {
     directions: 'Get Directions →',
     hours_na: 'Hours not available',
     walk: (n) => `🚶 ${n} min walk away`,
-    walk_set: '📍 Set location in Rome for walk times',
+    walk_set: (city) => `📍 Set location in ${city} for walk times`,
     you_here: '📍 You are here',
     geo_unsupported: 'Geolocation is not supported by your browser.',
     geo_error: 'Could not get your location. Make sure location access is allowed.',
-    onboard_sub: 'Your personal guide to eating well in Rome',
+    onboard_sub: (city) => `Your personal guide to eating well in ${city}`,
     onboard_step1_title: 'Explore the map',
     onboard_step1_desc: 'Tap any marker to see details. Zoom in to ungroup clustered pins.',
     onboard_step1_extra: 'Tap any colored pin to see the restaurant popup. Tap \'View Details\' for the full info panel. Zoom in to split grouped clusters into individual pins.',
@@ -120,11 +120,11 @@ const TRANSLATIONS = {
     directions: 'Vägbeskrivning →',
     hours_na: 'Öppettider saknas',
     walk: (n) => `🚶 ${n} min promenad`,
-    walk_set: '📍 Ange plats i Rom för gångtider',
+    walk_set: (city) => `📍 Ange plats i ${city} för gångtider`,
     you_here: '📍 Du är här',
     geo_unsupported: 'Geolokalisering stöds inte av din webbläsare.',
     geo_error: 'Kunde inte hämta din plats. Kontrollera att platsåtkomst är tillåten.',
-    onboard_sub: 'Din personliga guide till att äta gott i Rom',
+    onboard_sub: (city) => `Din personliga guide till att äta gott i ${city}`,
     onboard_step1_title: 'Utforska kartan',
     onboard_step1_desc: 'Tryck på en markör för att se detaljer. Zooma in för att dela upp kluster.',
     onboard_step1_extra: 'Tryck på en färgad nål för att se restaurangpopupen. Tryck på \'Visa detaljer\' för hela infopanelen. Zooma in för att dela upp kluster.',
@@ -167,11 +167,11 @@ const TRANSLATIONS = {
     directions: 'Indicazioni →',
     hours_na: 'Orari non disponibili',
     walk: (n) => `🚶 ${n} min a piedi`,
-    walk_set: '📍 Imposta posizione a Roma per i tempi',
+    walk_set: (city) => `📍 Imposta posizione a ${city} per i tempi`,
     you_here: '📍 Sei qui',
     geo_unsupported: 'La geolocalizzazione non è supportata dal tuo browser.',
     geo_error: 'Impossibile ottenere la tua posizione. Verifica che l\'accesso sia consentito.',
-    onboard_sub: 'La tua guida personale per mangiare bene a Roma',
+    onboard_sub: (city) => `La tua guida personale per mangiare bene a ${city}`,
     onboard_step1_title: 'Esplora la mappa',
     onboard_step1_desc: 'Tocca un segnaposto per vedere i dettagli. Zoom per separare i cluster.',
     onboard_step1_extra: 'Tocca qualsiasi spillo colorato per vedere il popup. Tocca \'Vedi dettagli\' per il pannello completo. Zoom per separare i cluster raggruppati.',
@@ -214,11 +214,11 @@ const TRANSLATIONS = {
     directions: 'Route →',
     hours_na: 'Öffnungszeiten nicht verfügbar',
     walk: (n) => `🚶 ${n} Min. zu Fuß`,
-    walk_set: '📍 Standort in Rom setzen für Gehzeiten',
+    walk_set: (city) => `📍 Standort in ${city} setzen für Gehzeiten`,
     you_here: '📍 Du bist hier',
     geo_unsupported: 'Geolokalisierung wird von deinem Browser nicht unterstützt.',
     geo_error: 'Standort konnte nicht ermittelt werden. Bitte Standortzugriff erlauben.',
-    onboard_sub: 'Dein persönlicher Guide zum gut Essen in Rom',
+    onboard_sub: (city) => `Dein persönlicher Guide zum gut Essen in ${city}`,
     onboard_step1_title: 'Karte erkunden',
     onboard_step1_desc: 'Tippe auf einen Marker für Details. Zoom um Cluster aufzuteilen.',
     onboard_step1_extra: 'Tippe auf einen farbigen Pin für das Restaurant-Popup. Tippe \'Details anzeigen\' für das vollständige Panel. Zoome um gruppierte Cluster aufzuteilen.',
@@ -261,11 +261,11 @@ const TRANSLATIONS = {
     directions: 'Cómo llegar →',
     hours_na: 'Horario no disponible',
     walk: (n) => `🚶 ${n} min caminando`,
-    walk_set: '📍 Establece ubicación en Roma para tiempos',
+    walk_set: (city) => `📍 Establece ubicación en ${city} para tiempos`,
     you_here: '📍 Estás aquí',
     geo_unsupported: 'La geolocalización no está soportada por tu navegador.',
     geo_error: 'No se pudo obtener tu ubicación. Asegúrate de permitir el acceso.',
-    onboard_sub: 'Tu guía personal para comer bien en Roma',
+    onboard_sub: (city) => `Tu guía personal para comer bien en ${city}`,
     onboard_step1_title: 'Explora el mapa',
     onboard_step1_desc: 'Toca cualquier marcador para ver detalles. Zoom para separar grupos.',
     onboard_step1_extra: 'Toca cualquier pin de color para ver el popup. Toca \'Ver detalles\' para el panel completo. Zoom para separar los grupos de pines.',
@@ -308,11 +308,11 @@ const TRANSLATIONS = {
     directions: 'Itinéraire →',
     hours_na: 'Horaires non disponibles',
     walk: (n) => `🚶 ${n} min à pied`,
-    walk_set: '📍 Définir position à Rome pour les temps',
+    walk_set: (city) => `📍 Définir position à ${city} pour les temps`,
     you_here: '📍 Vous êtes ici',
     geo_unsupported: 'La géolocalisation n\'est pas supportée par votre navigateur.',
     geo_error: 'Impossible d\'obtenir votre position. Vérifiez que l\'accès est autorisé.',
-    onboard_sub: 'Votre guide personnel pour bien manger à Rome',
+    onboard_sub: (city) => `Votre guide personnel pour bien manger à ${city}`,
     onboard_step1_title: 'Explorer la carte',
     onboard_step1_desc: 'Appuyez sur un marqueur pour voir les détails. Zoomez pour séparer les groupes.',
     onboard_step1_extra: 'Appuyez sur une épingle colorée pour voir le popup. Appuyez sur \'Voir les détails\' pour le panneau complet. Zoomez pour séparer les groupes.',
@@ -355,7 +355,6 @@ function t(key, ...args) {
 }
 
 function applyLanguage() {
-
   const lang = TRANSLATIONS[currentLang];
 
   // Flag
@@ -385,7 +384,8 @@ function applyLanguage() {
   document.getElementById('directionsBtn').textContent = lang.directions;
 
   // Onboarding
-  document.getElementById('onboardSub').textContent        = lang.onboard_sub;
+  const cityName = document.getElementById('cityNameHeader')?.textContent || 'Rome';
+  document.getElementById('onboardSub').textContent        = t('onboard_sub', cityName);
   document.getElementById('onboardStep1Title').textContent = lang.onboard_step1_title;
   document.getElementById('onboardStep1Desc').textContent  = lang.onboard_step1_desc;
   document.getElementById('onboardStep2Title').textContent = lang.onboard_step2_title;
@@ -918,6 +918,7 @@ function showDetail(r) {
 
   try {
     const walkEl = document.getElementById('detailWalkTime');
+    const cityName = document.getElementById('cityNameHeader')?.textContent || 'Rome';
     if (userLocation) {
       const R = 6371000;
       const dLat = (r.lat - userLocation.lat) * Math.PI / 180;
@@ -936,7 +937,8 @@ function showDetail(r) {
       }
       walkEl.style.display = 'flex';
     } else {
-      walkEl.style.display = 'none';
+      walkEl.textContent = t('walk_set', cityName);
+      walkEl.style.display = 'flex';
     }
   } catch(e) {
     console.error('Walk time error:', e);
