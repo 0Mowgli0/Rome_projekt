@@ -639,10 +639,14 @@ html, body {
 .detail-walk-time {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--gold);
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--parchment);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  padding: 10px 14px;
   margin-bottom: 12px;
 }
 

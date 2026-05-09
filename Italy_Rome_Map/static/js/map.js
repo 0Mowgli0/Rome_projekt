@@ -62,7 +62,6 @@ document.getElementById('backToCities').addEventListener('click', () => {
   loadCities();
 });
 
-// ── Translations ──────────────────────────────────────────────
 const TRANSLATIONS = {
   en: {
     flag: 'https://flagcdn.com/w20/gb.png',
@@ -81,17 +80,24 @@ const TRANSLATIONS = {
     onboard_sub: 'Your personal guide to eating well in Rome',
     onboard_step1_title: 'Explore the map',
     onboard_step1_desc: 'Tap any marker to see details. Zoom in to ungroup clustered pins.',
+    onboard_step1_extra: 'Tap any colored pin to see the restaurant popup. Tap \'View Details\' for the full info panel. Zoom in to split grouped clusters into individual pins.',
     onboard_step2_title: 'Filter by category & price',
     onboard_step2_desc: 'Use the sidebar to filter by type of food or budget.',
+    onboard_step2_extra: 'Tap a category like Pizza or Dessert to show only those restaurants on the map. Use the price buttons (€ to €€€€) to filter by budget. Tap All to reset.',
     onboard_step3_title: 'Find what\'s nearby',
     onboard_step3_desc: 'Tap the location button to see walk times and sort restaurants by distance.',
+    onboard_step3_extra: 'Tap the 📍 button on the map. Allow location access when prompted. The list will sort by distance and each restaurant will show your walk time.',
     onboard_step4_title: 'Get directions',
     onboard_step4_desc: 'Open any restaurant and tap Get Directions to navigate straight there.',
+    onboard_step4_extra: 'Tap any restaurant card or map pin. Scroll down in the detail panel and tap Get Directions — this opens Google Maps with navigation ready to go.',
     onboard_step5_title: 'Switch language',
     onboard_step5_desc: 'Tap the flag in the top right to switch between 6 languages.',
+    onboard_step5_extra: 'Tap the flag icon in the top right corner. Each tap cycles: 🇬🇧 English → 🇸🇪 Swedish → 🇮🇹 Italian → 🇩🇪 German → 🇪🇸 Spanish → 🇫🇷 French.',
+    onboard_show_btn: 'Show me →',
     onboard_btn: 'Let\'s Eat →',
     onboard_skip: 'Don\'t show this again',
     view_details: 'View Details',
+    city_label: 'English',
     categories: {
       fine_dining: 'Fine Dining',
       trattoria: 'Trattoria',
@@ -121,17 +127,24 @@ const TRANSLATIONS = {
     onboard_sub: 'Din personliga guide till att äta gott i Rom',
     onboard_step1_title: 'Utforska kartan',
     onboard_step1_desc: 'Tryck på en markör för att se detaljer. Zooma in för att dela upp kluster.',
+    onboard_step1_extra: 'Tryck på en färgad nål för att se restaurangpopupen. Tryck på \'Visa detaljer\' för hela infopanelen. Zooma in för att dela upp kluster.',
     onboard_step2_title: 'Filtrera efter kategori och pris',
     onboard_step2_desc: 'Använd sidofältet för att filtrera efter mattyp eller budget.',
+    onboard_step2_extra: 'Tryck på en kategori som Pizza eller Dessert för att visa bara dem. Använd prisknapparna (€ till €€€€) för att filtrera efter budget. Tryck Alla för att återställa.',
     onboard_step3_title: 'Hitta vad som finns i närheten',
     onboard_step3_desc: 'Tryck på platsknappen för att se gångtider och sortera efter avstånd.',
+    onboard_step3_extra: 'Tryck på 📍-knappen på kartan. Tillåt platsåtkomst när det efterfrågas. Listan sorteras efter avstånd och varje restaurang visar din gångtid.',
     onboard_step4_title: 'Få vägbeskrivning',
     onboard_step4_desc: 'Öppna en restaurang och tryck på Vägbeskrivning för att navigera dit.',
+    onboard_step4_extra: 'Tryck på ett restaurangkort eller en nål. Scrolla ner i infopanelen och tryck på Vägbeskrivning — detta öppnar Google Maps med navigering.',
     onboard_step5_title: 'Byt språk',
     onboard_step5_desc: 'Tryck på flaggan uppe till höger för att byta mellan 6 språk.',
+    onboard_step5_extra: 'Tryck på flaggikonen uppe till höger. Varje tryck byter: 🇬🇧 Engelska → 🇸🇪 Svenska → 🇮🇹 Italienska → 🇩🇪 Tyska → 🇪🇸 Spanska → 🇫🇷 Franska.',
+    onboard_show_btn: 'Visa mig →',
     onboard_btn: 'Vi äter! →',
     onboard_skip: 'Visa inte igen',
     view_details: 'Visa detaljer',
+    city_label: 'Svenska',
     categories: {
       fine_dining: 'Finrestaurang',
       trattoria: 'Trattoria',
@@ -161,17 +174,24 @@ const TRANSLATIONS = {
     onboard_sub: 'La tua guida personale per mangiare bene a Roma',
     onboard_step1_title: 'Esplora la mappa',
     onboard_step1_desc: 'Tocca un segnaposto per vedere i dettagli. Zoom per separare i cluster.',
+    onboard_step1_extra: 'Tocca qualsiasi spillo colorato per vedere il popup. Tocca \'Vedi dettagli\' per il pannello completo. Zoom per separare i cluster raggruppati.',
     onboard_step2_title: 'Filtra per categoria e prezzo',
     onboard_step2_desc: 'Usa la barra laterale per filtrare per tipo di cibo o budget.',
+    onboard_step2_extra: 'Tocca una categoria come Pizza o Dolci per mostrare solo quei ristoranti. Usa i pulsanti prezzo (€ a €€€€) per filtrare per budget. Tocca Tutti per resettare.',
     onboard_step3_title: 'Trova cosa c\'è vicino',
     onboard_step3_desc: 'Tocca il pulsante posizione per vedere i tempi a piedi e ordinare per distanza.',
+    onboard_step3_extra: 'Tocca il pulsante 📍 sulla mappa. Consenti l\'accesso alla posizione. La lista si ordinerà per distanza e ogni ristorante mostrerà il tempo a piedi.',
     onboard_step4_title: 'Ottieni indicazioni',
     onboard_step4_desc: 'Apri un ristorante e tocca Indicazioni per navigare direttamente.',
+    onboard_step4_extra: 'Tocca qualsiasi scheda ristorante o spillo. Scorri verso il basso nel pannello e tocca Indicazioni — si apre Google Maps con la navigazione pronta.',
     onboard_step5_title: 'Cambia lingua',
     onboard_step5_desc: 'Tocca la bandiera in alto a destra per cambiare lingua.',
+    onboard_step5_extra: 'Tocca l\'icona della bandiera in alto a destra. Ogni tocco cambia: 🇬🇧 Inglese → 🇸🇪 Svedese → 🇮🇹 Italiano → 🇩🇪 Tedesco → 🇪🇸 Spagnolo → 🇫🇷 Francese.',
+    onboard_show_btn: 'Mostrami →',
     onboard_btn: 'Mangiamo! →',
     onboard_skip: 'Non mostrare più',
     view_details: 'Vedi dettagli',
+    city_label: 'Italiano',
     categories: {
       fine_dining: 'Alta Cucina',
       trattoria: 'Trattoria',
@@ -201,17 +221,24 @@ const TRANSLATIONS = {
     onboard_sub: 'Dein persönlicher Guide zum gut Essen in Rom',
     onboard_step1_title: 'Karte erkunden',
     onboard_step1_desc: 'Tippe auf einen Marker für Details. Zoom um Cluster aufzuteilen.',
+    onboard_step1_extra: 'Tippe auf einen farbigen Pin für das Restaurant-Popup. Tippe \'Details anzeigen\' für das vollständige Panel. Zoome um gruppierte Cluster aufzuteilen.',
     onboard_step2_title: 'Nach Kategorie & Preis filtern',
     onboard_step2_desc: 'Nutze die Seitenleiste zum Filtern nach Essensart oder Budget.',
+    onboard_step2_extra: 'Tippe auf eine Kategorie wie Pizza oder Dessert um nur diese zu zeigen. Nutze die Preisknöpfe (€ bis €€€€) zum Filtern nach Budget. Tippe Alle zum Zurücksetzen.',
     onboard_step3_title: 'Finde was in der Nähe ist',
     onboard_step3_desc: 'Tippe den Standort-Button für Gehzeiten und Sortierung nach Entfernung.',
+    onboard_step3_extra: 'Tippe den 📍-Button auf der Karte. Erlaube Standortzugriff wenn gefragt. Die Liste wird nach Entfernung sortiert und zeigt deine Gehzeit.',
     onboard_step4_title: 'Route abrufen',
     onboard_step4_desc: 'Öffne ein Restaurant und tippe Route um direkt dorthin zu navigieren.',
+    onboard_step4_extra: 'Tippe eine Restaurantkarte oder einen Pin. Scrolle im Panel nach unten und tippe Route — das öffnet Google Maps mit der Navigation.',
     onboard_step5_title: 'Sprache wechseln',
     onboard_step5_desc: 'Tippe auf die Flagge oben rechts um die Sprache zu wechseln.',
+    onboard_step5_extra: 'Tippe das Flaggensymbol oben rechts. Jeder Tipp wechselt: 🇬🇧 Englisch → 🇸🇪 Schwedisch → 🇮🇹 Italienisch → 🇩🇪 Deutsch → 🇪🇸 Spanisch → 🇫🇷 Französisch.',
+    onboard_show_btn: 'Zeig mir →',
     onboard_btn: 'Essen gehen! →',
     onboard_skip: 'Nicht mehr anzeigen',
     view_details: 'Details anzeigen',
+    city_label: 'Deutsch',
     categories: {
       fine_dining: 'Feine Küche',
       trattoria: 'Trattoria',
@@ -241,17 +268,24 @@ const TRANSLATIONS = {
     onboard_sub: 'Tu guía personal para comer bien en Roma',
     onboard_step1_title: 'Explora el mapa',
     onboard_step1_desc: 'Toca cualquier marcador para ver detalles. Zoom para separar grupos.',
+    onboard_step1_extra: 'Toca cualquier pin de color para ver el popup. Toca \'Ver detalles\' para el panel completo. Zoom para separar los grupos de pines.',
     onboard_step2_title: 'Filtra por categoría y precio',
     onboard_step2_desc: 'Usa la barra lateral para filtrar por tipo de comida o presupuesto.',
+    onboard_step2_extra: 'Toca una categoría como Pizza o Postre para mostrar solo esos restaurantes. Usa los botones de precio (€ a €€€€) para filtrar por presupuesto. Toca Todos para resetear.',
     onboard_step3_title: 'Encuentra lo que hay cerca',
     onboard_step3_desc: 'Toca el botón de ubicación para ver tiempos a pie y ordenar por distancia.',
+    onboard_step3_extra: 'Toca el botón 📍 en el mapa. Permite el acceso a la ubicación. La lista se ordenará por distancia y cada restaurante mostrará tu tiempo a pie.',
     onboard_step4_title: 'Obtén indicaciones',
     onboard_step4_desc: 'Abre un restaurante y toca Cómo llegar para navegar directamente.',
+    onboard_step4_extra: 'Toca cualquier tarjeta o pin. Desplázate hacia abajo en el panel y toca Cómo llegar — esto abre Google Maps con la navegación lista.',
     onboard_step5_title: 'Cambiar idioma',
     onboard_step5_desc: 'Toca la bandera arriba a la derecha para cambiar el idioma.',
+    onboard_step5_extra: 'Toca el icono de bandera arriba a la derecha. Cada toque cambia: 🇬🇧 Inglés → 🇸🇪 Sueco → 🇮🇹 Italiano → 🇩🇪 Alemán → 🇪🇸 Español → 🇫🇷 Francés.',
+    onboard_show_btn: 'Muéstrame →',
     onboard_btn: '¡A comer! →',
     onboard_skip: 'No mostrar de nuevo',
     view_details: 'Ver detalles',
+    city_label: 'Español',
     categories: {
       fine_dining: 'Alta Cocina',
       trattoria: 'Trattoria',
@@ -281,17 +315,24 @@ const TRANSLATIONS = {
     onboard_sub: 'Votre guide personnel pour bien manger à Rome',
     onboard_step1_title: 'Explorer la carte',
     onboard_step1_desc: 'Appuyez sur un marqueur pour voir les détails. Zoomez pour séparer les groupes.',
+    onboard_step1_extra: 'Appuyez sur une épingle colorée pour voir le popup. Appuyez sur \'Voir les détails\' pour le panneau complet. Zoomez pour séparer les groupes.',
     onboard_step2_title: 'Filtrer par catégorie et prix',
     onboard_step2_desc: 'Utilisez la barre latérale pour filtrer par type de nourriture ou budget.',
+    onboard_step2_extra: 'Appuyez sur une catégorie comme Pizza ou Dessert pour n\'afficher que ceux-là. Utilisez les boutons de prix (€ à €€€€) pour filtrer par budget. Appuyez sur Tous pour réinitialiser.',
     onboard_step3_title: 'Trouver ce qui est proche',
     onboard_step3_desc: 'Appuyez sur le bouton de localisation pour voir les temps de marche.',
+    onboard_step3_extra: 'Appuyez sur le bouton 📍 sur la carte. Autorisez l\'accès à la localisation. La liste sera triée par distance et chaque restaurant affichera votre temps de marche.',
     onboard_step4_title: 'Obtenir l\'itinéraire',
     onboard_step4_desc: 'Ouvrez un restaurant et appuyez sur Itinéraire pour naviguer directement.',
+    onboard_step4_extra: 'Appuyez sur une carte ou une épingle. Faites défiler vers le bas et appuyez sur Itinéraire — cela ouvre Google Maps avec la navigation prête.',
     onboard_step5_title: 'Changer de langue',
     onboard_step5_desc: 'Appuyez sur le drapeau en haut à droite pour changer de langue.',
+    onboard_step5_extra: 'Appuyez sur l\'icône du drapeau en haut à droite. Chaque appui change: 🇬🇧 Anglais → 🇸🇪 Suédois → 🇮🇹 Italien → 🇩🇪 Allemand → 🇪🇸 Espagnol → 🇫🇷 Français.',
+    onboard_show_btn: 'Montre-moi →',
     onboard_btn: 'On mange ! →',
     onboard_skip: 'Ne plus afficher',
     view_details: 'Voir les détails',
+    city_label: 'Français',
     categories: {
       fine_dining: 'Gastronomie',
       trattoria: 'Trattoria',
@@ -314,6 +355,7 @@ function t(key, ...args) {
 }
 
 function applyLanguage() {
+
   const lang = TRANSLATIONS[currentLang];
 
   // Flag
@@ -356,6 +398,17 @@ function applyLanguage() {
   document.getElementById('onboardStep5Desc').textContent  = lang.onboard_step5_desc;
   document.getElementById('onboardBtn').textContent        = lang.onboard_btn;
   document.getElementById('onboardSkip').textContent       = lang.onboard_skip;
+  document.getElementById('step1Extra').textContent = lang.onboard_step1_extra;
+  document.getElementById('step2Extra').textContent = lang.onboard_step2_extra;
+  document.getElementById('step3Extra').textContent = lang.onboard_step3_extra;
+  document.getElementById('step4Extra').textContent = lang.onboard_step4_extra;
+  document.getElementById('step5Extra').textContent = lang.onboard_step5_extra;
+  document.querySelectorAll('.onboard-show-btn').forEach(btn => {
+    btn.textContent = lang.onboard_show_btn;
+  });
+
+  const citySpan = document.querySelector('.header-location span');
+  if (citySpan) citySpan.textContent = lang.city_label;
 
   // Refresh all popups with new language
   Object.values(markers).forEach(({ marker, restaurant: r }) => {
@@ -850,8 +903,11 @@ function showDetail(r) {
   document.getElementById('detailImage').src             = r.image;
   document.getElementById('detailName').textContent      = r.name;
   document.getElementById('detailDesc').textContent      = r.description;
-  document.getElementById('detailAddress').textContent   = r.address;
-  document.getElementById('detailAddress').href          = r.website;
+  const websiteName = r.website
+    ? r.website.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]
+    : r.address;
+  document.getElementById('detailAddress').textContent = r.website ? websiteName : r.address;
+  document.getElementById('detailAddress').href        = r.website || '#';
   document.getElementById('detailPrice').textContent     = r.price;
   document.getElementById('detailHours').textContent     = r.hours || t('hours_na');
   document.getElementById('detailCategory').textContent  = t('categories')[r.category] || categories[r.category]?.label || r.category;
