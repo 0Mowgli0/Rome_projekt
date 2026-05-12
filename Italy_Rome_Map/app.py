@@ -62,7 +62,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=La+Pergola+Rome",
                 "website": "https://romecavalieri.com/la-pergola/",
-                "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
+                "image": "/static/img/la_pergola.png"
             },
             {
                 "id": 2,
@@ -70,8 +70,8 @@ CITIES = {
                 "category": "fine_dining",
                 "description": "Two Michelin stars nestled in the heart of Rome. Chef Anthony Genovese crafts imaginative Italian cuisine with Asian influences in an intimate setting.",
                 "address": "Via dei Banchi Vecchi, 129",
-                "lat": 41.8975,
-                "lng": 12.4665,
+                "lat": 41.89804868824764,
+                "lng": 12.467403739138781,
                 "rating": 4,
                 "price": "€€€€",
                 "hours": "Tue–Sat: 7:30pm–10:30pm | Closed Sun & Mon",
@@ -86,7 +86,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Il+Pagliaccio+Rome",
                 "website": "https://www.ristoranteilpagliaccio.com/",
-                "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=250&fit=crop"
+                "image": "/static/img/il_pagliaccio.png"
             },
             {
                 "id": 3,
@@ -94,8 +94,8 @@ CITIES = {
                 "category": "fine_dining",
                 "description": "Dine with a direct view of the Colosseum from the rooftop terrace of Palazzo Manfredi. One Michelin star, extraordinary Roman cuisine in an unmatched setting.",
                 "address": "Via Labicana, 125",
-                "lat": 41.8896,
-                "lng": 12.4936,
+                "lat": 41.89026338523505,
+                "lng": 12.49553471635487,
                 "rating": 4,
                 "price": "€€€€",
                 "hours": "Mon–Sun: 7pm–10:30pm",
@@ -110,7 +110,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Aroma+Restaurant+Rome",
                 "website": "https://www.aromarestaurant.it/",
-                "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop"
+                "image": "/static/img/aroma.png"
             },
             {
                 "id": 4,
@@ -118,8 +118,8 @@ CITIES = {
                 "category": "fine_dining",
                 "description": "A charming Trastevere gem serving classic Italian dishes with heart. The tiramisu is reportedly one of the best in Rome — rich, creamy and utterly indulgent.",
                 "address": "Via della Scala, 1",
-                "lat": 41.8904,
-                "lng": 12.4687,
+                "lat": 41.8981473152283,
+                "lng": 12.47139208602155,
                 "rating": 4,
                 "price": "€€€",
                 "hours": "Mon–Sun: 12pm–3pm, 7pm–11pm",
@@ -134,7 +134,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Mimi+e+Coco+Trastevere+Rome",
                 "website": "https://www.mimiecoco.com/en/homepage/",
-                "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=250&fit=crop"
+                "image": "/static/img/mimi_e_coco.png"
             },
             {
                 "id": 5,
