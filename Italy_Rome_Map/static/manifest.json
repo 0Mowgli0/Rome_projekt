@@ -1,8 +1,9 @@
 {
-  "name": "Roma Tavola",
-  "short_name": "Roma Tavola",
-  "description": "Restaurant guide for Rome, Italy",
+  "name": "Tavola",
+  "short_name": "Tavola",
+  "description": "Restaurant guide for Italy",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#1A1410",
   "theme_color": "#1A1410",

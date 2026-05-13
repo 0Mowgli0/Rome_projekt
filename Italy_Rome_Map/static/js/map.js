@@ -9,7 +9,7 @@ async function loadCities() {
       const card = document.createElement('div');
       card.className = 'city-card';
       card.innerHTML = `
-        <img class="city-card-img" src="${city.image}" alt="${city.name}">
+        <img class="city-card-img" loading="lazy" src="${city.image}" alt="${city.name}">
         <div class="city-card-overlay"></div>
         <div class="city-card-body">
           <div class="city-card-country">${city.country}</div>
@@ -435,6 +435,24 @@ function applyLanguage() {
   applyFilters();
 }
 
+window.addEventListener('popstate', () => {
+  const pathCity = window.location.pathname.replace('/', '').toLowerCase();
+
+  if (!pathCity) {
+    document.getElementById('mapApp').classList.add('hidden');
+    document.getElementById('citySelector').classList.remove('hidden');
+    loadCities();
+    return;
+  }
+
+  currentCity = pathCity;
+  document.getElementById('citySelector').classList.add('hidden');
+  document.getElementById('mapApp').classList.remove('hidden');
+  document.getElementById('cityNameHeader').textContent =
+    pathCity.charAt(0).toUpperCase() + pathCity.slice(1);
+  loadData(pathCity);
+});
+
 // ── State ───────────────────────────────────────────────────
 let allRestaurants = [];
 let categories     = {};
@@ -681,22 +699,36 @@ function buildFilters() {
     btn.addEventListener('click', () => setFilter(key));
     list.appendChild(btn);
   }
-
-  document.querySelector('[data-cat="all"]').addEventListener('click', () => setFilter('all'));
 }
+
 
 function setFilter(cat) {
   activeCategory = cat;
   document.querySelectorAll('.filter-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.cat === cat);
   });
+
   applyFilters();
 }
-
 // ── Search ───────────────────────────────────────────────────
 document.getElementById('searchInput').addEventListener('input', function () {
   applyFilters();
 });
+
+
+function distanceMeters(lat1, lng1, lat2, lng2) {
+  const R = 6371000;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * Math.PI / 180) *
+    Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+// ── Apply all filters ─────────────────────────────────────────
 
 // ── Apply all filters ─────────────────────────────────────────
 function applyFilters() {
@@ -720,11 +752,10 @@ function applyFilters() {
   }
 
   if (userLocation) {
-    filtered = [...filtered].sort((a, b) => {
-      const distA = Math.pow(a.lat - userLocation.lat, 2) + Math.pow(a.lng - userLocation.lng, 2);
-      const distB = Math.pow(b.lat - userLocation.lat, 2) + Math.pow(b.lng - userLocation.lng, 2);
-      return distA - distB;
-    });
+    filtered = [...filtered].sort((a, b) =>
+      distanceMeters(userLocation.lat, userLocation.lng, a.lat, a.lng) -
+      distanceMeters(userLocation.lat, userLocation.lng, b.lat, b.lng)
+    );
   }
 
   renderRestaurants(filtered);
@@ -1056,3 +1087,5 @@ if (pathCity && pathCity !== '') {
 setTimeout(() => {
   map.invalidateSize();
 }, 300);
+
+document.querySelector('[data-cat="all"]').addEventListener('click', () => setFilter('all'));
