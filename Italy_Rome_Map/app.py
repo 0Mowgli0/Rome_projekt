@@ -28,6 +28,40 @@ FLORENCE_CATEGORIES = {
     "drinks":      {"label": "Drinks",      "color": "#4A90C4", "icon": "🍹"},
 }
 
+NAPLES_CATEGORIES = {
+    "fine_dining": {"label": "Fine Dining", "color": "#C9A84C", "icon": "🍽️"},
+    "trattoria":   {"label": "Trattoria",   "color": "#E05C3A", "icon": "🫓"},
+    "cafe":        {"label": "Café",        "color": "#6B9E78", "icon": "☕"},
+    "pizza":       {"label": "Pizza",       "color": "#D4547A", "icon": "🍕"},
+    "dessert":     {"label": "Dessert",     "color": "#9B6BB5", "icon": "🍦"},
+    "pasta":       {"label": "Pasta",       "color": "#E8A838", "icon": "🍝"},
+    "sandwich":    {"label": "Sandwich",    "color": "#7BAE7F", "icon": "🥪"},
+    "snack":       {"label": "Snacks",      "color": "#E07B54", "icon": "🍿"},
+    "drinks":      {"label": "Drinks",      "color": "#4A90C4", "icon": "🍹"},
+}
+
+VENICE_CATEGORIES = {
+    "fine_dining": {"label": "Fine Dining", "color": "#C9A84C", "icon": "🍽️"},
+    "cicchetti":   {"label": "Cicchetti",   "color": "#C0703A", "icon": "🥂"},
+    "trattoria":   {"label": "Trattoria",   "color": "#E05C3A", "icon": "🫓"},
+    "cafe":        {"label": "Café",        "color": "#6B9E78", "icon": "☕"},
+    "pasta":       {"label": "Pasta",       "color": "#E8A838", "icon": "🍝"},
+    "dessert":     {"label": "Dessert",     "color": "#9B6BB5", "icon": "🍦"},
+    "snack":       {"label": "Snacks",      "color": "#E07B54", "icon": "🍿"},
+    "drinks":      {"label": "Drinks",      "color": "#4A90C4", "icon": "🍹"},
+}
+
+MILAN_CATEGORIES = {
+    "fine_dining": {"label": "Fine Dining", "color": "#C9A84C", "icon": "🍽️"},
+    "trattoria":   {"label": "Trattoria",   "color": "#E05C3A", "icon": "🫓"},
+    "cafe":        {"label": "Café",        "color": "#6B9E78", "icon": "☕"},
+    "pasta":       {"label": "Pasta",       "color": "#E8A838", "icon": "🍝"},
+    "sandwich":    {"label": "Sandwich",    "color": "#7BAE7F", "icon": "🥪"},
+    "dessert":     {"label": "Dessert",     "color": "#9B6BB5", "icon": "🍦"},
+    "drinks":      {"label": "Drinks",      "color": "#4A90C4", "icon": "🍹"},
+    "snack":       {"label": "Snacks",      "color": "#E07B54", "icon": "🍿"},
+}
+
 CITIES = {
     "rome": {
         "id": "rome",
@@ -2233,6 +2267,1565 @@ CITIES = {
                 "maps_url": "https://maps.google.com/?q=Rastel+Bar+Florence",
                 "website": "https://www.tripadvisor.com/Restaurant_Review-g187895-d12543100-Reviews-Rastel_Bar-Florence_Tuscany.html",
                 "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&h=250&fit=crop"
+            },
+        ]
+    }
+
+    ,
+    "naples": {
+        "id": "naples",
+        "name": "Naples",
+        "name_it": "Napoli",
+        "country": "Italy",
+        "center": {"lat": 40.8518, "lng": 14.2681},
+        "zoom": 14,
+        "description": "The birthplace of pizza — where the food is loud, proud and utterly unforgettable.",
+        "image": "/static/img/naples.png",
+        "categories": NAPLES_CATEGORIES,
+        "restaurants": [
+
+            # ── Fine Dining ───────────────────────────────────────────
+            {
+                "id": 1,
+                "name": "Il Comandante",
+                "category": "fine_dining",
+                "description": "Naples' most celebrated fine dining restaurant on the 10th floor of Romeo Hotel, with panoramic views over the bay and Vesuvius. Chef Salvatore Bianco's Michelin-starred tasting menu is a love letter to Campania.",
+                "address": "Via Cristoforo Colombo, 45",
+                "lat": 40.8426,
+                "lng": 14.2657,
+                "rating": 5,
+                "price": "€€€€",
+                "hours": "Tue–Sun: 7:30pm–10:30pm | Closed Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "19:30", "close": "22:30"}],
+                    "wed": [{"open": "19:30", "close": "22:30"}],
+                    "thu": [{"open": "19:30", "close": "22:30"}],
+                    "fri": [{"open": "19:30", "close": "22:30"}],
+                    "sat": [{"open": "19:30", "close": "22:30"}],
+                    "sun": [{"open": "19:30", "close": "22:30"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Il+Comandante+Naples",
+                "website": "https://www.romeohotel.it/il-comandante/",
+                "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 2,
+                "name": "Palazzo Petrucci",
+                "category": "fine_dining",
+                "description": "One Michelin star in a stunning palazzo overlooking Piazza San Domenico Maggiore in the heart of the old city. Chef Lino Scarallo crafts elegant Neapolitan cuisine with extraordinary produce from Campania.",
+                "address": "Piazza San Domenico Maggiore, 4",
+                "lat": 40.8497,
+                "lng": 14.2527,
+                "rating": 5,
+                "price": "€€€€",
+                "hours": "Tue–Sat: 12:30pm–2:30pm, 7:30pm–10:30pm | Closed Sun & Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "wed": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "thu": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "fri": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "sat": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Palazzo+Petrucci+Naples",
+                "website": "https://www.palazzopetrucciristorante.it/",
+                "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 3,
+                "name": "Taverna dell'Arte",
+                "category": "fine_dining",
+                "description": "A vine-covered entrance on steep steps leads to one of Naples' best kept secrets. Former insurance broker Marcellino Amato and chef Marco di Martino serve elegant, ingredient-driven Campanian cuisine in an intimate setting.",
+                "address": "Rampe San Giovanni Maggiore, 1a",
+                "lat": 40.8488,
+                "lng": 14.2558,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Mon–Sat: 1pm–3pm, 8pm–11pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "13:00", "close": "15:00"}, {"open": "20:00", "close": "23:00"}],
+                    "tue": [{"open": "13:00", "close": "15:00"}, {"open": "20:00", "close": "23:00"}],
+                    "wed": [{"open": "13:00", "close": "15:00"}, {"open": "20:00", "close": "23:00"}],
+                    "thu": [{"open": "13:00", "close": "15:00"}, {"open": "20:00", "close": "23:00"}],
+                    "fri": [{"open": "13:00", "close": "15:00"}, {"open": "20:00", "close": "23:00"}],
+                    "sat": [{"open": "13:00", "close": "15:00"}, {"open": "20:00", "close": "23:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Taverna+dell+Arte+Naples",
+                "website": "https://www.tavernadellarte.it/",
+                "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop"
+            },
+
+            # ── Pizza ─────────────────────────────────────────────────
+            {
+                "id": 4,
+                "name": "L'Antica Pizzeria Da Michele",
+                "category": "pizza",
+                "description": "The most famous pizzeria in the world, operating since 1870. Only two pizzas: Margherita and Marinara. Julia Roberts ate here in Eat Pray Love. The queue is long but the pizza is worth every minute.",
+                "address": "Via Cesare Sersale, 1",
+                "lat": 40.8509,
+                "lng": 14.2628,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 11am–11pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "11:00", "close": "23:00"}],
+                    "tue": [{"open": "11:00", "close": "23:00"}],
+                    "wed": [{"open": "11:00", "close": "23:00"}],
+                    "thu": [{"open": "11:00", "close": "23:00"}],
+                    "fri": [{"open": "11:00", "close": "23:00"}],
+                    "sat": [{"open": "11:00", "close": "23:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=L+Antica+Pizzeria+Da+Michele+Naples",
+                "website": "https://www.damichele.net/",
+                "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 5,
+                "name": "Gino Sorbillo",
+                "category": "pizza",
+                "description": "The other great Naples pizza institution on Via dei Tribunali. Gino Sorbillo's creative approach to toppings complements the benchmark Neapolitan dough. Always packed — arrive early or book ahead.",
+                "address": "Via dei Tribunali, 32",
+                "lat": 40.8528,
+                "lng": 14.2563,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 12pm–3:30pm, 7pm–11:30pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "tue": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "wed": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "thu": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "fri": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "sat": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Gino+Sorbillo+Naples",
+                "website": "https://www.sorbillo.it/",
+                "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 6,
+                "name": "Di Matteo",
+                "category": "pizza",
+                "description": "Historic pizzeria on Via dei Tribunali since 1936, famous for Bill Clinton's 1994 visit. Serves both sit-down pizza and takeaway. Their pizza fritta — fried pizza stuffed with ricotta and salami — is unmissable.",
+                "address": "Via dei Tribunali, 94",
+                "lat": 40.8525,
+                "lng": 14.2538,
+                "rating": 4,
+                "price": "€",
+                "hours": "Mon–Sat: 9am–midnight | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "09:00", "close": "00:00"}],
+                    "tue": [{"open": "09:00", "close": "00:00"}],
+                    "wed": [{"open": "09:00", "close": "00:00"}],
+                    "thu": [{"open": "09:00", "close": "00:00"}],
+                    "fri": [{"open": "09:00", "close": "00:00"}],
+                    "sat": [{"open": "09:00", "close": "00:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Pizzeria+Di+Matteo+Naples",
+                "website": "https://www.pizzeriadimatteo.com/",
+                "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 7,
+                "name": "Starita a Materdei",
+                "category": "pizza",
+                "description": "Where pizza fritta was invented and made famous by Sophia Loren in the 1954 film L'Oro di Napoli. Larger and more comfortable than Da Michele. Exceptional both regular and fried pizza — the montanara is extraordinary.",
+                "address": "Via Materdei, 27",
+                "lat": 40.8573,
+                "lng": 14.2488,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 12pm–3:30pm, 7pm–midnight | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "00:00"}],
+                    "tue": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "00:00"}],
+                    "wed": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "00:00"}],
+                    "thu": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "00:00"}],
+                    "fri": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "00:00"}],
+                    "sat": [{"open": "12:00", "close": "15:30"}, {"open": "19:00", "close": "00:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Starita+a+Materdei+Naples",
+                "website": "https://www.pizzeriastarita.it/",
+                "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 8,
+                "name": "50 Kalò",
+                "category": "pizza",
+                "description": "Michelin-listed modern pizzeria by master pizzaiolo Ciro Salvo near Piazza Sannazaro. The dough is fermented 36 hours with low-yeast for an incredibly light, digestible crust. Widely considered one of Naples' best.",
+                "address": "Piazza Sannazaro, 201b",
+                "lat": 40.8278,
+                "lng": 14.2272,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sun: 12:30pm–3:30pm, 7pm–11:30pm",
+                "hours_structured": {
+                    "mon": [{"open": "12:30", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "tue": [{"open": "12:30", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "wed": [{"open": "12:30", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "thu": [{"open": "12:30", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "fri": [{"open": "12:30", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "sat": [{"open": "12:30", "close": "15:30"}, {"open": "19:00", "close": "23:30"}],
+                    "sun": [{"open": "12:30", "close": "15:30"}, {"open": "19:00", "close": "23:30"}]
+                },
+                "maps_url": "https://maps.google.com/?q=50+Kalo+Naples",
+                "website": "https://www.50kalo.it/",
+                "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=250&fit=crop"
+            },
+
+            # ── Trattoria ─────────────────────────────────────────────
+            {
+                "id": 9,
+                "name": "Trattoria da Nennella",
+                "category": "trattoria",
+                "description": "Naples' most chaotic and beloved trattoria in the Spanish Quarters. Purposely rude waiters, dancing on tables, plates of ragù thrown across the room and fruit served in a ceramic toilet. Utterly unmissable for the atmosphere alone.",
+                "address": "Vico Lungo Teatro Nuovo, 103",
+                "lat": 40.8453,
+                "lng": 14.2484,
+                "rating": 4,
+                "price": "€",
+                "hours": "Mon–Sat: 12pm–3pm, 7pm–11pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+                    "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+                    "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+                    "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+                    "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+                    "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "23:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Trattoria+da+Nennella+Naples",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187785-d1506236-Reviews-Trattoria_da_Nennella-Naples_Province_of_Naples_Campania.html",
+                "image": "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 10,
+                "name": "Antica Osteria da Tonino",
+                "category": "trattoria",
+                "description": "A family-run Chiaia institution since 1880 with walls covered in memorabilia. The gnocchi alla Sorrentina — pillowy potato gnocchi in rich tomato sauce with melted mozzarella — is one of the best dishes in Naples.",
+                "address": "Via Santa Teresa a Chiaia, 47",
+                "lat": 40.8363,
+                "lng": 14.2448,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sat: 12:30pm–3:30pm, 7:30pm–11pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "tue": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "wed": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "thu": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "fri": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "sat": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Antica+Osteria+da+Tonino+Naples",
+                "website": "https://www.anticaosteriadatonino.it/",
+                "image": "https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 11,
+                "name": "La Locanda Gesù Vecchio",
+                "category": "trattoria",
+                "description": "A warm, intimate space right off Spaccanapoli with yellow tablecloths and wine bottles lining the walls. Proper no-fuss Neapolitan classics — pasta e fagioli, parmigiana di melanzane — executed with quiet excellence.",
+                "address": "Via Giovanni Paladino, 28",
+                "lat": 40.8501,
+                "lng": 14.2562,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sat: 12:30pm–3pm, 7:30pm–11pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "tue": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "wed": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "thu": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "fri": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "sat": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=La+Locanda+Gesu+Vecchio+Naples",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187785-d2197073-Reviews-La_Locanda_di_Gesu_Vecchio-Naples_Province_of_Naples_Campania.html",
+                "image": "https://images.unsplash.com/photo-1572441713132-c542f4cf966c?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 12,
+                "name": "Osteria della Mattonella",
+                "category": "trattoria",
+                "description": "One of Naples' most loved neighborhood osterias near Piazza Dante. The paccheri al ragù napoletano here — slow-cooked for eight hours — is the definitive version of the dish. Book ahead, it fills up every night.",
+                "address": "Via Giovanni Nicotera, 13",
+                "lat": 40.8535,
+                "lng": 14.2507,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sat: 12:30pm–3pm, 7:30pm–11pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "tue": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "wed": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "thu": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "fri": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "sat": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Osteria+della+Mattonella+Naples",
+                "website": "https://www.osteriadella mattonella.it/",
+                "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=250&fit=crop"
+            },
+
+            # ── Café ──────────────────────────────────────────────────
+            {
+                "id": 13,
+                "name": "Gran Caffè Gambrinus",
+                "category": "cafe",
+                "description": "Naples' most historic café, founded in 1860 next to Piazza del Plebiscito. Belle Époque frescoes, marble counters and an espresso culture that is taken very seriously. Stand at the bar like a local — it's cheaper and more authentic.",
+                "address": "Via Chiaia, 1",
+                "lat": 40.8365,
+                "lng": 14.2494,
+                "rating": 4,
+                "price": "€€",
+                "hours": "Mon–Sun: 7am–11pm",
+                "hours_structured": {
+                    "mon": [{"open": "07:00", "close": "23:00"}],
+                    "tue": [{"open": "07:00", "close": "23:00"}],
+                    "wed": [{"open": "07:00", "close": "23:00"}],
+                    "thu": [{"open": "07:00", "close": "23:00"}],
+                    "fri": [{"open": "07:00", "close": "23:00"}],
+                    "sat": [{"open": "07:00", "close": "23:00"}],
+                    "sun": [{"open": "07:00", "close": "23:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Gran+Caffe+Gambrinus+Naples",
+                "website": "https://grancaffegambrinus.com/",
+                "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 14,
+                "name": "Caffè Mexico",
+                "category": "cafe",
+                "description": "The locals' answer to Gambrinus — no tourists, no frills, just arguably the best espresso in Naples. Operating since 1927 on Piazza Dante, this is the authentic Neapolitan coffee experience. Sugar already added, served correctly.",
+                "address": "Piazza Dante, 86",
+                "lat": 40.8534,
+                "lng": 14.2515,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 7am–8:30pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "07:00", "close": "20:30"}],
+                    "tue": [{"open": "07:00", "close": "20:30"}],
+                    "wed": [{"open": "07:00", "close": "20:30"}],
+                    "thu": [{"open": "07:00", "close": "20:30"}],
+                    "fri": [{"open": "07:00", "close": "20:30"}],
+                    "sat": [{"open": "07:00", "close": "20:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Caffe+Mexico+Naples+Piazza+Dante",
+                "website": "https://www.caffemexico.it/",
+                "image": "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=400&h=250&fit=crop"
+            },
+
+            # ── Pasta ─────────────────────────────────────────────────
+            {
+                "id": 15,
+                "name": "Cantina della Sapienza",
+                "category": "pasta",
+                "description": "A former wine cellar hidden in the historic center that appears unchanged since the 18th century. Tiny, atmospheric and serving some of the most authentic Neapolitan pasta you'll find — the pasta e patate is extraordinary.",
+                "address": "Via della Sapienza, 40",
+                "lat": 40.8533,
+                "lng": 14.2547,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 12pm–3pm | Closed Sun (lunch only)",
+                "hours_structured": {
+                    "mon": [{"open": "12:00", "close": "15:00"}],
+                    "tue": [{"open": "12:00", "close": "15:00"}],
+                    "wed": [{"open": "12:00", "close": "15:00"}],
+                    "thu": [{"open": "12:00", "close": "15:00"}],
+                    "fri": [{"open": "12:00", "close": "15:00"}],
+                    "sat": [{"open": "12:00", "close": "15:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Cantina+della+Sapienza+Naples",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187785-d1506236-Reviews-Cantina_della_Sapienza-Naples_Province_of_Naples_Campania.html",
+                "image": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 16,
+                "name": "Il Porticciolo",
+                "category": "pasta",
+                "description": "A beloved seafood pasta spot on the Mergellina waterfront with views over the bay. The spaghetti alle vongole and pasta con i frutti di mare are made with the freshest catch from the Gulf of Naples. Come for lunch.",
+                "address": "Via Mergellina, 23",
+                "lat": 40.8281,
+                "lng": 14.2242,
+                "rating": 4,
+                "price": "€€€",
+                "hours": "Tue–Sun: 12:30pm–3:30pm, 7:30pm–11pm | Closed Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "wed": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "thu": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "fri": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "sat": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}],
+                    "sun": [{"open": "12:30", "close": "15:30"}, {"open": "19:30", "close": "23:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Il+Porticciolo+Mergellina+Naples",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187785-d1057921-Reviews-Il_Porticciolo-Naples_Province_of_Naples_Campania.html",
+                "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&h=250&fit=crop"
+            },
+
+            # ── Snacks ────────────────────────────────────────────────
+            {
+                "id": 17,
+                "name": "La Masardona",
+                "category": "snack",
+                "description": "The undisputed king of pizza fritta in Naples since 1945. A hole-in-the-wall near the station where the fried pizza is stuffed with ricotta, salami and black pepper. Eaten standing on the street — the only correct way.",
+                "address": "Via Giulio Cesare Capaccio, 27",
+                "lat": 40.8548,
+                "lng": 14.2714,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 7am–2pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "07:00", "close": "14:00"}],
+                    "tue": [{"open": "07:00", "close": "14:00"}],
+                    "wed": [{"open": "07:00", "close": "14:00"}],
+                    "thu": [{"open": "07:00", "close": "14:00"}],
+                    "fri": [{"open": "07:00", "close": "14:00"}],
+                    "sat": [{"open": "07:00", "close": "14:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=La+Masardona+Naples",
+                "website": "https://www.lamasardona.it/",
+                "image": "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 18,
+                "name": "Friggitoria Fiorenzano",
+                "category": "snack",
+                "description": "A Pignasecca market institution since 1950 serving the full repertoire of Neapolitan fried street food — crocchè di patate, frittatine di pasta, palle di riso. Everything costs €1–2. Go hungry.",
+                "address": "Piazza Montesanto, 1",
+                "lat": 40.8517,
+                "lng": 14.2471,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 8am–3pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "08:00", "close": "15:00"}],
+                    "tue": [{"open": "08:00", "close": "15:00"}],
+                    "wed": [{"open": "08:00", "close": "15:00"}],
+                    "thu": [{"open": "08:00", "close": "15:00"}],
+                    "fri": [{"open": "08:00", "close": "15:00"}],
+                    "sat": [{"open": "08:00", "close": "15:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Friggitoria+Fiorenzano+Naples",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187785-d2094532-Reviews-Friggitoria_Fiorenzano-Naples_Province_of_Naples_Campania.html",
+                "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=250&fit=crop"
+            },
+
+            # ── Sandwich ──────────────────────────────────────────────
+            {
+                "id": 19,
+                "name": "Cibi Cotti",
+                "category": "sandwich",
+                "description": "A historic lunch spot tucked inside the Mergellina covered market serving builders, shopkeepers and lawyers. Freshly made gnocchi alla Sorrentina, parmigiana and grilled vegetables. Queue, point at what you want, eat standing.",
+                "address": "Via Mergellina, Mercato Coperto",
+                "lat": 40.8285,
+                "lng": 14.2250,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 7am–2pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "07:00", "close": "14:00"}],
+                    "tue": [{"open": "07:00", "close": "14:00"}],
+                    "wed": [{"open": "07:00", "close": "14:00"}],
+                    "thu": [{"open": "07:00", "close": "14:00"}],
+                    "fri": [{"open": "07:00", "close": "14:00"}],
+                    "sat": [{"open": "07:00", "close": "14:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Cibi+Cotti+Mergellina+Naples",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187785-d3456789-Reviews-Cibi_Cotti-Naples_Province_of_Naples_Campania.html",
+                "image": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&h=250&fit=crop"
+            },
+
+            # ── Dessert ───────────────────────────────────────────────
+            {
+                "id": 20,
+                "name": "Pasticceria Sfogliatella Mary",
+                "category": "dessert",
+                "description": "The best sfogliatelle in Naples, full stop. This tiny pastry counter in Galleria Umberto I has been making the shell-shaped ricotta pastries since 1860. Eat them hot, straight from the oven. Life-changing at €1.50.",
+                "address": "Galleria Umberto I, 66",
+                "lat": 40.8381,
+                "lng": 14.2497,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 7:30am–8pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "07:30", "close": "20:00"}],
+                    "tue": [{"open": "07:30", "close": "20:00"}],
+                    "wed": [{"open": "07:30", "close": "20:00"}],
+                    "thu": [{"open": "07:30", "close": "20:00"}],
+                    "fri": [{"open": "07:30", "close": "20:00"}],
+                    "sat": [{"open": "07:30", "close": "20:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Sfogliatella+Mary+Galleria+Umberto+Naples",
+                "website": "https://www.sfogliatellaMary.it/",
+                "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 21,
+                "name": "Pasticceria Mennella",
+                "category": "dessert",
+                "description": "A renowned Neapolitan pastry institution with five locations across the city. Famous for their babà — rum-soaked brioche that is the defining Neapolitan dessert — and exceptional gelato. The pistachio and lemon are benchmarks.",
+                "address": "Via dei Tribunali, 148",
+                "lat": 40.8524,
+                "lng": 14.2523,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sun: 7:30am–10pm",
+                "hours_structured": {
+                    "mon": [{"open": "07:30", "close": "22:00"}],
+                    "tue": [{"open": "07:30", "close": "22:00"}],
+                    "wed": [{"open": "07:30", "close": "22:00"}],
+                    "thu": [{"open": "07:30", "close": "22:00"}],
+                    "fri": [{"open": "07:30", "close": "22:00"}],
+                    "sat": [{"open": "07:30", "close": "22:00"}],
+                    "sun": [{"open": "07:30", "close": "22:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Pasticceria+Mennella+Naples",
+                "website": "https://www.pasticceriamennella.it/",
+                "image": "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 22,
+                "name": "Gay-Odin",
+                "category": "dessert",
+                "description": "Naples' legendary chocolate maker since 1894. The foresta — a tube of dark chocolate rolled in chocolate flakes — is one of the greatest confections in Italy. Multiple locations, all worth visiting.",
+                "address": "Via Benedetto Croce, 61",
+                "lat": 40.8498,
+                "lng": 14.2536,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sat: 9:30am–8pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "09:30", "close": "20:00"}],
+                    "tue": [{"open": "09:30", "close": "20:00"}],
+                    "wed": [{"open": "09:30", "close": "20:00"}],
+                    "thu": [{"open": "09:30", "close": "20:00"}],
+                    "fri": [{"open": "09:30", "close": "20:00"}],
+                    "sat": [{"open": "09:30", "close": "20:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Gay+Odin+Naples",
+                "website": "https://www.gay-odin.it/",
+                "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 23,
+                "name": "Fantasia Gelati",
+                "category": "dessert",
+                "description": "Over 50 flavours of artisanal gelato made with natural ingredients, with multiple locations across Naples. The standout is the lemon sorbet using Sorrento lemons — intensely flavoured and perfectly balanced.",
+                "address": "Piazza Vanvitelli, 22",
+                "lat": 40.8547,
+                "lng": 14.2383,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sun: 10am–midnight",
+                "hours_structured": {
+                    "mon": [{"open": "10:00", "close": "00:00"}],
+                    "tue": [{"open": "10:00", "close": "00:00"}],
+                    "wed": [{"open": "10:00", "close": "00:00"}],
+                    "thu": [{"open": "10:00", "close": "00:00"}],
+                    "fri": [{"open": "10:00", "close": "00:00"}],
+                    "sat": [{"open": "10:00", "close": "00:00"}],
+                    "sun": [{"open": "10:00", "close": "00:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Fantasia+Gelati+Naples+Vanvitelli",
+                "website": "https://www.fantasiagelati.it/",
+                "image": "https://images.unsplash.com/photo-1488900128323-21503983a07e?w=400&h=250&fit=crop"
+            },
+
+            # ── Drinks ────────────────────────────────────────────────
+            {
+                "id": 24,
+                "name": "Enoteca Belledonne",
+                "category": "drinks",
+                "description": "The best wine bar in Naples, tucked in a tiny alley in Chiaia. Floor-to-ceiling bottles, excellent aperitivo snacks and a crowd of well-dressed locals. Arrive at 7pm for the full aperitivo experience.",
+                "address": "Vico Belledonne a Chiaia, 18",
+                "lat": 40.8356,
+                "lng": 14.2426,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sat: 11am–2pm, 5pm–midnight | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "11:00", "close": "14:00"}, {"open": "17:00", "close": "00:00"}],
+                    "tue": [{"open": "11:00", "close": "14:00"}, {"open": "17:00", "close": "00:00"}],
+                    "wed": [{"open": "11:00", "close": "14:00"}, {"open": "17:00", "close": "00:00"}],
+                    "thu": [{"open": "11:00", "close": "14:00"}, {"open": "17:00", "close": "00:00"}],
+                    "fri": [{"open": "11:00", "close": "14:00"}, {"open": "17:00", "close": "00:00"}],
+                    "sat": [{"open": "11:00", "close": "14:00"}, {"open": "17:00", "close": "00:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Enoteca+Belledonne+Naples",
+                "website": "https://www.enotecabelledonne.com/",
+                "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 25,
+                "name": "Lúpulo Craft Beer",
+                "category": "drinks",
+                "description": "Naples' best craft beer bar in the Chiaia neighbourhood. An impressive rotating tap list of Italian and international craft beers in a lively, unpretentious setting. The perfect alternative to wine.",
+                "address": "Via Carlo Poerio, 51",
+                "lat": 40.8355,
+                "lng": 14.2445,
+                "rating": 4,
+                "price": "€€",
+                "hours": "Mon–Sun: 5pm–2am",
+                "hours_structured": {
+                    "mon": [{"open": "17:00", "close": "02:00"}],
+                    "tue": [{"open": "17:00", "close": "02:00"}],
+                    "wed": [{"open": "17:00", "close": "02:00"}],
+                    "thu": [{"open": "17:00", "close": "02:00"}],
+                    "fri": [{"open": "17:00", "close": "02:00"}],
+                    "sat": [{"open": "17:00", "close": "02:00"}],
+                    "sun": [{"open": "17:00", "close": "02:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Lupulo+Craft+Beer+Naples",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187785-d7456789-Reviews-Lupulo-Naples_Province_of_Naples_Campania.html",
+                "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=250&fit=crop"
+            },
+        ]
+    }
+
+    ,
+    "venice": {
+        "id": "venice",
+        "name": "Venice",
+        "name_it": "Venezia",
+        "country": "Italy",
+        "center": {"lat": 45.4408, "lng": 12.3155},
+        "zoom": 14,
+        "description": "A city built on water — where cicchetti, spritz and fresh seafood are the holy trinity.",
+        "image": "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=500&fit=crop",
+        "categories": VENICE_CATEGORIES,
+        "restaurants": [
+
+            # ── Fine Dining ───────────────────────────────────────────
+            {
+                "id": 1,
+                "name": "Osteria alle Testiere",
+                "category": "fine_dining",
+                "description": "Venice's most celebrated small restaurant — just 22 seats. Chef Bruno Gavagnin's daily-changing menu is built entirely around what came off the boats that morning. Book two months ahead minimum. Michelin-recognised. Worth every effort.",
+                "address": "Calle del Mondo Novo, 5801",
+                "lat": 45.4365,
+                "lng": 12.3378,
+                "rating": 5,
+                "price": "€€€€",
+                "hours": "Tue–Sat: 12:30pm–2pm, 7pm–11pm | Closed Sun & Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "12:30", "close": "14:00"}, {"open": "19:00", "close": "23:00"}],
+                    "wed": [{"open": "12:30", "close": "14:00"}, {"open": "19:00", "close": "23:00"}],
+                    "thu": [{"open": "12:30", "close": "14:00"}, {"open": "19:00", "close": "23:00"}],
+                    "fri": [{"open": "12:30", "close": "14:00"}, {"open": "19:00", "close": "23:00"}],
+                    "sat": [{"open": "12:30", "close": "14:00"}, {"open": "19:00", "close": "23:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Osteria+alle+Testiere+Venice",
+                "website": "https://www.osterialletestiere.it/",
+                "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 2,
+                "name": "Al Covo",
+                "category": "fine_dining",
+                "description": "A Castello institution since 1987, run by the Benelli family with warm, unpretentious elegance. The baccalà mantecato and the day's catch prepared with Venetian restraint are extraordinary. Michelin-listed. Book well ahead.",
+                "address": "Campiello de la Pescaria, 3968",
+                "lat": 45.4322,
+                "lng": 12.3561,
+                "rating": 5,
+                "price": "€€€€",
+                "hours": "Thu–Mon: 12:45pm–2pm, 7:30pm–10pm | Closed Tue & Wed",
+                "hours_structured": {
+                    "mon": [{"open": "12:45", "close": "14:00"}, {"open": "19:30", "close": "22:00"}],
+                    "tue": [],
+                    "wed": [],
+                    "thu": [{"open": "12:45", "close": "14:00"}, {"open": "19:30", "close": "22:00"}],
+                    "fri": [{"open": "12:45", "close": "14:00"}, {"open": "19:30", "close": "22:00"}],
+                    "sat": [{"open": "12:45", "close": "14:00"}, {"open": "19:30", "close": "22:00"}],
+                    "sun": [{"open": "12:45", "close": "14:00"}, {"open": "19:30", "close": "22:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Al+Covo+Venice",
+                "website": "https://ristorantealcovo.com/",
+                "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 3,
+                "name": "Antiche Carampane",
+                "category": "fine_dining",
+                "description": "Tucked down a quiet San Polo alley with a sign that says 'No pizza, no lasagne, no tourist menu.' Exactly right. The finest traditional Venetian seafood in the city — fritto misto, sarde in saor, and bigoli in salsa — done perfectly.",
+                "address": "Rio Terà de le Carampane, 1911",
+                "lat": 45.4390,
+                "lng": 12.3269,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Tue–Sat: 12:30pm–2:30pm, 7:30pm–10:30pm | Closed Sun & Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "wed": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "thu": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "fri": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "sat": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Antiche+Carampane+Venice",
+                "website": "https://www.antichecarampane.com/",
+                "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop"
+            },
+
+            # ── Cicchetti ─────────────────────────────────────────────
+            {
+                "id": 4,
+                "name": "Bar All'Arco",
+                "category": "cicchetti",
+                "description": "The most consistently praised cicchetti bar in Venice by people who actually live here. A tiny counter near the Rialto market with a small, traditional selection of impeccably made crostini. Featured on Somebody Feed Phil. Go early.",
+                "address": "Calle de l'Ochialer, 436",
+                "lat": 45.4389,
+                "lng": 12.3355,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 8am–2:30pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "08:00", "close": "14:30"}],
+                    "tue": [{"open": "08:00", "close": "14:30"}],
+                    "wed": [{"open": "08:00", "close": "14:30"}],
+                    "thu": [{"open": "08:00", "close": "14:30"}],
+                    "fri": [{"open": "08:00", "close": "14:30"}],
+                    "sat": [{"open": "08:00", "close": "14:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Bar+All+Arco+Venice",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187870-d1058986-Reviews-Bar_All_Arco-Venice_Veneto.html",
+                "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 5,
+                "name": "Cantina Do Mori",
+                "category": "cicchetti",
+                "description": "Reputedly the oldest bacaro in Venice, operating since 1462 near the Rialto. Copper pots hang from low ceilings, wine flows in small ombra glasses, and the cicchetti — especially the baccalà and fried zucchini flowers — are exceptional.",
+                "address": "Calle Do Mori, 429",
+                "lat": 45.4386,
+                "lng": 12.3358,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 8am–8pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "08:00", "close": "20:00"}],
+                    "tue": [{"open": "08:00", "close": "20:00"}],
+                    "wed": [{"open": "08:00", "close": "20:00"}],
+                    "thu": [{"open": "08:00", "close": "20:00"}],
+                    "fri": [{"open": "08:00", "close": "20:00"}],
+                    "sat": [{"open": "08:00", "close": "20:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Cantina+Do+Mori+Venice",
+                "website": "https://www.cantinaschiavi.com/",
+                "image": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 6,
+                "name": "Cantine del Vino già Schiavi",
+                "category": "cicchetti",
+                "description": "The iconic Dorsoduro bacaro where you dangle your feet over the canal and eat some of Venice's best crostini. Dozens of wines by the glass, inventive toppings — tuna polpette, baccalà-stuffed courgette flowers — and a genuinely local crowd.",
+                "address": "Fondamenta Nani, 992",
+                "lat": 45.4309,
+                "lng": 12.3228,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 8:30am–8:30pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "08:30", "close": "20:30"}],
+                    "tue": [{"open": "08:30", "close": "20:30"}],
+                    "wed": [{"open": "08:30", "close": "20:30"}],
+                    "thu": [{"open": "08:30", "close": "20:30"}],
+                    "fri": [{"open": "08:30", "close": "20:30"}],
+                    "sat": [{"open": "08:30", "close": "20:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Cantine+del+Vino+gia+Schiavi+Venice",
+                "website": "https://www.cantinaschiavi.com/",
+                "image": "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 7,
+                "name": "Osteria Bancogiro",
+                "category": "cicchetti",
+                "description": "Right on the Grand Canal next to the Rialto bridge and market. Start at the bar with cicchetti and a Select spritz, then move upstairs for a full Venetian seafood dinner. The terrace view is one of the best in the city.",
+                "address": "Campo San Giacometto, 122",
+                "lat": 45.4391,
+                "lng": 12.3360,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Tue–Sun: 10am–3pm, 6pm–11pm | Closed Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "10:00", "close": "15:00"}, {"open": "18:00", "close": "23:00"}],
+                    "wed": [{"open": "10:00", "close": "15:00"}, {"open": "18:00", "close": "23:00"}],
+                    "thu": [{"open": "10:00", "close": "15:00"}, {"open": "18:00", "close": "23:00"}],
+                    "fri": [{"open": "10:00", "close": "15:00"}, {"open": "18:00", "close": "23:00"}],
+                    "sat": [{"open": "10:00", "close": "15:00"}, {"open": "18:00", "close": "23:00"}],
+                    "sun": [{"open": "10:00", "close": "15:00"}, {"open": "18:00", "close": "23:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Osteria+Bancogiro+Venice",
+                "website": "https://www.osteriabancogiro.it/",
+                "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 8,
+                "name": "Bacareto da Lele",
+                "category": "cicchetti",
+                "description": "A closet-sized bacaro near Santa Croce with mini-panini at €1 each and wine from €0.80 a glass. No tourists, just students and workers. The most authentic and cheapest cicchetti experience in Venice — queue outside and eat standing.",
+                "address": "Campo dei Tolentini, 183",
+                "lat": 45.4425,
+                "lng": 12.3186,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Fri: 6am–8pm | Sat: 6am–2pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "06:00", "close": "20:00"}],
+                    "tue": [{"open": "06:00", "close": "20:00"}],
+                    "wed": [{"open": "06:00", "close": "20:00"}],
+                    "thu": [{"open": "06:00", "close": "20:00"}],
+                    "fri": [{"open": "06:00", "close": "20:00"}],
+                    "sat": [{"open": "06:00", "close": "14:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Bacareto+da+Lele+Venice",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187870-d3456789-Reviews-Bacareto_da_Lele-Venice_Veneto.html",
+                "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=250&fit=crop"
+            },
+
+            # ── Trattoria ─────────────────────────────────────────────
+            {
+                "id": 9,
+                "name": "Trattoria al Gatto Nero",
+                "category": "trattoria",
+                "description": "On the island of Burano, 40 minutes by vaporetto from Venice. Worth every minute of the journey. The risotto di gò with goby fish from the lagoon and the house Pinot Grigio are extraordinary. Book ahead and make a day of it.",
+                "address": "Via Giudecca, 88, Burano",
+                "lat": 45.4853,
+                "lng": 12.4173,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Tue–Sun: 12:30pm–3pm, 7:30pm–9pm | Closed Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "21:00"}],
+                    "wed": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "21:00"}],
+                    "thu": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "21:00"}],
+                    "fri": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "21:00"}],
+                    "sat": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "21:00"}],
+                    "sun": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "21:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Trattoria+al+Gatto+Nero+Burano+Venice",
+                "website": "https://www.gattonero.com/",
+                "image": "https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 10,
+                "name": "Corte Sconta",
+                "category": "trattoria",
+                "description": "A hidden courtyard restaurant in Castello that has been cooking classic Venetian seafood for over 40 years. Sarde in saor, baccalà mantecato, and tagliolini with white truffles in season. Warm, family-run, and consistently excellent.",
+                "address": "Calle del Pestrin, 3886",
+                "lat": 45.4330,
+                "lng": 12.3560,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Tue–Sat: 12:30pm–2:30pm, 7:30pm–10pm | Closed Sun & Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:00"}],
+                    "wed": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:00"}],
+                    "thu": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:00"}],
+                    "fri": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:00"}],
+                    "sat": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Corte+Sconta+Venice",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187870-d1058987-Reviews-Corte_Sconta-Venice_Veneto.html",
+                "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=250&fit=crop"
+            },
+
+            # ── Café ──────────────────────────────────────────────────
+            {
+                "id": 11,
+                "name": "Caffè Florian",
+                "category": "cafe",
+                "description": "The oldest café in continuous operation in the world, founded in 1720 on Piazza San Marco. Outrageously expensive but worth doing once. Sit inside in the frescoed rooms and order a hot chocolate. The orchestra plays outside in summer.",
+                "address": "Piazza San Marco, 57",
+                "lat": 45.4341,
+                "lng": 12.3385,
+                "rating": 4,
+                "price": "€€€€",
+                "hours": "Mon–Sun: 9am–11pm",
+                "hours_structured": {
+                    "mon": [{"open": "09:00", "close": "23:00"}],
+                    "tue": [{"open": "09:00", "close": "23:00"}],
+                    "wed": [{"open": "09:00", "close": "23:00"}],
+                    "thu": [{"open": "09:00", "close": "23:00"}],
+                    "fri": [{"open": "09:00", "close": "23:00"}],
+                    "sat": [{"open": "09:00", "close": "23:00"}],
+                    "sun": [{"open": "09:00", "close": "23:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Caffe+Florian+Venice",
+                "website": "https://www.caffeflorian.com/",
+                "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 12,
+                "name": "Torrefazione Cannaregio",
+                "category": "cafe",
+                "description": "A local coffee roastery in Cannaregio beloved by Venetians and featured on Somebody Feed Phil. No tourist prices, excellent espresso, and a neighbourhood feel far from San Marco. Order a macchiato and a pastry at the bar.",
+                "address": "Rio Terà San Leonardo, 1337",
+                "lat": 45.4449,
+                "lng": 12.3264,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sat: 7am–7pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "07:00", "close": "19:00"}],
+                    "tue": [{"open": "07:00", "close": "19:00"}],
+                    "wed": [{"open": "07:00", "close": "19:00"}],
+                    "thu": [{"open": "07:00", "close": "19:00"}],
+                    "fri": [{"open": "07:00", "close": "19:00"}],
+                    "sat": [{"open": "07:00", "close": "19:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Torrefazione+Cannaregio+Venice",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187870-d2094455-Reviews-Torrefazione_Cannaregio-Venice_Veneto.html",
+                "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=250&fit=crop"
+            },
+
+            # ── Pasta ─────────────────────────────────────────────────
+            {
+                "id": 13,
+                "name": "Osteria da Alberto",
+                "category": "pasta",
+                "description": "A Cannaregio favourite with locals for its exceptional spaghetti alle vongole and fresh seafood pasta. The menu changes daily based on the market. Warm, no-frills atmosphere with canal-side seating. Book ahead.",
+                "address": "Calle Larga Giacinto Gallina, 5401",
+                "lat": 45.4431,
+                "lng": 12.3371,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sat: 12pm–3pm, 6:30pm–10pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:00", "close": "15:00"}, {"open": "18:30", "close": "22:00"}],
+                    "tue": [{"open": "12:00", "close": "15:00"}, {"open": "18:30", "close": "22:00"}],
+                    "wed": [{"open": "12:00", "close": "15:00"}, {"open": "18:30", "close": "22:00"}],
+                    "thu": [{"open": "12:00", "close": "15:00"}, {"open": "18:30", "close": "22:00"}],
+                    "fri": [{"open": "12:00", "close": "15:00"}, {"open": "18:30", "close": "22:00"}],
+                    "sat": [{"open": "12:00", "close": "15:00"}, {"open": "18:30", "close": "22:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Osteria+da+Alberto+Venice+Cannaregio",
+                "website": "https://www.osteriadaalberto.it/",
+                "image": "https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 14,
+                "name": "La Zucca",
+                "category": "pasta",
+                "description": "A Santa Croce institution loved by both Venetians and savvy visitors. Focuses on vegetables and seasonal Veneto ingredients — a welcome break from pure seafood. The pasta with radicchio and taleggio is extraordinary. Book ahead.",
+                "address": "Calle del Tentor, 1762",
+                "lat": 45.4411,
+                "lng": 12.3215,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sat: 12:30pm–2:30pm, 7pm–10:30pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:30", "close": "14:30"}, {"open": "19:00", "close": "22:30"}],
+                    "tue": [{"open": "12:30", "close": "14:30"}, {"open": "19:00", "close": "22:30"}],
+                    "wed": [{"open": "12:30", "close": "14:30"}, {"open": "19:00", "close": "22:30"}],
+                    "thu": [{"open": "12:30", "close": "14:30"}, {"open": "19:00", "close": "22:30"}],
+                    "fri": [{"open": "12:30", "close": "14:30"}, {"open": "19:00", "close": "22:30"}],
+                    "sat": [{"open": "12:30", "close": "14:30"}, {"open": "19:00", "close": "22:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=La+Zucca+Venice",
+                "website": "https://www.lazucca.it/",
+                "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&h=250&fit=crop"
+            },
+
+            # ── Snacks ────────────────────────────────────────────────
+            {
+                "id": 15,
+                "name": "Acqua e Mais",
+                "category": "snack",
+                "description": "The best street food in Venice — fried fish in a paper cone, seafood skewers, and crostini to eat standing by the canal. Featured on Somebody Feed Phil. Near the Rialto bridge and always worth the short queue.",
+                "address": "Corte de l'Orso, 2834",
+                "lat": 45.4393,
+                "lng": 12.3338,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sun: 10am–9pm",
+                "hours_structured": {
+                    "mon": [{"open": "10:00", "close": "21:00"}],
+                    "tue": [{"open": "10:00", "close": "21:00"}],
+                    "wed": [{"open": "10:00", "close": "21:00"}],
+                    "thu": [{"open": "10:00", "close": "21:00"}],
+                    "fri": [{"open": "10:00", "close": "21:00"}],
+                    "sat": [{"open": "10:00", "close": "21:00"}],
+                    "sun": [{"open": "10:00", "close": "21:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Acqua+e+Mais+Venice",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187870-d2094532-Reviews-Acqua_e_Mais-Venice_Veneto.html",
+                "image": "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&h=250&fit=crop"
+            },
+
+            # ── Dessert ───────────────────────────────────────────────
+            {
+                "id": 16,
+                "name": "Gelateria Nico",
+                "category": "dessert",
+                "description": "A Dorsoduro institution since 1935 on the Zattere waterfront with views across the Giudecca canal. The gianduiotto — a block of dense hazelnut chocolate gelato served in whipped cream — is the most Venetian dessert you'll find.",
+                "address": "Fondamenta Zattere al Ponte Longo, 922",
+                "lat": 45.4288,
+                "lng": 12.3259,
+                "rating": 4,
+                "price": "€€",
+                "hours": "Mon–Sun: 6:45am–11pm",
+                "hours_structured": {
+                    "mon": [{"open": "06:45", "close": "23:00"}],
+                    "tue": [{"open": "06:45", "close": "23:00"}],
+                    "wed": [{"open": "06:45", "close": "23:00"}],
+                    "thu": [{"open": "06:45", "close": "23:00"}],
+                    "fri": [{"open": "06:45", "close": "23:00"}],
+                    "sat": [{"open": "06:45", "close": "23:00"}],
+                    "sun": [{"open": "06:45", "close": "23:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Gelateria+Nico+Venice",
+                "website": "https://www.gelateria-nico.com/",
+                "image": "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 17,
+                "name": "Tonolo",
+                "category": "dessert",
+                "description": "The best pasticceria in Venice, beloved by locals in Dorsoduro since 1886. Incredible cornetti, zaleti, frittole during Carnival, and some of the finest pastries in the city. Go for breakfast — the locals queue outside from 7am.",
+                "address": "Calle San Pantalon, 3764",
+                "lat": 45.4348,
+                "lng": 12.3246,
+                "rating": 5,
+                "price": "€",
+                "hours": "Tue–Sat: 7:30am–8pm | Sun: 7:30am–1pm | Closed Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "07:30", "close": "20:00"}],
+                    "wed": [{"open": "07:30", "close": "20:00"}],
+                    "thu": [{"open": "07:30", "close": "20:00"}],
+                    "fri": [{"open": "07:30", "close": "20:00"}],
+                    "sat": [{"open": "07:30", "close": "20:00"}],
+                    "sun": [{"open": "07:30", "close": "13:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Pasticceria+Tonolo+Venice",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187870-d1058780-Reviews-Tonolo-Venice_Veneto.html",
+                "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop"
+            },
+
+            # ── Drinks ────────────────────────────────────────────────
+            {
+                "id": 18,
+                "name": "Al Timon",
+                "category": "drinks",
+                "description": "A lively canal-side bar on Fondamenta degli Ormesini in Cannaregio — one of the most atmospheric spots in Venice for an evening spritz. A moored boat serves as extra seating. Local crowd, excellent cicchetti, and the best Select spritz in town.",
+                "address": "Fondamenta dei Ormesini, 2754",
+                "lat": 45.4461,
+                "lng": 12.3296,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sun: 11am–1am",
+                "hours_structured": {
+                    "mon": [{"open": "11:00", "close": "01:00"}],
+                    "tue": [{"open": "11:00", "close": "01:00"}],
+                    "wed": [{"open": "11:00", "close": "01:00"}],
+                    "thu": [{"open": "11:00", "close": "01:00"}],
+                    "fri": [{"open": "11:00", "close": "01:00"}],
+                    "sat": [{"open": "11:00", "close": "01:00"}],
+                    "sun": [{"open": "11:00", "close": "01:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Al+Timon+Venice",
+                "website": "https://www.altimon.it/",
+                "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 19,
+                "name": "Harry's Bar",
+                "category": "drinks",
+                "description": "Where the Bellini was invented in 1948. Expensive, touristy and absolutely worth going once for the history alone. Ernest Hemingway drank here. The Bellini — white peach purée and Prosecco — tastes different here than anywhere else.",
+                "address": "Calle Vallaresso, 1323",
+                "lat": 45.4322,
+                "lng": 12.3380,
+                "rating": 4,
+                "price": "€€€€",
+                "hours": "Mon–Sun: 10:30am–11pm",
+                "hours_structured": {
+                    "mon": [{"open": "10:30", "close": "23:00"}],
+                    "tue": [{"open": "10:30", "close": "23:00"}],
+                    "wed": [{"open": "10:30", "close": "23:00"}],
+                    "thu": [{"open": "10:30", "close": "23:00"}],
+                    "fri": [{"open": "10:30", "close": "23:00"}],
+                    "sat": [{"open": "10:30", "close": "23:00"}],
+                    "sun": [{"open": "10:30", "close": "23:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Harry+Bar+Venice",
+                "website": "https://www.harrysbarvenezia.com/",
+                "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&h=250&fit=crop"
+            },
+        ]
+    }
+
+    ,
+    "milan": {
+        "id": "milan",
+        "name": "Milano",
+        "name_it": "Milano",
+        "country": "Italy",
+        "center": {"lat": 45.4654, "lng": 9.1859},
+        "zoom": 14,
+        "description": "Italy's capital of fashion and design — where risotto, cotoletta and the Negroni Sbagliato were born.",
+        "image": "/static/img/milano.png",
+        "categories": MILAN_CATEGORIES,
+        "restaurants": [
+
+            # ── Fine Dining ───────────────────────────────────────────
+            {
+                "id": 1,
+                "name": "Trippa",
+                "category": "fine_dining",
+                "description": "The defining restaurant of Milan's neo-trattoria movement. Chef Diego Rossi honours offal and disappearing Italian dishes with unfussy brilliance. The butter pasta cooked in broth is legendary. Virtually impossible to get a table — reservations open on the 1st of each month for the following month.",
+                "address": "Via Giorgio Vasari, 1",
+                "lat": 45.4607,
+                "lng": 9.2108,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Mon–Fri: 7:15pm–11:30pm | Fri–Sat: 12:30pm–2:30pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "19:15", "close": "23:30"}],
+                    "tue": [{"open": "19:15", "close": "23:30"}],
+                    "wed": [{"open": "19:15", "close": "23:30"}],
+                    "thu": [{"open": "19:15", "close": "23:30"}],
+                    "fri": [{"open": "12:30", "close": "14:30"}, {"open": "19:15", "close": "23:30"}],
+                    "sat": [{"open": "12:30", "close": "14:30"}, {"open": "19:15", "close": "23:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Trippa+Milan",
+                "website": "https://www.trippamilano.it/",
+                "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 2,
+                "name": "Il Luogo di Aimo e Nadia",
+                "category": "fine_dining",
+                "description": "A Relais & Châteaux restaurant open since the 1960s and one of the world's great dining tables. Two Michelin stars. The seasonal tasting menus organised by Italian territory are extraordinary — Sardinian mussels, Ligurian red mullet, buckwheat tortello.",
+                "address": "Via Montecuccoli, 6",
+                "lat": 45.4519,
+                "lng": 9.1401,
+                "rating": 5,
+                "price": "€€€€",
+                "hours": "Tue–Sat: 12:30pm–2pm, 8pm–10:30pm | Closed Sun & Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "12:30", "close": "14:00"}, {"open": "20:00", "close": "22:30"}],
+                    "wed": [{"open": "12:30", "close": "14:00"}, {"open": "20:00", "close": "22:30"}],
+                    "thu": [{"open": "12:30", "close": "14:00"}, {"open": "20:00", "close": "22:30"}],
+                    "fri": [{"open": "12:30", "close": "14:00"}, {"open": "20:00", "close": "22:30"}],
+                    "sat": [{"open": "12:30", "close": "14:00"}, {"open": "20:00", "close": "22:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Il+Luogo+di+Aimo+e+Nadia+Milan",
+                "website": "https://www.aimoenadia.com/",
+                "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 3,
+                "name": "Boeucc",
+                "category": "fine_dining",
+                "description": "Milan's oldest restaurant, founded in 1696 in a palazzo near the Duomo. Vaulted ceilings, velvet curtains, marble statuary and waiters in cummerbunds. The risotto alla Milanese and ossobuco are the definitive versions of both dishes.",
+                "address": "Piazza Belgioioso, 2",
+                "lat": 45.4660,
+                "lng": 9.1945,
+                "rating": 4,
+                "price": "€€€€",
+                "hours": "Mon–Fri: 12:30pm–2:30pm, 7:30pm–10:30pm | Sat: 7:30pm–10:30pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "tue": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "wed": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "thu": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "fri": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "sat": [{"open": "19:30", "close": "22:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Boeucc+Milan",
+                "website": "https://www.boeucc-restaurant.it/",
+                "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop"
+            },
+
+            # ── Trattoria ─────────────────────────────────────────────
+            {
+                "id": 4,
+                "name": "Trattoria del Nuovo Macello",
+                "category": "trattoria",
+                "description": "Off the beaten track but worth every step. The finest cotoletta alla Milanese in the city — thick, pink and juicy as it should be, not the thin orecchia d'elefante version. The risotto is equally perfect. Book ahead.",
+                "address": "Via Cesare Lombroso, 20",
+                "lat": 45.4499,
+                "lng": 9.2077,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Mon–Fri: 12:30pm–2:30pm, 7:30pm–10:30pm | Closed Sat & Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "tue": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "wed": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "thu": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "fri": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "sat": [],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Trattoria+del+Nuovo+Macello+Milan",
+                "website": "https://www.trattoriadelnuovomacello.it/",
+                "image": "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 5,
+                "name": "Antica Trattoria della Pesa",
+                "category": "trattoria",
+                "description": "A Milanese institution since 1880 in Porta Nuova serving the city's most authentic traditional dishes. The hot zabaglione in a coffee chalice is legendary. Brasato and cotoletta are textbook. A pilgrimage for anyone serious about Milanese food.",
+                "address": "Viale Pasubio, 10",
+                "lat": 45.4786,
+                "lng": 9.1853,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Mon–Sat: 12:30pm–2:30pm, 7:30pm–10:30pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "tue": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "wed": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "thu": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "fri": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "sat": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Antica+Trattoria+della+Pesa+Milan",
+                "website": "https://www.anticatrattoriadella pesa.com/",
+                "image": "https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 6,
+                "name": "Erba Brusca",
+                "category": "trattoria",
+                "description": "A laidback canal-side restaurant south of the Navigli with a vegetable garden that supplies the kitchen. French-born chef Alice Delcourt's farm-to-table cooking is some of the most interesting in Milan. The outdoor garden at lunch is extraordinary.",
+                "address": "Alzaia Naviglio Pavese, 286",
+                "lat": 45.4337,
+                "lng": 9.1671,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Wed–Sun: 12:30pm–2:30pm, 8pm–11pm | Closed Mon & Tue",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [],
+                    "wed": [{"open": "12:30", "close": "14:30"}, {"open": "20:00", "close": "23:00"}],
+                    "thu": [{"open": "12:30", "close": "14:30"}, {"open": "20:00", "close": "23:00"}],
+                    "fri": [{"open": "12:30", "close": "14:30"}, {"open": "20:00", "close": "23:00"}],
+                    "sat": [{"open": "12:30", "close": "14:30"}, {"open": "20:00", "close": "23:00"}],
+                    "sun": [{"open": "12:30", "close": "14:30"}, {"open": "20:00", "close": "23:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Erba+Brusca+Milan",
+                "website": "https://www.erbabrusca.it/",
+                "image": "https://images.unsplash.com/photo-1572441713132-c542f4cf966c?w=400&h=250&fit=crop"
+            },
+
+            # ── Café ──────────────────────────────────────────────────
+            {
+                "id": 7,
+                "name": "Bar Luce",
+                "category": "cafe",
+                "description": "Wes Anderson designed this café inside the Prada Foundation — pastel colours, curved ceilings, pinball machines and a menu of classic Milanese bar food. The tramezzini and sfogliatelle are excellent. A cultural destination as much as a café.",
+                "address": "Largo Isarco, 2",
+                "lat": 45.4433,
+                "lng": 9.1978,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sun: 9am–9pm",
+                "hours_structured": {
+                    "mon": [{"open": "09:00", "close": "21:00"}],
+                    "tue": [{"open": "09:00", "close": "21:00"}],
+                    "wed": [{"open": "09:00", "close": "21:00"}],
+                    "thu": [{"open": "09:00", "close": "21:00"}],
+                    "fri": [{"open": "09:00", "close": "21:00"}],
+                    "sat": [{"open": "09:00", "close": "21:00"}],
+                    "sun": [{"open": "09:00", "close": "21:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Bar+Luce+Prada+Foundation+Milan",
+                "website": "https://www.fondazioneprada.org/visit/bar-luce/",
+                "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 8,
+                "name": "Caffè Cova",
+                "category": "cafe",
+                "description": "Milan's most elegant historic café, founded in 1817 near Teatro alla Scala. The panettone, pastries and hot chocolate are exceptional. Via Montenapoleone location puts it in the heart of the fashion district — dress accordingly.",
+                "address": "Via Montenapoleone, 8",
+                "lat": 45.4678,
+                "lng": 9.1963,
+                "rating": 4,
+                "price": "€€€",
+                "hours": "Mon–Sat: 8am–8pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "08:00", "close": "20:00"}],
+                    "tue": [{"open": "08:00", "close": "20:00"}],
+                    "wed": [{"open": "08:00", "close": "20:00"}],
+                    "thu": [{"open": "08:00", "close": "20:00"}],
+                    "fri": [{"open": "08:00", "close": "20:00"}],
+                    "sat": [{"open": "08:00", "close": "20:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Caffe+Cova+Milan",
+                "website": "https://www.caffecova.com/",
+                "image": "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=400&h=250&fit=crop"
+            },
+
+            # ── Pasta ─────────────────────────────────────────────────
+            {
+                "id": 9,
+                "name": "Risotteria Melotti",
+                "category": "pasta",
+                "description": "The best risotto in Milan, full stop. The Melotti family grows their own Vialone Nano rice in Verona and serves it in a sleek modern space near the Duomo. The risotto alla Milanese with saffron is benchmark quality.",
+                "address": "Via Santa Radegonda, 16",
+                "lat": 45.4654,
+                "lng": 9.1888,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sat: 12pm–3pm, 7pm–10:30pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+                    "tue": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+                    "wed": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+                    "thu": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+                    "fri": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+                    "sat": [{"open": "12:00", "close": "15:00"}, {"open": "19:00", "close": "22:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Risotteria+Melotti+Milan",
+                "website": "https://www.risotteriamelotti.it/",
+                "image": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 10,
+                "name": "Ratanà",
+                "category": "pasta",
+                "description": "Modern Milanese cooking in a restored 1930s railway building near Porta Garibaldi. Chef Cesare Battisti's risotto and pasta are some of the finest in the city. The mondeghili — Milanese meatballs — and polenta are equally outstanding.",
+                "address": "Via Gaetano de Castillia, 28",
+                "lat": 45.4836,
+                "lng": 9.1882,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Mon–Fri: 12:30pm–2:30pm, 7:30pm–10:30pm | Sat: 7:30pm–10:30pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "tue": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "wed": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "thu": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "fri": [{"open": "12:30", "close": "14:30"}, {"open": "19:30", "close": "22:30"}],
+                    "sat": [{"open": "19:30", "close": "22:30"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Ratana+Milan",
+                "website": "https://www.ratana.it/",
+                "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&h=250&fit=crop"
+            },
+
+            # ── Sandwich ──────────────────────────────────────────────
+            {
+                "id": 11,
+                "name": "Luini",
+                "category": "sandwich",
+                "description": "Milan's most famous street food institution since 1888, steps from the Duomo. The panzerotto — a deep-fried half-moon of dough stuffed with tomato and mozzarella — is one of the great Italian street foods. Queue outside, eat standing. €3.",
+                "address": "Via Santa Radegonda, 16",
+                "lat": 45.4651,
+                "lng": 9.1887,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon: 10am–3pm | Tue–Sat: 10am–8pm | Closed Sun",
+                "hours_structured": {
+                    "mon": [{"open": "10:00", "close": "15:00"}],
+                    "tue": [{"open": "10:00", "close": "20:00"}],
+                    "wed": [{"open": "10:00", "close": "20:00"}],
+                    "thu": [{"open": "10:00", "close": "20:00"}],
+                    "fri": [{"open": "10:00", "close": "20:00"}],
+                    "sat": [{"open": "10:00", "close": "20:00"}],
+                    "sun": []
+                },
+                "maps_url": "https://maps.google.com/?q=Luini+Milan",
+                "website": "https://www.luini.it/",
+                "image": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 12,
+                "name": "Spontini",
+                "category": "sandwich",
+                "description": "Milan's cult pizza al taglio institution since 1953. Thick, focaccia-style slices sold by the slice at around €4 each. The original Via Spontini location is the pilgrimage spot — always a queue, always worth it.",
+                "address": "Via Spontini, 4",
+                "lat": 45.4730,
+                "lng": 9.2065,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sun: 11am–midnight",
+                "hours_structured": {
+                    "mon": [{"open": "11:00", "close": "00:00"}],
+                    "tue": [{"open": "11:00", "close": "00:00"}],
+                    "wed": [{"open": "11:00", "close": "00:00"}],
+                    "thu": [{"open": "11:00", "close": "00:00"}],
+                    "fri": [{"open": "11:00", "close": "00:00"}],
+                    "sat": [{"open": "11:00", "close": "00:00"}],
+                    "sun": [{"open": "11:00", "close": "00:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Spontini+Milan",
+                "website": "https://www.pizzeriaspontini.it/",
+                "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&h=250&fit=crop"
+            },
+
+            # ── Dessert ───────────────────────────────────────────────
+            {
+                "id": 13,
+                "name": "Pasticceria Marchesi",
+                "category": "dessert",
+                "description": "Milan's most storied pasticceria, founded in 1824 near Sant'Ambrogio. The panettone is the benchmark against which all others are measured. Also famous for marrons glacés, pralines and a hot chocolate that is extraordinary in winter.",
+                "address": "Via Santa Maria alla Porta, 11",
+                "lat": 45.4630,
+                "lng": 9.1830,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Tue–Sun: 8am–8pm | Closed Mon",
+                "hours_structured": {
+                    "mon": [],
+                    "tue": [{"open": "08:00", "close": "20:00"}],
+                    "wed": [{"open": "08:00", "close": "20:00"}],
+                    "thu": [{"open": "08:00", "close": "20:00"}],
+                    "fri": [{"open": "08:00", "close": "20:00"}],
+                    "sat": [{"open": "08:00", "close": "20:00"}],
+                    "sun": [{"open": "08:00", "close": "20:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Pasticceria+Marchesi+Milan",
+                "website": "https://www.pasticceriamarchesi.com/",
+                "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 14,
+                "name": "Gelateria Toldo",
+                "category": "dessert",
+                "description": "A Brera neighbourhood institution making some of the finest artisanal gelato in Milan since 1969. The nocciola and pistachio are benchmark, the seasonal fruit sorbets extraordinary. Loved by locals and completely unpretentious.",
+                "address": "Via Ponte Vetero, 9",
+                "lat": 45.4716,
+                "lng": 9.1838,
+                "rating": 5,
+                "price": "€",
+                "hours": "Mon–Sun: 11am–11pm",
+                "hours_structured": {
+                    "mon": [{"open": "11:00", "close": "23:00"}],
+                    "tue": [{"open": "11:00", "close": "23:00"}],
+                    "wed": [{"open": "11:00", "close": "23:00"}],
+                    "thu": [{"open": "11:00", "close": "23:00"}],
+                    "fri": [{"open": "11:00", "close": "23:00"}],
+                    "sat": [{"open": "11:00", "close": "23:00"}],
+                    "sun": [{"open": "11:00", "close": "23:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Gelateria+Toldo+Milan+Brera",
+                "website": "https://www.tripadvisor.com/Restaurant_Review-g187849-d2094532-Reviews-Gelateria_Toldo-Milan_Lombardy.html",
+                "image": "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=400&h=250&fit=crop"
+            },
+
+            # ── Drinks ────────────────────────────────────────────────
+            {
+                "id": 15,
+                "name": "Bar Basso",
+                "category": "drinks",
+                "description": "The birthplace of the Negroni Sbagliato — a mistaken Negroni where gin is replaced by Prosecco. A quintessential Milanese aperitivo bar open since the 1940s. Order the Sbagliato in their signature oversized vintage glassware. A Milan institution.",
+                "address": "Via Plinio, 39",
+                "lat": 45.4739,
+                "lng": 9.2101,
+                "rating": 5,
+                "price": "€€",
+                "hours": "Mon–Sat: 9am–1am | Closed Tue",
+                "hours_structured": {
+                    "mon": [{"open": "09:00", "close": "01:00"}],
+                    "tue": [],
+                    "wed": [{"open": "09:00", "close": "01:00"}],
+                    "thu": [{"open": "09:00", "close": "01:00"}],
+                    "fri": [{"open": "09:00", "close": "01:00"}],
+                    "sat": [{"open": "09:00", "close": "01:00"}],
+                    "sun": [{"open": "09:00", "close": "01:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Bar+Basso+Milan",
+                "website": "https://www.barbasso.com/",
+                "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&h=250&fit=crop"
+            },
+            {
+                "id": 16,
+                "name": "Nottingham Forest",
+                "category": "drinks",
+                "description": "One of the world's great cocktail bars, tucked in Porta Venezia since 1986. Bartender Dario Comini is a legend — his elaborate theatrical cocktails have influenced a generation of mixologists. No menu, just tell him what you feel like.",
+                "address": "Viale Piave, 1",
+                "lat": 45.4736,
+                "lng": 9.2045,
+                "rating": 5,
+                "price": "€€€",
+                "hours": "Mon–Sun: 6:30pm–2am",
+                "hours_structured": {
+                    "mon": [{"open": "18:30", "close": "02:00"}],
+                    "tue": [{"open": "18:30", "close": "02:00"}],
+                    "wed": [{"open": "18:30", "close": "02:00"}],
+                    "thu": [{"open": "18:30", "close": "02:00"}],
+                    "fri": [{"open": "18:30", "close": "02:00"}],
+                    "sat": [{"open": "18:30", "close": "02:00"}],
+                    "sun": [{"open": "18:30", "close": "02:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Nottingham+Forest+Bar+Milan",
+                "website": "https://www.nottinghamforest.it/",
+                "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=250&fit=crop"
+            },
+
+            # ── Snacks ────────────────────────────────────────────────
+            {
+                "id": 17,
+                "name": "Mercato Centrale Milano",
+                "category": "snack",
+                "description": "A three-floor food market inside the Centrale railway station bringing together the best artisan food producers in Italy. Everything from fresh pasta to pizza, gelato to craft beer. Perfect for a quick quality meal before or after a train.",
+                "address": "Piazza Duca d'Aosta, 1",
+                "lat": 45.4855,
+                "lng": 9.2045,
+                "rating": 4,
+                "price": "€€",
+                "hours": "Mon–Sun: 8am–midnight",
+                "hours_structured": {
+                    "mon": [{"open": "08:00", "close": "00:00"}],
+                    "tue": [{"open": "08:00", "close": "00:00"}],
+                    "wed": [{"open": "08:00", "close": "00:00"}],
+                    "thu": [{"open": "08:00", "close": "00:00"}],
+                    "fri": [{"open": "08:00", "close": "00:00"}],
+                    "sat": [{"open": "08:00", "close": "00:00"}],
+                    "sun": [{"open": "08:00", "close": "00:00"}]
+                },
+                "maps_url": "https://maps.google.com/?q=Mercato+Centrale+Milano",
+                "website": "https://www.mercatocentrale.it/milano/",
+                "image": "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&h=250&fit=crop"
             },
         ]
     }

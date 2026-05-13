@@ -28,6 +28,7 @@ const CAT_COLORS = {
   snack:       '#E07B54',
   drinks:      '#4A90C4',
   bistecca:    '#8B1A1A',
+  cicchetti:   '#C0703A',
 };
 
 const CAT_ICONS = {
@@ -41,4 +42,5 @@ const CAT_ICONS = {
   snack:       '🍿',
   drinks:      '🍹',
   bistecca:    '🥩',
+  cicchetti:   '🥖',
 };

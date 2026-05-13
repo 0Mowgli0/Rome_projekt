@@ -36,10 +36,11 @@ const TRANSLATIONS = {
     view_details: 'View Details',
     city_label: 'English',
     categories: {
-      fine_dining: 'Fine Dining', trattoria: 'Trattoria', cafe: 'Café',
-      pizza: 'Pizza', dessert: 'Dessert', pasta: 'Pasta',
-      sandwich: 'Sandwich', snack: 'Snacks', drinks: 'Drinks', bistecca: 'Bistecca',
-    }
+  fine_dining: 'Fine Dining', trattoria: 'Trattoria', cafe: 'Café',
+  pizza: 'Pizza', dessert: 'Dessert', pasta: 'Pasta',
+  sandwich: 'Sandwich', snack: 'Snacks', drinks: 'Drinks', bistecca: 'Bistecca',
+  cicchetti: 'Cicchetti',
+}
   },
   sv: {
     flag: 'https://flagcdn.com/w20/se.png',
@@ -79,7 +80,7 @@ const TRANSLATIONS = {
     categories: {
       fine_dining: 'Finrestaurang', trattoria: 'Trattoria', cafe: 'Café',
       pizza: 'Pizza', dessert: 'Dessert', pasta: 'Pasta',
-      sandwich: 'Smörgås', snack: 'Snacks', drinks: 'Drinkar', bistecca: 'Bistecca',
+      sandwich: 'Smörgås', snack: 'Snacks', drinks: 'Drinkar', bistecca: 'Bistecca', cicchetti: 'Cicchetti',
     }
   },
   it: {
@@ -120,7 +121,7 @@ const TRANSLATIONS = {
     categories: {
       fine_dining: 'Alta Cucina', trattoria: 'Trattoria', cafe: 'Caffè',
       pizza: 'Pizza', dessert: 'Dolci', pasta: 'Pasta',
-      sandwich: 'Panino', snack: 'Snack', drinks: 'Bevande', bistecca: 'Bistecca',
+      sandwich: 'Panino', snack: 'Snack', drinks: 'Bevande', bistecca: 'Bistecca', cicchetti: 'Cicchetti',
     }
   },
   de: {
@@ -161,7 +162,7 @@ const TRANSLATIONS = {
     categories: {
       fine_dining: 'Feine Küche', trattoria: 'Trattoria', cafe: 'Café',
       pizza: 'Pizza', dessert: 'Dessert', pasta: 'Pasta',
-      sandwich: 'Sandwich', snack: 'Snacks', drinks: 'Getränke', bistecca: 'Bistecca',
+      sandwich: 'Sandwich', snack: 'Snacks', drinks: 'Getränke', bistecca: 'Bistecca', cicchetti: 'Cicchetti',
     }
   },
   es: {
@@ -203,6 +204,7 @@ const TRANSLATIONS = {
       fine_dining: 'Alta Cocina', trattoria: 'Trattoria', cafe: 'Café',
       pizza: 'Pizza', dessert: 'Postre', pasta: 'Pasta',
       sandwich: 'Sándwich', snack: 'Snacks', drinks: 'Bebidas', bistecca: 'Bistecca',
+      cicchetti: 'Cicchetti',
     }
   },
   fr: {
@@ -243,7 +245,7 @@ const TRANSLATIONS = {
     categories: {
       fine_dining: 'Gastronomie', trattoria: 'Trattoria', cafe: 'Café',
       pizza: 'Pizza', dessert: 'Dessert', pasta: 'Pâtes',
-      sandwich: 'Sandwich', snack: 'Snacks', drinks: 'Boissons', bistecca: 'Bistecca',
+      sandwich: 'Sandwich', snack: 'Snacks', drinks: 'Boissons', bistecca: 'Bistecca', cicchetti: 'Cicchetti',
     }
   }
 };
