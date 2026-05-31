@@ -216,7 +216,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Da+Enzo+al+29+Rome",
                 "website": "https://www.daenzoal29.com/",
-                "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=400&h=250&fit=crop"
+                "image": "/static/img/da_enzo.png"
             },
             {
                 "id": 7,
