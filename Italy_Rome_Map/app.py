@@ -192,7 +192,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=La+Zanzara+Roma",
                 "website": "https://www.lazanzararoma.com/",
-                "image":    "/static/img/la_zanzara.png"
+                "image":    "/static/img/La_Zanzara.png"
             },
             {
                 "id": 6,
