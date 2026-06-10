@@ -239,8 +239,8 @@ CITIES = {
                     "sun": [{"open": "12:30", "close": "15:00"}, {"open": "19:30", "close": "23:00"}]
                 },
                 "maps_url": "https://maps.google.com/?q=Flavio+al+Velavevodetto+Rome",
-                "website": "https://www.flavioalvelavevodetto.it/",
-                "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=250&fit=crop"
+                "website": "https://www.ristorantevelavevodetto.it/en/restaurants/roma-testaccio/",
+                "image": "/static/img/flavio_al_velavevodetto.png"
             },
             {
                 "id": 8,
@@ -264,7 +264,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Trattoria+Vecchia+Roma",
                 "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1053991-Reviews-Trattoria_Vecchia_Roma-Rome_Lazio.html",
-                "image": "https://images.unsplash.com/photo-1534482421-64566f976cfa?w=400&h=250&fit=crop"
+                "image": "/static/img/Vecchia.png"
             },
             {
                 "id": 9,
@@ -288,7 +288,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Sant'Eustachio+il+Caffe+Rome",
                 "website": "https://www.santeustachioilcaffe.it/",
-                "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=250&fit=crop"
+                "image": "/static/img/santeustachioilcaffe.png"
             },
             {
                 "id": 10,
@@ -312,7 +312,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Antico+Caffe+Greco+Rome",
                 "website": "https://www.anticocaffegreco.eu/",
-                "image": "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=400&h=250&fit=crop"
+                "image": "/static/img/Antico_Caffè_Greco.png"
             },
             {
                 "id": 11,
@@ -336,7 +336,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Caffe+della+Pace+Rome",
                 "website": "https://www.caffedellapace.it/",
-                "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=250&fit=crop"
+                "image": "/static/img/Caffè_della_Pace.png"
             },
             {
                 "id": 12,
@@ -360,7 +360,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Pizzarium+Bonci+Rome",
                 "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1884226-Reviews-Pizzarium-Rome_Lazio.html",
-                "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop"
+                "image": "/static/img/Pizzarium.png"
             },
             {
                 "id": 13,
@@ -384,7 +384,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Seu+Pizza+Illuminati+Rome",
                 "website": "https://www.seupizza.com/",
-                "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=250&fit=crop"
+                "image": "/static/img/Seu_Pizza_Illuminati.png"
             },
             {
                 "id": 14,
@@ -408,7 +408,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Mariuccia+Ristorante+Pizzeria+Roma",
                 "website": "https://mariucciagroup.it/",
-                "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop"
+                "image": "/static/img/Mariuccia.png"
             },
             {
                 "id": 15,
@@ -432,7 +432,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Trapizzino+Trastevere+Rome",
                 "website": "https://www.trapizzino.it/en/",
-                "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=250&fit=crop"
+                "image": "/static/img/Trapizzino.png"
             },
             {
                 "id": 16,
@@ -456,7 +456,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=Roscioli+Salumeria+Rome",
                 "website": "https://salumeriaroscioli.com/",
-                "image": "https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&h=250&fit=crop"
+                "image": "/static/img/Roscioli.png"
             },
             {
                 "id": 17,
@@ -480,7 +480,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=L'Antica+Pizzeria+Di+Trevi+Rome",
                 "website": "https://ristorantetrivioroma.com/",
-                "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop"
+                "image": "/static/img/L'Antica_Pizzeria_Di_Trevi.png"
             },
             {
                 "id": 18,
@@ -504,7 +504,7 @@ CITIES = {
                 },
                 "maps_url": "https://maps.google.com/?q=La+Renella+Trastevere+Rome",
                 "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d1095877-Reviews-La_Renella-Rome_Lazio.html",
-                "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=250&fit=crop"
+                "image": "/static/img/La_Renella.png"
             },
             {
                 "id": 19,
