@@ -1116,27 +1116,28 @@ html, body {
 
 /* ─── City Selector ──────────────────────────────────────── */
 .city-selector {
+  background: radial-gradient(ellipse at 50% 20%, #3d2a0d 0%, #1A1410 45%, #0a0806 100%);
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
   position: fixed;
   inset: 0;
-  background: var(--ink);
-  z-index: 5000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  overflow-y: auto;
+  z-index: 500;
 }
 
-.city-selector.hidden { display: none; }
-
 .city-selector-inner {
-  width: min(600px, 100%);
+  width: min(680px, 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 20px;
 }
+
+.city-selector.hidden { display: none; }
+
 
 .city-selector-logo {
   display: flex;
@@ -1179,23 +1180,30 @@ html, body {
 
 .city-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   width: 100%;
 }
 
 .city-card {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  height: 200px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: cardSlideUp 0.5s ease both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes cardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .city-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .city-card-img {

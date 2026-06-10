@@ -5,9 +5,10 @@ async function loadCities() {
     const data = await res.json();
     const grid = document.getElementById('cityGrid');
     grid.innerHTML = '';
-    data.cities.forEach(city => {
+    data.cities.forEach((city, index) => {
       const card = document.createElement('div');
       card.className = 'city-card';
+      card.style.animationDelay = `${index * 120}ms`;
       card.innerHTML = `
         <img class="city-card-img" loading="lazy" src="${city.image}" alt="${city.name}">
         <div class="city-card-overlay"></div>
